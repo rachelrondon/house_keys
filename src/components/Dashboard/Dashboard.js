@@ -1,23 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 
+// 
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      users: []
+      apartments: []
     };
   }
 
   componentDidMount() {
-    fetch('http://myapi-profstream.herokuapp.com/api/e52818/persons', {
+    fetch('http://localhost:8000/apartments/1/newApt', {
       method: 'GET',
     })
     .then((results) => {
-      results.json().then((users_data) => {
+      results.json().then((apartments_data) => {
 
-        this.setState({users: users_data})
+        this.setState({apartments: apartments_data})
       });
     })
     .catch((err) => {
@@ -30,19 +32,14 @@ class Dashboard extends Component {
       <div>
         <nav>
           <h1> Welcome, Rachel</h1>
-          {/* <img>Logo</img> */}
-          {/* <Link to="/new/post"></Link> */}
         </nav>
         <div className="container">
           <div className="row">
-          {this.state.users.map((user) => {
+          {this.state.apartments.map((apartment) => {
             return(
-            <div key={user.id} className="">
+            <div key={apartment.id} className="">
             <div>
-              <h2>Name: {user.firstname} {user.lastname}</h2>
-            </div>
-            <div>
-              <h2>Email: {user.email}</h2>
+              <h2>Gender: {apartment.address}</h2>
             </div>
           </div>
             )
