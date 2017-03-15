@@ -1,14 +1,13 @@
 {
   "name": "house_keys",
   "version": "0.1.0",
-  "description": "",
+  "description": "A roomate finder using React.js &amp; Express.js",
   "engines": {
     "npm": ">=3"
   },
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
-    "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
@@ -99,9 +98,6 @@
       "\\.(css|scss)$": "identity-obj-proxy",
       "^.+\\.(gif|ttf|eot|svg|woff|woff2|ico)$": "<rootDir>/tools/fileMock.js"
     }
-  },
-  "bugs": {
-    "url": ""
   },
   "homepage": "https://github.com/coryhouse/react-slingshot#readme",
   "main": "webpack.config.dev.js",
