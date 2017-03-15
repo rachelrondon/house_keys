@@ -9,22 +9,10 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-<<<<<<< HEAD
-=======
       apartments: [],
->>>>>>> 89895d871bde34f02fb7fac06dfc69df2465b784
       roommates: []
     };
   }
-  componentDidMount() {
-    fetch('http://localhost:8000/roommates', {
-      method: 'GET',
-    })
-    .then((results) => {
-      console.log
-      results.json().then((roommates_data) => {
-        this.setState({roommates: roommates_data})
-      });
   // componentDidMount() {
   //   fetch('http://localhost:8000/apartments/', {
   //     method: 'GET',
