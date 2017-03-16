@@ -9,10 +9,11 @@ class NewUser extends Component {
 
       this.state = {
         user: {
-          firstname: '',
-          lastname: '',
+          first_name: '',
+          last_name: '',
+          username: '',
           email: '',
-          username: ''
+          password_digest: ''
         }
       };
     }
@@ -35,13 +36,14 @@ class NewUser extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    fetch('http://myapi-profstream.herokuapp.com/api/e52818/persons', {
+    fetch(`http://localhost:8000/users/{user.id}`, {
       method: 'POST',
       body: JSON.stringify({
-        firstname: this.state.user.firstname,
-        lastname: this.state.user.lastname,
+        firstname: this.state.user.first_name,
+        lastname: this.state.user.last_name,
+        username: this.state.user.username,
         email: this.state.user.email,
-        username: this.state.user.username
+        password_digest: this.state.user.password_digest
       }),
       headers: {
         'Content-type': 'application/json'
@@ -65,13 +67,19 @@ class NewUser extends Component {
                 First Name
               </div>
               <div className="">
-                <input name="firstname" placeholder="first name" onChange={this.handleChange.bind(this)}></input>
+                <input name="first_name" placeholder="first name" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Last Name
               </div>
               <div className="">
-                <input  name="lastname" placeholder="last name" onChange={this.handleChange.bind(this)}></input>
+                <input  name="last_name" placeholder="last name" onChange={this.handleChange.bind(this)}></input>
+              </div>
+              <div className="">
+                Username
+              </div>
+              <div className="">
+                <input name="username" placeholder="username" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Email
@@ -80,17 +88,11 @@ class NewUser extends Component {
                 <input name="email" placeholder="email" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
-                Username
+                password
               </div>
               <div className="">
-                <input name="username" placeholder="username" onChange={this.handleChange.bind(this)}></input>
+                <input name="password_digest" placeholder="password" onChange={this.handleChange.bind(this)}></input>
               </div>
-              {/* <div className="">
-                Password
-              </div>
-              <div className="">
-                <input placeholder="password"></input>
-              </div> */}
               <button href="/dashboard" type="submit">Submit</button>
             </form>
           </nav>
