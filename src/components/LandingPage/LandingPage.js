@@ -9,14 +9,14 @@ class LandingPage extends Component {
   render(){
     return(
       <div id="landing-page-div">
-        <div id="landing-page-logo">
-          <img src=""></img>
-        </div>
-        <div id="login-in-link">
-        <Link to='/login'>Login</Link>
-        </div>
-        <div id="sign-up-link">
-        <Link to='/user/new' type="button"> Sign Up</Link>
+        <div id="landing-page-logo"></div>
+          <div id="landing-page-links">
+            <div id="login-in-link">
+             <Link to='/login'>Login</Link>
+            </div>
+            <div id="sign-up-link">
+            <Link to='/user/new' className="sign-up"> Sign Up</Link>
+          </div>
         </div>
       </div>
     )

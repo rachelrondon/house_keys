@@ -17,6 +17,29 @@ class Dashboard extends Component {
     };
   }
 
+  componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
+  }
+
+  componentDidMount() {
+      fetch('http://localhost:8000/', {
+          method: 'GET',
+          headers: {
+              'Authorization': window.localStorage.getItem('token')
+          }
+      })
+      .then((results) => {
+          results.json().then((content) => {
+            browserHistory.push('/dashboard');
+          });
+      })
+      .catch((err) => {
+          browserHistory.push('/login');
+      });
+  }
+
   handleApartmentClick(event) {
     this.setState({
       apartmentClick: true,
@@ -51,6 +74,7 @@ class Dashboard extends Component {
     return(
       <div>
         <nav>
+          <h1>{this.state.message}</h1>
           <h1> Welcome, Rachel</h1>
         </nav>
         <div className="collection">

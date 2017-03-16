@@ -4,14 +4,6 @@ import { Route, Router, browserHistory } from "react-router";
 
 import './materialize/css/materialize.css';
 import './Style/Style.css';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
-const App = () => (
-  <MuiThemeProvider>
-    <NewPostRoommate />
-  </MuiThemeProvider>
-);
-
 
 // Here we are importing the 7 views
 
