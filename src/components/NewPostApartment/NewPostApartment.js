@@ -8,53 +8,33 @@ class NewPostApartment extends Component {
     constructor(props) {
       super(props)
 
+      console.log(props);
       this.state = {
-        user: {
-          firstname: '',
-          lastname: '',
-          email: '',
-          username: ''
-        },
         apartment: {
+          title: '',
           address: '',
+          rent: 500,
           description: '',
-          picture: '',
-          price: ''
+          photo: '',
+          user_id: 1
         }
       };
     }
 
-  componentDidMount() {
-    fetch(`http://localhost:8000`, {
-      method: "GET"
-    })
-    .then((results) => {
-      results.json().then((user_data) => {
-        this.setState({user: user_data});
-      })
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  }
-
   handleSubmit(event) {
     event.preventDefault();
 
-    fetch(`http://localhost:8000`, {
+    fetch(`http://localhost:8000/apartments/new`, {
       method: "POST",
       body: JSON.stringify({
-        firstname: this.state.user.firstname,
-        lastname: this.state.user.lastname,
-        email: this.state.user.email,
-        username: this.state.user.username
+        apartment: this.state.apartment
       }),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": 'application/json'
       }
     })
     .then(() => {
-      browserHistory.push("/dashboard");
+      browserHistory.push('/dashboard');
     })
     .catch((err) => {
       console.log(err);
@@ -78,31 +58,37 @@ class NewPostApartment extends Component {
         <div>
           <nav>
             <h2 className=""> Add Apartment</h2>
-            <h2 className="">for {this.state.user.name}</h2>
+            {/* <h2 className="">for {this.state.user.first_name} {this.state.user.first_name}</h2> */}
             <form onSubmit={this.handleSubmit.bind(this)} className="">
               <div className="">
-                Addres
+                Title
               </div>
               <div className="">
-                <input name="name" placeholder="Address" onChange={this.handleChange.bind(this)}></input>
+                <input name="title" type="text" placeholder="Title" onChange={this.handleChange.bind(this)}></input>
+              </div>
+              <div className="">
+                Address
+              </div>
+              <div className="">
+                <input name="address" type="text" placeholder="Address" onChange={this.handleChange.bind(this)}></input>
+              </div>
+              <div className="">
+                Rent
+              </div>
+              <div className="">
+                <input  name="rent" type="number" placeholder="Rent" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Description
               </div>
               <div className="">
-                <input  name="description" placeholder="description" onChange={this.handleChange.bind(this)}></input>
+                <input name="description" type="text" placeholder="Description" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
-                Image
+                Photo
               </div>
               <div className="">
-                <input name="picture" placeholder="img" onChange={this.handleChange.bind(this)}></input>
-              </div>
-              <div className="">
-                Price
-              </div>
-              <div className="">
-                <input name="price" placeholder="rent" onChange={this.handleChange.bind(this)}></input>
+                <input name="photo" type="text" placeholder="Add photo" onChange={this.handleChange.bind(this)}></input>
               </div>
               <button href="/dashboard" type="submit">Submit</button>
             </form>
