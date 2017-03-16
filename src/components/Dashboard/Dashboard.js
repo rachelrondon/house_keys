@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
 
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
@@ -13,34 +12,35 @@ class Dashboard extends Component {
       apartments: [],
       roommates: []
     };
+}
 
-  handleApartmentClick(event) {
+  handleApartmentClick() {
     this.setState({
       apartmentClick: true,
       roommateClick: false
-    })
+    });
   }
 
   renderApartment() {
     if(this.state.apartmentClick) {
       return(
         <DashboardApartments />
-      )
+      );
     }
   }
 
-  handleRoommateClick(event) {
+  handleRoommateClick() {
     this.setState({
       roommateClick: true,
       apartmentClick: false
-    })
+    });
   }
 
   renderRoommate() {
     if(this.state.roommateClick) {
       return(
         <DashboardRoommate />
-      )
+      );
     }
   }
 
@@ -66,7 +66,7 @@ class Dashboard extends Component {
       {this.renderRoommate()}
 
     </div>
-    )
+  );
   }
 }
 

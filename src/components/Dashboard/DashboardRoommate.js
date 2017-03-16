@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-import update from 'react-addons-update';
-import { Link } from "react-router";
-import { browserHistory } from 'react-router';
-
 
 class DashboardRoommate extends Component {
   constructor(props) {
@@ -10,7 +6,7 @@ class DashboardRoommate extends Component {
 
     this.state = {
       roommates: []
-    }
+    };
   }
 
   componentDidMount() {
@@ -24,7 +20,7 @@ class DashboardRoommate extends Component {
   })
   .catch((err) => {
     console.log(err);
-  })
+  });
 }
 
 
@@ -58,11 +54,11 @@ class DashboardRoommate extends Component {
               <h2>Wallet: {roommate.wallet}</h2>
             </div>
         </div>
-          )
+          );
         })}
     </div>
   </div>
-    )
+    );
   }
 }
 
