@@ -10,7 +10,6 @@ class EditUser extends Component {
       return(
         <div>
           <nav>
-            {/* <img>LOGO</img> */}
             <h1>Edit</h1>
             <input placeholder="name"></input>
             <input placeholder="email"></input>

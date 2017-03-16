@@ -8,7 +8,6 @@ class Login extends Component {
   render(){
     return(
       <div>
-        <img src=""></img>
         <input placeholder="username"></input>
         <input placeholder="password"></input>
       </div>

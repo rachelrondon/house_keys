@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 
-
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
+
 
 class Dashboard extends Component {
   constructor(props) {
@@ -14,7 +14,6 @@ class Dashboard extends Component {
       roommates: []
     };
   }
-
 
   handleApartmentClick(event) {
     this.setState({
@@ -47,25 +46,29 @@ class Dashboard extends Component {
   }
 
   render(){
-   return(
-     <div>
-       <nav>
-         <h1> Welcome, Rachel</h1>
-       </nav>
-     <div>
-       <button onClick={this.handleApartmentClick.bind(this)} >
-         Apartment
-       </button>
-     </div>
-     <div>
-       <button onClick={this.handleRoommateClick.bind(this)} >
-         Roommate
-       </button>
-     </div>
-     {this.renderApartment()}
-     {this.renderRoommate()}
+    return(
+      <div>
+        <nav>
+          <h1> Welcome, Rachel</h1>
+        </nav>
+
+      <div>
+        <button onClick={this.handleApartmentClick.bind(this)} >
+          Apartment
+        </button>
+      </div>
+
+      <div>
+        <button onClick={this.handleRoommateClick.bind(this)} >
+          Roommate
+        </button>
+      </div>
+      {this.renderApartment()}
+      {this.renderRoommate()}
+
     </div>
     )
   }
 }
+
 export default Dashboard;

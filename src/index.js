@@ -9,7 +9,7 @@ import EditUser from './components/EditUser/EditUser';
 import NewUser from './components/NewUser/NewUser';
 import LandingPage from './components/LandingPage/LandingPage';
 import NewProfile from './components/NewProfile/NewProfile';
-import NewPost from "./components/NewPost/NewPost";
+import NewPostRoommate from "./components/NewPostRoommate/NewPostRoommate";
 import NewPostApartment from './components/NewPostApartment/NewPostApartment';
 
 
@@ -24,7 +24,7 @@ ReactDom.render(
     <Route path='/user/new' component={NewUser} />
     <Route path='/user/profile' component={NewProfile} />
     <Route path='/user/new/apartment' component={NewPostApartment} />
-    <Route path='/user/new/post' component={NewPost} />
+    <Route path='/user/new/roommate' component={NewPostRoommate} />
 
   </Router>
   , document.getElementById("app"));
