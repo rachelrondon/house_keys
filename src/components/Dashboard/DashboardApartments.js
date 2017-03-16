@@ -35,10 +35,13 @@ class DashboardApartments extends Component {
           return(
           <div key={apartment.id} className="">
             <div>
+              <h2>Title: {apartment.title}</h2>
+            </div>
+            <div>
               <h2>Address: {apartment.address}</h2>
             </div>
             <div>
-              <h2>Rent: {apartment.rent}</h2>
+              <h2>Rent: ${apartment.rent}</h2>
             </div>
             <div>
               <h2>Description: {apartment.description}</h2>
