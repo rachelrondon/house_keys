@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Route, Router, browserHistory } from "react-router";
 import { Link } from "react-router";
 
-
-
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -46,7 +44,7 @@ class Login extends Component {
     return(
       <div id="login-page-div">
         <form onSubmit={this.handleSubmit.bind(this)}>
-<<<<<<< HEAD
+
           <div id="login-in-info">
             <div id="login-page-logo"></div>
             <div id="email-input">
@@ -65,19 +63,6 @@ class Login extends Component {
               <Link to="/dashboard" type="submit">Login</Link>
             </div>
         </div>
-=======
-          <div>Email</div>
-          <div>
-            <input name="email" onChange={this.handleChange.bind(this)} type="email" />
-          </div>
-          <div>Password</div>
-          <div>
-            <input name="password" onChange={this.handleChange.bind(this)} type="password" />
-          </div>
-          <div>
-            <button type="submit">Login</button>
-          </div>
->>>>>>> 655997b8aa25a81912f2f5c5e507e70e988a43c7
         </form>
       </div>
     )
