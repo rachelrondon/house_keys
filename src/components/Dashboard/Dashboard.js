@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 
-// 
+import DashboardApartments from "./DashboardApartments";
+import DashboardRoommate from "./DashboardRoommate";
+
+//
 
 class Dashboard extends Component {
   constructor(props) {
@@ -33,7 +36,9 @@ class Dashboard extends Component {
         <nav>
           <h1> Welcome, Rachel</h1>
         </nav>
-        <div className="container">
+        <form
+          onSubmit={}
+        {/* <div className="container">
           <div className="row">
           {this.state.apartments.map((apartment) => {
             return(
@@ -45,7 +50,11 @@ class Dashboard extends Component {
             )
           })}
         </div>
-      </div>
+      </div> */}
+
+      <DashboardApartments />
+      <DashboardRoommate />
+
     </div>
     )
   }
