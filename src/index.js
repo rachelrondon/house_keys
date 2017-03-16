@@ -2,8 +2,8 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Route, Router, browserHistory } from "react-router";
 
-import './materialize/css/materialize.css';
 import './Style/Style.css';
+import './Vendor/milligram/dist/milligram.css';
 
 // Here we are importing the ten views
 import Dashboard from './components/Dashboard/Dashboard';
