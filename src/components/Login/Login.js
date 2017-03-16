@@ -3,14 +3,15 @@ import { Route, Router, browserHistory } from "react-router";
 import { Link } from "react-router";
 
 
+
 class Login extends Component {
   constructor(props) {
-      super(props);
+    super(props);
 
-      this.state = {
+    this.state = {
         email: '',
         password: ''
-      };
+    };
   }
 
   handleChange(event) {
@@ -20,28 +21,32 @@ class Login extends Component {
     }
 
   handleSubmit(event) {
-        event.preventDefault();
+    event.preventDefault();
 
-        fetch("http://localhost:8000/users/new", {
-            method: "POST",
-            body: JSON.stringify(this.state)
-        })
-        .then((results) => {
-            results.json().then((jwt) => {
-                console.log(jwt.token);
-                window.localStorage.setItem("token", jwt.token);
-                browserHistory.push("/dashboard");
-            });
-        })
-        .catch((err) => {
-            alert("Not authenticated!");
-        });
-    }
+    fetch('http://localhost:8000/users/login', {
+        method: 'POST',
+        body: JSON.stringify(this.state),
+        headers: {
+          'Content-type': 'application/json'
+        }
+    })
+    .then((results) => {
+      results.json().then((jwt) => {
+        console.log('**',jwt.token);
+        window.localStorage.setItem('token', jwt.token);
+        browserHistory.push('/dashboard');
+      });
+    })
+    .catch((err) => {
+        alert('Not authenticated!');
+    });
+  }
 
   render(){
     return(
       <div id="login-page-div">
         <form onSubmit={this.handleSubmit.bind(this)}>
+<<<<<<< HEAD
           <div id="login-in-info">
             <div id="login-page-logo"></div>
             <div id="email-input">
@@ -60,6 +65,19 @@ class Login extends Component {
               <Link to="/dashboard" type="submit">Login</Link>
             </div>
         </div>
+=======
+          <div>Email</div>
+          <div>
+            <input name="email" onChange={this.handleChange.bind(this)} type="email" />
+          </div>
+          <div>Password</div>
+          <div>
+            <input name="password" onChange={this.handleChange.bind(this)} type="password" />
+          </div>
+          <div>
+            <button type="submit">Login</button>
+          </div>
+>>>>>>> 655997b8aa25a81912f2f5c5e507e70e988a43c7
         </form>
       </div>
     )
