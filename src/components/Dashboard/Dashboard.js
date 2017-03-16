@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router";
 
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
@@ -12,58 +13,58 @@ class Dashboard extends Component {
       apartments: [],
       roommates: [],
     };
-}
+  }
 
-componentWillMount() {
+  componentWillMount() {
     if (!localStorage.getItem('token')) {
         browserHistory.push('/login');
     }
-}
+  }
 
-componentDidMount() {
-    fetch('http://localhost:8000/dashboard', {
-        method: 'GET',
-        headers: {
-            'Authorization': window.localStorage.getItem('token')
-        }
-    })
-    .then((results) => {
-        results.json().then((content) => {
-            this.setState({message: content.message});
-        });
-    })
-    .catch((err) => {
-        browserHistory.push('/login');
-    });
-}
+  componentDidMount() {
+      fetch('http://localhost:8000/', {
+          method: 'GET',
+          headers: {
+              'Authorization': window.localStorage.getItem('token')
+          }
+      })
+      .then((results) => {
+          results.json().then((content) => {
+            browserHistory.push('/dashboard');
+          });
+      })
+      .catch((err) => {
+          browserHistory.push('/login');
+      });
+  }
 
-  handleApartmentClick() {
+  handleApartmentClick(event) {
     this.setState({
       apartmentClick: true,
       roommateClick: false
-    });
+    })
   }
 
   renderApartment() {
     if(this.state.apartmentClick) {
       return(
         <DashboardApartments />
-      );
+      )
     }
   }
 
-  handleRoommateClick() {
+  handleRoommateClick(event) {
     this.setState({
       roommateClick: true,
       apartmentClick: false
-    });
+    })
   }
 
   renderRoommate() {
     if(this.state.roommateClick) {
       return(
         <DashboardRoommate />
-      );
+      )
     }
   }
 
@@ -71,6 +72,7 @@ componentDidMount() {
     return(
       <div>
         <nav>
+          <h1>{this.state.message}</h1>
           <h1> Welcome, Rachel</h1>
         </nav>
         <Link to="user/new/apartment">New Apartment Post</Link><br />
@@ -90,7 +92,7 @@ componentDidMount() {
       {this.renderRoommate()}
 
     </div>
-  );
+    )
   }
 }
 
