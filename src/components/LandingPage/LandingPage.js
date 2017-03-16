@@ -9,9 +9,15 @@ class LandingPage extends Component {
   render(){
     return(
       <div>
-        <img src=""></img>
-        <Link to='/login'> Login</Link>
+        <div>
+          <img src=""></img>
+        </div>
+        <div id="login-in-link">
+        <Link to='/login'>Login</Link>
+        </div>
+        <div id="sign-up-link">
         <Link to='/user/new' type="button"> SignUp</Link>
+        </div>
       </div>
     )
   }

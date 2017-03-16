@@ -2,7 +2,8 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Route, Router, browserHistory } from "react-router";
 
-import './materialize/css/materialize.css'
+import './materialize/css/materialize.css';
+import './Style/Style.css';
 
 // Here we are importing the 8 views
 import Dashboard from './components/Dashboard/Dashboard';
