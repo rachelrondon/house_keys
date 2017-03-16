@@ -14,6 +14,7 @@ class Dashboard extends Component {
       roommates: []
     };
   }
+<<<<<<< HEAD
   setHiToTrue(e) {
     this.setState({
       isHi: true
@@ -29,6 +30,8 @@ class Dashboard extends Component {
       )
     }
   }
+=======
+>>>>>>> d05e2bcc643da774e52951177a0188ad00f52635
 
   handleApartmentClick(event) {
     this.setState({
@@ -67,6 +70,7 @@ class Dashboard extends Component {
          <h1> Welcome, Rachel</h1>
        </nav>
 
+<<<<<<< HEAD
      <div>
        {/* <DashboardApartments /> */}
        <button onClick={this.handleApartmentClick.bind(this)} >
@@ -91,6 +95,24 @@ class Dashboard extends Component {
      {this.renderRoommate()}
    </div>
  )
+=======
+      <div>
+        <button onClick={this.handleApartmentClick.bind(this)} >
+          Apartment
+        </button>
+      </div>
+
+      <div>
+        <button onClick={this.handleRoommateClick.bind(this)} >
+          Roommate
+        </button>
+      </div>
+      {this.renderApartment()}
+      {this.renderRoommate()}
+
+    </div>
+    )
+>>>>>>> d05e2bcc643da774e52951177a0188ad00f52635
   }
 }
 export default Dashboard;
