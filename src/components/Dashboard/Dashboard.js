@@ -8,16 +8,16 @@ import DashboardRoommate from './DashboardRoommate';
 class Dashboard extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       apartments: [],
       roommates: []
     };
-}
 
   handleApartmentClick(event) {
     this.setState({
-      apartmentClick: true
+      apartmentClick: true,
+      roommateClick: false
     })
   }
 
@@ -31,7 +31,8 @@ class Dashboard extends Component {
 
   handleRoommateClick(event) {
     this.setState({
-      roommateClick: true
+      roommateClick: true,
+      apartmentClick: false
     })
   }
 
@@ -51,14 +52,12 @@ class Dashboard extends Component {
         </nav>
 
       <div>
-        {/* <DashboardApartments /> */}
         <button onClick={this.handleApartmentClick.bind(this)} >
           Apartment
         </button>
       </div>
 
       <div>
-        {/* <DashboardRoommate /> */}
         <button onClick={this.handleRoommateClick.bind(this)} >
           Roommate
         </button>
