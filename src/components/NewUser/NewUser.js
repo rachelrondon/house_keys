@@ -5,6 +5,7 @@ import { browserHistory } from 'react-router';
 
 class NewUser extends Component {
     constructor(props) {
+      console.log(props);
       super(props);
 
       this.state = {
@@ -30,17 +31,25 @@ class NewUser extends Component {
     })
 
     this.setState(newState);
-    console.log(this.state);
+    console.log(newState);
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
+<<<<<<< HEAD
     fetch('http://localhost:8000/users', {
       method: 'POST',
       body: JSON.stringify({
         firstname: this.state.user.first_name,
         lastname: this.state.user.last_name,
+=======
+    fetch(`http://localhost:8000/users`, {
+      method: 'POST',
+      body: JSON.stringify({
+        first_name: this.state.user.first_name,
+        last_name: this.state.user.last_name,
+>>>>>>> 7299249c626db5d4699cca53322bb3aee204bcdf
         username: this.state.user.username,
         email: this.state.user.email,
         password_digest: this.state.user.password_digest
@@ -88,7 +97,11 @@ class NewUser extends Component {
                 <input name="email" placeholder="email" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
+<<<<<<< HEAD
                 password
+=======
+                Password
+>>>>>>> 7299249c626db5d4699cca53322bb3aee204bcdf
               </div>
               <div className="">
                 <input name="password_digest" placeholder="password" onChange={this.handleChange.bind(this)}></input>

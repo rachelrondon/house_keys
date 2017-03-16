@@ -9,7 +9,11 @@ import EditUser from './components/EditUser/EditUser';
 import NewUser from './components/NewUser/NewUser';
 import LandingPage from './components/LandingPage/LandingPage';
 import NewProfile from './components/NewProfile/NewProfile';
+<<<<<<< HEAD
 import NewPostRoommate from "./components/NewPostRoommate/NewPostRoommate";
+=======
+import NewPostRoommate from './components/NewPostRoommate/NewPostRoommate';
+>>>>>>> 7299249c626db5d4699cca53322bb3aee204bcdf
 import NewPostApartment from './components/NewPostApartment/NewPostApartment';
 
 
@@ -25,6 +29,9 @@ ReactDom.render(
     <Route path='/user/profile' component={NewProfile} />
     <Route path='/user/new/apartment' component={NewPostApartment} />
     <Route path='/user/new/roommate' component={NewPostRoommate} />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7299249c626db5d4699cca53322bb3aee204bcdf
   </Router>
   , document.getElementById("app"));
