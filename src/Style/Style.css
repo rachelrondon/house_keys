@@ -1,9 +1,42 @@
-#login-in-link {
-font-family:helvetica;
-font-size:24px;
+#landing-page-div {
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  height:100%;
+  width:100%;
 }
 
-#sign-up-link {
-font-family:helvetica;
-font-size:24px;
+#landing-page-logo {
+  display: 0;
+  height: 60%;
+  width: 100%;
+  padding-top: 800px;
+  background-color: #07393C;
+}
+
+#login-in-link {
+  font-family: 'Lalezar', cursive;
+  font-size:30px;
+  height: 100px;
+  width: 100%;
+  background-color: #FCA311;
+}
+
+#sign-up-link{
+  font-family: 'Lalezar', cursive;
+  font-size:30px;
+  height: 100px;
+  width:100%;
+  background-color: #000000;
+}
+
+#landing-page-links {
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  padding-top: 80%;
+}
+
+a {
+  color:white;
 }
