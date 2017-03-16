@@ -1,63 +1,96 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 
-import DashboardApartments from "./DashboardApartments";
-import DashboardRoommate from "./DashboardRoommate";
 
-//
+import DashboardApartments from './DashboardApartments';
+import DashboardRoommate from './DashboardRoommate';
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      apartments: []
+      apartments: [],
+      roommates: []
     };
   }
-
-  componentDidMount() {
-    fetch('http://localhost:8000/apartments/1/newApt', {
-      method: 'GET',
+  setHiToTrue(e) {
+    this.setState({
+      isHi: true
     })
-    .then((results) => {
-      results.json().then((apartments_data) => {
+  }
 
-        this.setState({apartments: apartments_data})
-      });
+  renderHi() {
+    console.log('rendering')
+    if(this.state.isHi) {
+      console.log('hi')
+      return(
+        <h1>yo</h1>
+      )
+    }
+  }
+
+  handleApartmentClick(event) {
+    this.setState({
+      apartmentClick: true,
+      roommateClick: false
     })
-    .catch((err) => {
+  }
 
-    });
+  renderApartment() {
+    if(this.state.apartmentClick) {
+      return(
+        <DashboardApartments />
+      )
+    }
+  }
+
+  handleRoommateClick(event) {
+    this.setState({
+      roommateClick: true,
+      apartmentClick: false
+    })
+  }
+
+  renderRoommate() {
+    if(this.state.roommateClick) {
+      return(
+        <DashboardRoommate />
+      )
+    }
   }
 
   render(){
-    return(
-      <div>
-        <nav>
-          <h1> Welcome, Rachel</h1>
-        </nav>
-        <form
-          onSubmit={}
-        {/* <div className="container">
-          <div className="row">
-          {this.state.apartments.map((apartment) => {
-            return(
-            <div key={apartment.id} className="">
-            <div>
-              <h2>Gender: {apartment.address}</h2>
-            </div>
-          </div>
-            )
-          })}
-        </div>
-      </div> */}
+   return(
+     <div>
+       <nav>
+         <h1> Welcome, Rachel</h1>
+       </nav>
 
-      <DashboardApartments />
-      <DashboardRoommate />
+     <div>
+       {/* <DashboardApartments /> */}
+       <button onClick={this.handleApartmentClick.bind(this)} >
+         Apartment
+       </button>
+     </div>
 
-    </div>
-    )
+     <div>
+       <button
+         onClick={this.setHiToTrue.bind(this)}>
+         dan!
+       </button>
+     </div>
+     {this.renderHi()}
+     <div>
+       {/* <DashboardRoommate /> */}
+       <button onClick={this.handleRoommateClick.bind(this)} >
+         Roommate
+       </button>
+     </div>
+     {this.renderApartment()}
+     {this.renderRoommate()}
+   </div>
+ )
   }
 }
-
 export default Dashboard;

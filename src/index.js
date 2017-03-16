@@ -12,6 +12,7 @@ import NewProfile from './components/NewProfile/NewProfile';
 import NewPost from "./components/NewPost/NewPost";
 import NewPostApartment from './components/NewPostApartment/NewPostApartment';
 
+
 // Here are the routes for the 8 views
 
 ReactDom.render(
