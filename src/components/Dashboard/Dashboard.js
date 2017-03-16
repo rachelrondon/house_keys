@@ -14,6 +14,29 @@ class Dashboard extends Component {
     };
 }
 
+componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
+}
+
+componentDidMount() {
+    fetch('http://localhost:8000/dashboard', {
+        method: 'GET',
+        headers: {
+            'Authorization': window.localStorage.getItem('token')
+        }
+    })
+    .then((results) => {
+        results.json().then((content) => {
+            this.setState({message: content.message});
+        });
+    })
+    .catch((err) => {
+        browserHistory.push('/login');
+    });
+}
+
   handleApartmentClick() {
     this.setState({
       apartmentClick: true,

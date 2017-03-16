@@ -21,7 +21,7 @@ class Login extends Component {
   handleSubmit(event) {
         event.preventDefault();
 
-        fetch("http://localhost:8000/users/new", {
+        fetch("http://localhost:8000/users/login", {
             method: "POST",
             body: JSON.stringify(this.state)
         })

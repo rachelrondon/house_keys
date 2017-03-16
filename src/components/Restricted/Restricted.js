@@ -18,7 +18,7 @@ class Restricted extends Component {
 
     // Web token fetching thanks to Arun's auth_example_react/react-app
     componentDidMount() {
-        fetch('http://localhost:8000/restricted', {
+        fetch('http://localhost:8000/', {
             method: 'GET',
             headers: {
                 'Authorization': window.localStorage.getItem('token')
