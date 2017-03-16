@@ -2,6 +2,9 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Route, Router, browserHistory } from "react-router";
 
+import './materialize/css/materialize.css';
+import './Style/Style.css';
+
 // Here we are importing the ten views
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';
@@ -12,9 +15,6 @@ import NewProfile from './components/NewProfile/NewProfile';
 import NewPostRoommate from "./components/NewPostRoommate/NewPostRoommate";
 import NewPostApartment from './components/NewPostApartment/NewPostApartment';
 import Restricted from './components/Restricted/Restricted'
-
-
-// Here are the routes for the ten views
 
 ReactDom.render(
   <Router history={browserHistory}>
