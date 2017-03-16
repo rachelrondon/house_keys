@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Route, Router, browserHistory } from "react-router";
+
 
 class Login extends Component {
   constructor(props) {
@@ -25,8 +27,9 @@ class Login extends Component {
         })
         .then((results) => {
             results.json().then((jwt) => {
+                console.log(jwt.token);
                 window.localStorage.setItem("token", jwt.token);
-                browserHistory.push("/restricted");
+                browserHistory.push("/dashboard");
             });
         })
         .catch((err) => {
@@ -38,18 +41,18 @@ class Login extends Component {
     return(
       <div>
         <form onSubmit={this.handleSubmit.bind(this)}>
-                <div>Email</div>
-                <div>
-                    <input name="email" onChange={this.handleChange.bind(this)} type="email" />
-                </div>
-                <div>Password</div>
-                <div>
-                    <input name="password" onChange={this.handleChange.bind(this)} type="password" />
-                </div>
-                <div>
-                    <button type="submit">Login</button>
-                </div>
-            </form>
+          <div>Email</div>
+          <div>
+              <input name="email" onChange={this.handleChange.bind(this)} type="email" />
+          </div>
+          <div>Password</div>
+          <div>
+              <input name="password" onChange={this.handleChange.bind(this)} type="password" />
+          </div>
+          <div>
+              <button type="submit">Login</button>
+          </div>
+        </form>
       </div>
     )
   }

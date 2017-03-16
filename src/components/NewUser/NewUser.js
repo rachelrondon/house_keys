@@ -34,8 +34,8 @@ class NewUser extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    fetch('http://localhost:8000/', {
+    
+    fetch(`http://localhost:8000/users`, {
       method: 'POST',
       body: JSON.stringify({
         firstname: this.state.user.firstname,
