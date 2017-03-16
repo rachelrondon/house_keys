@@ -8,40 +8,12 @@ import DashboardRoommate from './DashboardRoommate';
 class Dashboard extends Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       apartments: [],
       roommates: []
     };
-  }
-  // componentDidMount() {
-  //   fetch('http://localhost:8000/apartments/', {
-  //     method: 'GET',
-  //   })
-  //   .then((results) => {
-  //     results.json().then((apartments_data) => {
-  //
-  //       this.setState({apartments: apartments_data})
-  //     });
-  //   })
-  //   .catch((err) => {
-  //
-  //   });
-  // }
-  setHiToTrue(e) {
-    this.setState({
-      isHi: true
-    })
-  }
-
-  renderHi() {
-    console.log('rendering')
-    if(this.state.isHi) {
-      console.log('hi')
-      return(
-        <h1>yo</h1>
-      )
-    }
-  }
+}
 
   handleApartmentClick(event) {
     this.setState({
@@ -85,13 +57,6 @@ class Dashboard extends Component {
         </button>
       </div>
 
-      <div>
-        <button
-          onClick={this.setHiToTrue.bind(this)}>
-          dan!
-        </button>
-      </div>
-      {this.renderHi()}
       <div>
         {/* <DashboardRoommate /> */}
         <button onClick={this.handleRoommateClick.bind(this)} >
