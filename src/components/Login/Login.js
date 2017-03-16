@@ -41,19 +41,27 @@ class Login extends Component {
 
   render(){
     return(
-      <div>
+      <div id="login-page-div">
         <form onSubmit={this.handleSubmit.bind(this)}>
-          <div>Email</div>
-          <div>
-            <input name="email" onChange={this.handleChange.bind(this)} type="email" />
-          </div>
-          <div>Password</div>
-          <div>
-            <input name="password" onChange={this.handleChange.bind(this)} type="password" />
-          </div>
-          <div>
-            <button type="submit">Login</button>
-          </div>
+
+          <div id="login-in-info">
+            <div id="login-page-logo"></div>
+            <div id="email-input">
+              <div>Email</div>
+              <div>
+                  <input name="email" onChange={this.handleChange.bind(this)} type="email" />
+              </div>
+            </div>
+            <div id="password-input">
+              <div>Password</div>
+              <div>
+                  <input name="password" onChange={this.handleChange.bind(this)} type="password" />
+              </div>
+            </div>
+            <div id="login-button">
+              <Link to="/dashboard" type="submit">Login</Link>
+            </div>
+        </div>
         </form>
       </div>
     )

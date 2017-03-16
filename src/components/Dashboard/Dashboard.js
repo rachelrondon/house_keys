@@ -14,11 +14,11 @@ class Dashboard extends Component {
     };
   }
 
-  componentWillMount() {
-    if (!localStorage.getItem('token')) {
-        browserHistory.push('/login');
-    }
-  }
+  // componentWillMount() {
+  //   if (!localStorage.getItem('token')) {
+  //       browserHistory.push('/login');
+  //   }
+  // }
 
   componentDidMount() {
       fetch('http://localhost:8000/dashboard', {
