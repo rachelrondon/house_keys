@@ -57,6 +57,10 @@ handleSubmit(event) {
   render(){
     return(
       <div>
+        <nav>
+          <h2 className="">Add Roommate</h2>
+        </nav>
+          <Link to="/dashboard">Back to Home</Link><br />
         <form onSubmit={this.handleSubmit.bind(this)} className="">
           <div className="">
             Title

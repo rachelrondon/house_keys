@@ -9,6 +9,8 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
 
+    console.log(props)
+
     this.state = {
       apartments: [],
       roommates: []
@@ -51,6 +53,8 @@ class Dashboard extends Component {
         <nav>
           <h1> Welcome, Rachel</h1>
         </nav>
+        <Link to="/user/new/apartment">Add New Apartment</Link><br />
+        <Link to="/user/new/roommate">Add New Roommate</Link><br />
 
       <div>
         <button onClick={this.handleApartmentClick.bind(this)} >
