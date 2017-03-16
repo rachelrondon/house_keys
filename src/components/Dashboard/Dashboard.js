@@ -4,7 +4,6 @@ import { Link } from "react-router";
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
 
-
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +21,7 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-      fetch('http://localhost:8000/', {
+      fetch('http://localhost:8000/dashboard', {
           method: 'GET',
           headers: {
               'Authorization': window.localStorage.getItem('token')
