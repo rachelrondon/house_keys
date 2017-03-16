@@ -1,20 +1,18 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import update from 'react-addons-update';
-import { Link } from "react-router";
+import { Link } from 'react-router';
 import { browserHistory } from 'react-router';
 
 class NewUser extends Component {
     constructor(props) {
-      console.log(props);
       super(props);
 
       this.state = {
         user: {
-          first_name: '',
-          last_name: '',
-          username: '',
+          firstname: '',
+          lastname: '',
           email: '',
-          password_digest: ''
+          username: ''
         }
       };
     }
@@ -31,20 +29,19 @@ class NewUser extends Component {
     })
 
     this.setState(newState);
-    console.log(newState);
+    console.log(this.state);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-
+    
     fetch(`http://localhost:8000/users`, {
       method: 'POST',
       body: JSON.stringify({
-        first_name: this.state.user.first_name,
-        last_name: this.state.user.last_name,
-        username: this.state.user.username,
+        firstname: this.state.user.firstname,
+        lastname: this.state.user.lastname,
         email: this.state.user.email,
-        password_digest: this.state.user.password_digest
+        username: this.state.user.username
       }),
       headers: {
         'Content-type': 'application/json'
@@ -68,19 +65,13 @@ class NewUser extends Component {
                 First Name
               </div>
               <div className="">
-                <input name="first_name" placeholder="first name" onChange={this.handleChange.bind(this)}></input>
+                <input name="firstname" placeholder="first name" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Last Name
               </div>
               <div className="">
-                <input  name="last_name" placeholder="last name" onChange={this.handleChange.bind(this)}></input>
-              </div>
-              <div className="">
-                Username
-              </div>
-              <div className="">
-                <input name="username" placeholder="username" onChange={this.handleChange.bind(this)}></input>
+                <input  name="lastname" placeholder="last name" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Email
@@ -89,11 +80,17 @@ class NewUser extends Component {
                 <input name="email" placeholder="email" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
+                Username
+              </div>
+              <div className="">
+                <input name="username" placeholder="username" onChange={this.handleChange.bind(this)}></input>
+              </div>
+              {/* <div className="">
                 Password
               </div>
               <div className="">
-                <input name="password_digest" placeholder="password" onChange={this.handleChange.bind(this)}></input>
-              </div>
+                <input placeholder="password"></input>
+              </div> */}
               <button href="/dashboard" type="submit">Submit</button>
             </form>
           </nav>

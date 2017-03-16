@@ -58,7 +58,8 @@ class NewPostApartment extends Component {
         <div>
           <nav>
             <h2 className=""> Add Apartment</h2>
-            {/* <h2 className="">for {this.state.user.first_name} {this.state.user.first_name}</h2> */}
+          </nav>
+           <Link to="/dashboard">Back to Home</Link>
             <form onSubmit={this.handleSubmit.bind(this)} className="">
               <div className="">
                 Title
@@ -92,7 +93,6 @@ class NewPostApartment extends Component {
               </div>
               <button href="/dashboard" type="submit">Submit</button>
             </form>
-          </nav>
         </div>
       )
     }
