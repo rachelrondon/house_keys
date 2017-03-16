@@ -12,7 +12,6 @@ class Dashboard extends Component {
     this.state = {
       apartments: [],
       roommates: [],
-      message: 'Heyyyyy you got here!'
     };
   }
 
@@ -76,7 +75,8 @@ class Dashboard extends Component {
           <h1>{this.state.message}</h1>
           <h1> Welcome, Rachel</h1>
         </nav>
-
+        <Link to="user/new/apartment">New Apartment Post</Link><br />
+        <Link to="user/new/roommate">New Roomate Post</Link><br />
       <div>
         <button onClick={this.handleApartmentClick.bind(this)} >
           Apartment
