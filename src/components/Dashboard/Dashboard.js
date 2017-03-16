@@ -21,7 +21,7 @@ class Dashboard extends Component {
   // }
 
   componentDidMount() {
-      fetch('http://localhost:8000/', {
+      fetch('http://localhost:8000/dashboard', {
           method: 'GET',
           headers: {
               'Authorization': window.localStorage.getItem('token')
