@@ -11,9 +11,24 @@ class Dashboard extends Component {
 
     this.state = {
       apartments: [],
-      roommates: []
+      roommates: [],
+      // user: []
     };
   }
+
+//   componentDidMount() {
+//     fetch(`http://localhost:8000/users/${this.props.params.id}`), {
+//     method: 'GET'
+//   }
+//   .then((results) => {
+//     results.json().then((user_data) => {
+//       this.setState({user: user_data});
+//     });
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+// }
 
   handleApartmentClick(event) {
     this.setState({
@@ -51,7 +66,8 @@ class Dashboard extends Component {
         <nav>
           <h1> Welcome, Rachel</h1>
         </nav>
-
+        <Link to="user/new/apartment">New Apartment Post</Link>
+        <br></br><Link to="user/new/roommate">New Roomate Post</Link>
       <div>
         <button onClick={this.handleApartmentClick.bind(this)} >
           Apartment

@@ -2,6 +2,8 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Route, Router, browserHistory } from "react-router";
 
+import './materialize/css/materialize.css'
+
 // Here we are importing the 8 views
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';
@@ -9,16 +11,9 @@ import EditUser from './components/EditUser/EditUser';
 import NewUser from './components/NewUser/NewUser';
 import LandingPage from './components/LandingPage/LandingPage';
 import NewProfile from './components/NewProfile/NewProfile';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import NewPostRoommate from "./components/NewPostRoommate/NewPostRoommate";
-=======
-import NewPostRoommate from './components/NewPostRoommate/NewPostRoommate';
->>>>>>> 7299249c626db5d4699cca53322bb3aee204bcdf
-=======
-import NewPostRoommate from "./components/NewPostRoommate/NewPostRoommate";
->>>>>>> 89356e4663c4b3aa709f87be8819a235958da18a
 import NewPostApartment from './components/NewPostApartment/NewPostApartment';
+
 
 
 // Here are the routes for the 8 views
@@ -33,12 +28,5 @@ ReactDom.render(
     <Route path='/user/profile' component={NewProfile} />
     <Route path='/user/new/apartment' component={NewPostApartment} />
     <Route path='/user/new/roommate' component={NewPostRoommate} />
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 7299249c626db5d4699cca53322bb3aee204bcdf
-=======
->>>>>>> 89356e4663c4b3aa709f87be8819a235958da18a
   </Router>
   , document.getElementById("app"));

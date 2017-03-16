@@ -36,26 +36,11 @@ class NewUser extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-    fetch('http://localhost:8000/users', {
-      method: 'POST',
-      body: JSON.stringify({
-        firstname: this.state.user.first_name,
-        lastname: this.state.user.last_name,
-=======
-=======
->>>>>>> 89356e4663c4b3aa709f87be8819a235958da18a
     fetch(`http://localhost:8000/users`, {
       method: 'POST',
       body: JSON.stringify({
         first_name: this.state.user.first_name,
         last_name: this.state.user.last_name,
-<<<<<<< HEAD
->>>>>>> 7299249c626db5d4699cca53322bb3aee204bcdf
-=======
->>>>>>> 89356e4663c4b3aa709f87be8819a235958da18a
         username: this.state.user.username,
         email: this.state.user.email,
         password_digest: this.state.user.password_digest
@@ -103,15 +88,7 @@ class NewUser extends Component {
                 <input name="email" placeholder="email" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
-<<<<<<< HEAD
-<<<<<<< HEAD
-                password
-=======
                 Password
->>>>>>> 7299249c626db5d4699cca53322bb3aee204bcdf
-=======
-                Password
->>>>>>> 89356e4663c4b3aa709f87be8819a235958da18a
               </div>
               <div className="">
                 <input name="password_digest" placeholder="password" onChange={this.handleChange.bind(this)}></input>
