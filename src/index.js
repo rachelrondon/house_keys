@@ -25,6 +25,5 @@ ReactDom.render(
     <Route path='/user/profile' component={NewProfile} />
     <Route path='/user/new/apartment' component={NewPostApartment} />
     <Route path='/user/new/roommate' component={NewPostRoommate} />
-
   </Router>
   , document.getElementById("app"));
