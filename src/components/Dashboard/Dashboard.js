@@ -11,8 +11,32 @@ class Dashboard extends Component {
 
     this.state = {
       apartments: [],
-      roommates: []
+      roommates: [],
+      message: 'Heyyyyy you got here!'
     };
+  }
+
+  componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
+  }
+
+  componentDidMount() {
+      fetch('http://localhost:8000/', {
+          method: 'GET',
+          headers: {
+              'Authorization': window.localStorage.getItem('token')
+          }
+      })
+      .then((results) => {
+          results.json().then((content) => {
+            browserHistory.push('/dashboard');
+          });
+      })
+      .catch((err) => {
+          browserHistory.push('/login');
+      });
   }
 
   handleApartmentClick(event) {
@@ -49,6 +73,7 @@ class Dashboard extends Component {
     return(
       <div>
         <nav>
+          <h1>{this.state.message}</h1>
           <h1> Welcome, Rachel</h1>
         </nav>
 
