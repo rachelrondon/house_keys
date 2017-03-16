@@ -9,7 +9,7 @@ import EditUser from './components/EditUser/Edituser';
 import NewUser from './components/NewUser/NewUser';
 import LandingPage from './components/LandingPage/LandingPage';
 import NewProfile from './components/NewProfile/NewProfile';
-import NewPostRoommate from './components/NewPostRoommate/NewPostRoommate';
+import NewPostRoommate from "./components/NewPostRoommate/NewPostRoommate";
 import NewPostApartment from './components/NewPostApartment/NewPostApartment';
 
 

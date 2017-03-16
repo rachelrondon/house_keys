@@ -33,6 +33,9 @@ class DashboardRoommate extends Component {
           return(
           <div key={roommate.id} className="">
             <div>
+              <h2>Title: {roommate.title}</h2>
+            </div>
+            <div>
               <h2>Gender: {roommate.gender}</h2>
             </div>
             <div>
@@ -45,13 +48,13 @@ class DashboardRoommate extends Component {
               <h2>Dishes: {roommate.dishes}</h2>
             </div>
             <div>
-              <h2>Toilet_paper: {roommate.toilet_paper}</h2>
+              <h2>Toilet_paper: {roommate.toliet_paper}</h2>
             </div>
             <div>
-              <h2>Age: {roommate.age}</h2>
+              <h2>Age:{roommate.age}</h2>
             </div>
             <div>
-              <h2>Wallet: {roommate.wallet}</h2>
+              <h2>Wallet:{roommate.wallet}</h2>
             </div>
         </div>
           );
