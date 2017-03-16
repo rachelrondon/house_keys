@@ -1,0 +1,30 @@
+* {
+  text-align: center;
+}
+
+#landing-page-div {
+  background: url('http://images.all-free-download.com/images/graphiclarge/green_house_icon_312519.jpg') no-repeat fixed center;
+}
+
+#landing-page-logo {
+
+}
+
+#login-in-link {
+ font-family: 'Lalezar', cursive;
+ font-size:30px;
+ background-color: #FCA311;
+}
+
+#sign-up-link{
+ font-family: 'Lalezar', cursive;
+ font-size:30px;
+ background-color: #000;
+}
+
+.sign-up {
+ /*padding-top: 20px;*/
+}
+a {
+ color: white;
+}

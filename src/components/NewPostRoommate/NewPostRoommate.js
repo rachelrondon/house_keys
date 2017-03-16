@@ -60,7 +60,11 @@ handleSubmit(event) {
         <nav>
           <h2 className="">Add Roommate</h2>
         </nav>
-          <Link to="/dashboard">Back to Home</Link><br />
+
+        <div className="collection">
+          <Link className="collection-item" to="/dashboard">Back to Home</Link>
+        </div>
+
         <form onSubmit={this.handleSubmit.bind(this)} className="">
           <div className="">
             Title

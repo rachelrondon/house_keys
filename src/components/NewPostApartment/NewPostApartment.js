@@ -59,8 +59,10 @@ class NewPostApartment extends Component {
           <nav>
             <h2 className=""> Add Apartment</h2>
           </nav>
-            <Link to="/dashboard">Back to Home</Link>
-            {/* <h2 className="">for {this.state.user.first_name} {this.state.user.first_name}</h2> */}
+            <div className="collection">
+              <Link className="collection-item" to="/dashboard">Back to Home</Link>
+            </div>
+
             <form onSubmit={this.handleSubmit.bind(this)} className="">
               <div className="">
                 Title
