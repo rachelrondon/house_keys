@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
+import { Link, browserHistory } from "react-router";
+import Login from '../Login/Login'
 
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
@@ -9,22 +10,23 @@ class Dashboard extends Component {
     super(props);
 
     this.state = {
+      user: {},
       apartments: [],
       roommates: [],
     };
   }
 
-  // componentWillMount() {
-  //   if (!localStorage.getItem('token')) {
-  //       browserHistory.push('/login');
-  //   }
-  // }
+  componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
+  }
 
   componentDidMount() {
-      fetch('http://localhost:8000/dashboard', {
+      fetch('http://localhost:8000/users/restricted', {
           method: 'GET',
           headers: {
-              'Authorization': window.localStorage.getItem('token')
+              'Authorization':  window.localStorage.getItem('token')
           }
       })
       .then((results) => {
@@ -71,8 +73,7 @@ class Dashboard extends Component {
     return(
       <div>
         <nav>
-          <h1>{this.state.message}</h1>
-          <h1> Welcome, Rachel</h1>
+          <h1>Welcome,  </h1>
         </nav>
         <Link to="user/new/apartment">New Apartment Post</Link><br />
         <Link to="user/new/roommate">New Roomate Post</Link><br />
