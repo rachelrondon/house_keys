@@ -11,18 +11,38 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
 
+    console.log(props)
+
     this.state = {
       apartments: [],
-      roommates: [],
+      roommates: []
     };
   }
 
   componentWillMount() {
     if (!localStorage.getItem('token')) {
         browserHistory.push('/login');
-    } 
+    } else {
+      console.log(this.props.location.state)
+    }
   }
 
+  // componentDidMount() {
+  //     fetch('http://localhost:8000/dashboard', {
+  //         method: 'GET',
+  //         headers: {
+  //             'Authorization': window.localStorage.getItem('token')
+  //         }
+  //     })
+  //     .then((results) => {
+  //         results.json().then((content) => {
+  //           browserHistory.push('/dashboard');
+  //         });
+  //     })
+  //     .catch((err) => {
+  //         browserHistory.push('/login');
+  //     });
+  // }
   logout() {
     window.localStorage.removeItem('token');
     browserHistory.push('/');
@@ -63,10 +83,13 @@ class Dashboard extends Component {
     return(
       <div>
         <nav>
-          <h1> Welcome, {this.props.location.state.user.first_name}</h1>
+          <h1> Welcome, </h1>
         </nav>
-        <Link to="user/new/apartment">New Apartment Post</Link><br />
-        <Link to="user/new/roommate">New Roomate Post</Link><br />
+        <div className="collection">
+          <Link className="collection-item" to="/user/new/apartment">Add New Apartment</Link><br />
+          <Link className="collection-item" to="/user/new/roommate">Add New Roommate</Link>
+        </div>
+
       <div>
         <button onClick={this.handleApartmentClick.bind(this)} >
           Apartment

@@ -65,7 +65,10 @@ class NewPostApartment extends Component {
           <nav>
             <h2 className=""> Add Apartment</h2>
           </nav>
-           <Link to="/dashboard">Back to Home</Link>
+            <div className="collection">
+              <Link className="collection-item" to="/dashboard">Back to Home</Link>
+            </div>
+
             <form onSubmit={this.handleSubmit.bind(this)} className="">
               <div className="">
                 Title
