@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DashboardSmoker from './DashboardSmoker';
 import DashboardGender from './DashboardGender';
 import DashboardSleep from './DashboardSleep';
+import DashboardDishes from './DashboardDishes';
 
 
 class DashboardRoommate extends Component {
@@ -75,6 +76,21 @@ renderSleep() {
   }
 }
 
+handleDishesClick() {
+  this.setState({
+    dishesClick: true
+    // roommateClick: false,
+    // apartmentClick: false
+  })
+}
+
+renderDishes() {
+  if(this.state.dishesClick) {
+    return(
+      <DashboardDishes />
+    )
+  }
+}
 
   render(){
     return(
@@ -98,6 +114,12 @@ renderSleep() {
             </button>
           </div>
           {this.renderSleep()}
+          <div>
+            <button onClick={this.handleDishesClick.bind(this)} >
+              Dishes
+            </button>
+          </div>
+          {this.renderDishes()}
         {/* <div className="container">
           <select name="smoker">
             <option name="1">yes</option>

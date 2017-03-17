@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DashboardSmoker extends Component {
+class DashboardDishes extends Component {
   constructor(props) {
     super(props);
 
@@ -32,7 +32,7 @@ class DashboardSmoker extends Component {
           return(
           <div key={roommate.id} className="">
             <div>
-              <h2>Smoker:{roommate.smoker}</h2>
+              <h2>Dishes:{roommate.dishes}</h2>
             </div>
         </div>
          );
@@ -43,4 +43,4 @@ class DashboardSmoker extends Component {
   }
 }
 
-export default DashboardSmoker;
+export default DashboardDishes;
