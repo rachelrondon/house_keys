@@ -21,7 +21,6 @@ ReactDom.render(
     <Route path='/' component={LandingPage} />
     <Route path='/dashboard' component={Dashboard} />
     <Route path='/login' component={Login} />
-    <Route path='/restricted' component={Restricted} />
     <Route path='/user/edit' component={EditUser} />
     <Route path='/user/new' component={NewUser} />
     <Route path='/user/profile' component={NewProfile} />

@@ -5,10 +5,17 @@ import { Link } from "react-router";
 class Login extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
         email: '',
         password: ''
     };
+  }
+
+  componentWillMount() {
+    if (localStorage.getItem('token')) {
+        browserHistory.push('/dashboard');
+    }
   }
 
   handleChange(event) {
@@ -43,25 +50,9 @@ class Login extends Component {
     return(
       <div id="login-page-div">
         <form onSubmit={this.handleSubmit.bind(this)}>
-
-          <div id="login-in-info">
-            <div id="login-page-logo"></div>
-            <div id="email-input">
-              <div>Email</div>
-              <div>
-                  <input name="email" onChange={this.handleChange.bind(this)} type="email" />
-              </div>
-            </div>
-            <div id="password-input">
-              <div>Password</div>
-              <div>
-                  <input name="password" onChange={this.handleChange.bind(this)} type="password" />
-              </div>
-            </div>
-            <div id="login-button">
-              <Link to="/dashboard" type="submit">Login</Link>
-            </div>
-        </div>
+          <input placeholder="Email" name='email' type="email" onChange={this.handleChange.bind(this)}></input>
+          <input placeholder="Password" name="password" type="password" onChange={this.handleChange.bind(this)}></input>
+          <input type="submit"></input>
         </form>
       </div>
     )
