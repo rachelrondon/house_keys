@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import update from 'react-addons-update';
+
 import { Link, browserHistory } from "react-router";
 
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
+import DashboardSmoker from './DashboardSmoker';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -12,13 +15,15 @@ class Dashboard extends Component {
 
     this.state = {
       apartments: [],
-      roommates: [],
+      roommates: []
     };
   }
 
   componentWillMount() {
     if (!localStorage.getItem('token')) {
         browserHistory.push('/login');
+    } else {
+      console.log(this.props.location.state)
     }
   }
 
@@ -38,13 +43,15 @@ class Dashboard extends Component {
   //         browserHistory.push('/login');
   //     });
   // }
-
-
+  logout() {
+    window.localStorage.removeItem('token');
+    browserHistory.push('/');
+  }
 
   handleApartmentClick(event) {
     this.setState({
       apartmentClick: true,
-      roommateClick: false
+      roommateClick: false,
     })
   }
 
@@ -59,7 +66,8 @@ class Dashboard extends Component {
   handleRoommateClick() {
     this.setState({
       roommateClick: true,
-      apartmentClick: false
+      apartmentClick: false,
+      // smokerClick: false
     })
   }
 
@@ -75,8 +83,7 @@ class Dashboard extends Component {
     return(
       <div>
         <nav>
-          <h1>{this.state.message}</h1>
-          <h1> Welcome, Rachel</h1>
+          <h1> Welcome, {this.props.location.state.user.first_name}</h1>
         </nav>
         <div className="collection">
           <Link className="collection-item" to="/user/new/apartment">Add New Apartment</Link><br />
@@ -96,7 +103,7 @@ class Dashboard extends Component {
       </div>
       {this.renderApartment()}
       {this.renderRoommate()}
-
+      <button onClick={this.logout.bind(this)}>Logout</button>
     </div>
     )
   }
