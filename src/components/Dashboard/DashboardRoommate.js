@@ -5,6 +5,7 @@ import DashboardSleep from './DashboardSleep';
 import DashboardDishes from './DashboardDishes';
 import DashboardToiletPaper from './DashboardToiletPaper';
 import DashboardAge from './DashboardAge';
+import DashboardWallet from './DashboardWallet';
 
 
 class DashboardRoommate extends Component {
@@ -126,6 +127,22 @@ renderAge() {
   }
 }
 
+handleWalletClick() {
+  this.setState({
+    walletClick: true
+    // roommateClick: false,
+    // apartmentClick: false
+  })
+}
+
+renderWallet() {
+  if(this.state.walletClick) {
+    return(
+      <DashboardWallet />
+    )
+  }
+}
+
   render(){
     return(
       <div>
@@ -166,6 +183,12 @@ renderAge() {
             </button>
           </div>
           {this.renderAge()}
+          <div>
+            <button onClick={this.handleWalletClick.bind(this)} >
+              Wallet
+            </button>
+          </div>
+          {this.renderWallet()}
         {/* <div className="container">
           <select name="smoker">
             <option name="1">yes</option>
