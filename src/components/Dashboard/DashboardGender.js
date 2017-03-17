@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DashboardSmoker extends Component {
+class DashboardGender extends Component {
   constructor(props) {
     super(props);
 
@@ -23,22 +23,6 @@ class DashboardSmoker extends Component {
   });
 }
 
-// handleSmokerClick() {
-//   this.setState({
-//     smokerClick: true
-//     // roommateClick: false,
-//     // apartmentClick: false
-//   })
-// }
-
-// renderSmoker() {
-//   if(this.state.smokerClick) {
-//     return(
-//       <DashboardSmoker />
-//     )
-//   }
-// }
-
   render(){
     return(
       <div>
@@ -48,7 +32,7 @@ class DashboardSmoker extends Component {
           return(
           <div key={roommate.id} className="">
             <div>
-              <h2>Smoker:{roommate.smoker}</h2>
+              <h2>Gender:{roommate.gender}</h2>
             </div>
         </div>
          );
@@ -59,4 +43,4 @@ class DashboardSmoker extends Component {
   }
 }
 
-export default DashboardSmoker;
+export default DashboardGender;

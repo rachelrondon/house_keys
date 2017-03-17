@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DashboardSmoker from './DashboardSmoker';
+import DashboardGender from './DashboardGender';
 
 
 class DashboardRoommate extends Component {
@@ -27,9 +28,9 @@ class DashboardRoommate extends Component {
 
 handleSmokerClick() {
   this.setState({
-    smokerClick: true,
-    roommateClick: false,
-    apartmentClick: false
+    smokerClick: true
+    // roommateClick: false,
+    // apartmentClick: false
   })
 }
 
@@ -37,6 +38,22 @@ renderSmoker() {
   if(this.state.smokerClick) {
     return(
       <DashboardSmoker />
+    )
+  }
+}
+
+handleGenderClick() {
+  this.setState({
+    genderClick: true
+    // roommateClick: false,
+    // apartmentClick: false
+  })
+}
+
+renderGender() {
+  if(this.state.genderClick) {
+    return(
+      <DashboardGender />
     )
   }
 }
@@ -51,11 +68,18 @@ renderSmoker() {
               Smoker
             </button>
           </div>
-        <div className="container">
+          {this.renderSmoker()}
+          <div>
+            <button onClick={this.handleGenderClick.bind(this)} >
+              Gender
+            </button>
+          </div>
+          {this.renderGender()}
+        {/* <div className="container">
           <select name="smoker">
             <option name="1">yes</option>
             <option name="2">no</option>
-          </select>
+          </select> */}
           {/* <div className="container">
              {this.state.roommates.map((roommate) => {
               console.log(roommate.id);
@@ -78,7 +102,7 @@ renderSmoker() {
           </div>
            );
           })} */}
-      </div>
+      {/* </div> */}
     </div>
       {/* <div className="container">
         {this.state.roommates.map((roommate) => {
@@ -114,6 +138,7 @@ renderSmoker() {
         })}
     </div> */}
   </div>
+  // </div>
     );
   }
 }

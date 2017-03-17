@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
+import { Link, browserHistory } from "react-router";
 import update from 'react-addons-update';
-import { browserHistory } from 'react-router';
+
 
 class NewPostRoommate extends Component {
   constructor(props) {
@@ -20,6 +20,12 @@ class NewPostRoommate extends Component {
           user_id: ''
       }
     };
+  }
+
+  componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
   }
 
 handleChange(event) {
