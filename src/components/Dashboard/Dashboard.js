@@ -9,6 +9,7 @@ class Dashboard extends Component {
     super(props);
 
     this.state = {
+      user: {},
       apartments: [],
       roommates: [],
     };
@@ -20,22 +21,8 @@ class Dashboard extends Component {
     }
   }
 
-  // componentDidMount() {
-  //     fetch('http://localhost:8000/users/restricted', {
-  //         method: 'GET',
-  //         headers: {
-  //             'Authorization': window.localStorage.getItem('token')
-  //         }
-  //     })
-  //     .then((results) => {
-  //         results.json().then((content) => {
-  //           browserHistory.push('/dashboard');
-  //         });
-  //     })
-  //     .catch((err) => {
-  //         browserHistory.push('/login');
-  //     });
-  // }
+  componentDidMount() {
+  }
 
   handleApartmentClick(event) {
     this.setState({
@@ -72,7 +59,7 @@ class Dashboard extends Component {
       <div>
         <nav>
           <h1>{this.state.message}</h1>
-          <h1> Welcome, Rachel</h1>
+          <h1> Welcome, {this.state.user.first_name}</h1>
         </nav>
         <Link to="user/new/apartment">New Apartment Post</Link><br />
         <Link to="user/new/roommate">New Roomate Post</Link><br />
