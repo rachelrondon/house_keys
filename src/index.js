@@ -2,8 +2,9 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Route, Router, browserHistory } from "react-router";
 
-import './Style/Style.css';
 import './Vendor/milligram/dist/milligram.css';
+import './Style/Style.css';
+import './img/key-background-gold.svg';
 
 // Here we are importing the ten views
 import Dashboard from './components/Dashboard/Dashboard';
