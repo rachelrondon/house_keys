@@ -22,6 +22,12 @@ class NewPostApartment extends Component {
       };
     }
 
+  componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
+  }
+
   handleSubmit(event) {
     event.preventDefault();
 
