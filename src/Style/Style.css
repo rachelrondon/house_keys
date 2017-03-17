@@ -10,12 +10,11 @@ body {
   flex-direction: column;
   text-align: center;
   width: 100%;
-  margin: 0;
 }
 
 .landing-page-logo {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 .landing-page-links a {
@@ -26,15 +25,17 @@ body {
 .lp-login {
   z-index: 4;
   position: fixed;
+  width: 100%;
   bottom: 15.25%;
-  left: 46%;
+  text-align: center;
 }
 
 .lp-sign-up {
-  z-index: 4;
+  z-index: 3;
   position: fixed;
+  width: 100%;
   bottom: 3%;
-  left: 45%
+  text-align: center;
 }
 
 .lp-sign-up a {
@@ -50,14 +51,12 @@ body {
   position: fixed;
   left: -15px;
   bottom: 0;
-  z-index: 1;
   /*background-attachment: fixed;*/
 }
 
 .back-key {
   background: url("../img/key-background-charcoal.svg");
   background-overflow: hidden;
-  z-index: 0;
   height: 80px;
   background-repeat: repeat-x;
   width: 110%;
@@ -65,6 +64,15 @@ body {
   left: -15px;
   bottom: 9.75%;
   /*background-attachment: fixed;*/
+}
+
+.back-key-liftblock {
+  background-color: #333;
+  height: 80px;
+  position: fixed;
+  left: -15px;
+  bottom: 0;
+  width: 110%;
 }
 
 /* End of Landing Page Styling */
