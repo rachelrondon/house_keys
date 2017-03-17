@@ -3,6 +3,8 @@ import DashboardSmoker from './DashboardSmoker';
 import DashboardGender from './DashboardGender';
 import DashboardSleep from './DashboardSleep';
 import DashboardDishes from './DashboardDishes';
+import DashboardToiletPaper from './DashboardToiletPaper';
+import DashboardAge from './DashboardAge';
 
 
 class DashboardRoommate extends Component {
@@ -92,6 +94,38 @@ renderDishes() {
   }
 }
 
+handleToiletPaperClick() {
+  this.setState({
+    toiletpaperClick: true
+    // roommateClick: false,
+    // apartmentClick: false
+  })
+}
+
+renderToiletPaper() {
+  if(this.state.toiletpaperClick) {
+    return(
+      <DashboardToiletPaper />
+    )
+  }
+}
+
+handleAgeClick() {
+  this.setState({
+    ageClick: true
+    // roommateClick: false,
+    // apartmentClick: false
+  })
+}
+
+renderAge() {
+  if(this.state.ageClick) {
+    return(
+      <DashboardAge />
+    )
+  }
+}
+
   render(){
     return(
       <div>
@@ -120,6 +154,18 @@ renderDishes() {
             </button>
           </div>
           {this.renderDishes()}
+          <div>
+            <button onClick={this.handleToiletPaperClick.bind(this)} >
+              Toilet Paper
+            </button>
+          </div>
+          {this.renderToiletPaper()}
+          <div>
+            <button onClick={this.handleAgeClick.bind(this)} >
+              Age
+            </button>
+          </div>
+          {this.renderAge()}
         {/* <div className="container">
           <select name="smoker">
             <option name="1">yes</option>
