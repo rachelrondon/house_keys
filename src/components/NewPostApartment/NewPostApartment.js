@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { browserHistory } from 'react-router';
 import update from 'react-addons-update';
 
+import GoogleMapsForm from '../Services/GoogleMapsForm';
 
 class NewPostApartment extends Component {
     constructor(props) {
@@ -20,6 +21,12 @@ class NewPostApartment extends Component {
         }
       };
     }
+
+  componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
+  }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -49,7 +56,6 @@ class NewPostApartment extends Component {
         }
       }
     });
-
     this.setState(newState);
   }
 
@@ -93,6 +99,7 @@ class NewPostApartment extends Component {
               </div>
               <button href="/dashboard" type="submit">Submit</button>
             </form>
+            <GoogleMapsForm />
         </div>
       )
     }
