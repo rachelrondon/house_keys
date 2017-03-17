@@ -11,10 +11,8 @@ import Login from './components/Login/Login';
 import EditUser from './components/EditUser/Edituser';
 import NewUser from './components/NewUser/NewUser';
 import LandingPage from './components/LandingPage/LandingPage';
-import NewProfile from './components/NewProfile/NewProfile';
 import NewPostRoommate from "./components/NewPostRoommate/NewPostRoommate";
 import NewPostApartment from './components/NewPostApartment/NewPostApartment';
-import Restricted from './components/Restricted/Restricted'
 
 ReactDom.render(
   <Router history={browserHistory}>
@@ -23,7 +21,6 @@ ReactDom.render(
     <Route path='/login' component={Login} />
     <Route path='/user/edit' component={EditUser} />
     <Route path='/user/new' component={NewUser} />
-    <Route path='/user/profile' component={NewProfile} />
     <Route path='/user/new/apartment' component={NewPostApartment} />
     <Route path='/user/new/roommate' component={NewPostRoommate} />
   </Router>
