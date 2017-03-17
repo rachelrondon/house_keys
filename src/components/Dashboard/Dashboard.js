@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
+import { Link, browserHistory } from "react-router";
 
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
@@ -21,7 +21,7 @@ class Dashboard extends Component {
   // }
 
   componentDidMount() {
-      fetch('http://localhost:8000/dashboard', {
+      fetch('http://localhost:8000/users/restricted', {
           method: 'GET',
           headers: {
               'Authorization': window.localStorage.getItem('token')
