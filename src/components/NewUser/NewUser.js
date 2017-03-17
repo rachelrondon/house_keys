@@ -45,8 +45,9 @@ class NewUser extends Component {
         let authUser = jwt.user;
         window.localStorage.setItem('token', jwt.token);
         window.localStorage.setItem('user', JSON.stringify(authUser));
-        console.log('Local User:', authUser)
         browserHistory.push('/dashboard');
+        console.log(jwt.token)
+        console.log(jwt.user)
       });
     })
     .catch((err) => {
