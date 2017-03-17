@@ -33,7 +33,13 @@ class DashboardRoommate extends Component {
 
 handleSmokerClick() {
   this.setState({
-    smokerClick: true
+    smokerClick: true,
+    genderClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false
     // roommateClick: false,
     // apartmentClick: false
   })
@@ -49,7 +55,13 @@ renderSmoker() {
 
 handleGenderClick() {
   this.setState({
-    genderClick: true
+    genderClick: true,
+    smokerClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false
     // roommateClick: false,
     // apartmentClick: false
   })
@@ -65,7 +77,13 @@ renderGender() {
 
 handleSleepClick() {
   this.setState({
-    sleepClick: true
+    sleepClick: true,
+    genderClick: false,
+    smokerClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false
     // roommateClick: false,
     // apartmentClick: false
   })
@@ -81,7 +99,13 @@ renderSleep() {
 
 handleDishesClick() {
   this.setState({
-    dishesClick: true
+    dishesClick: true,
+    sleepClick: false,
+    genderClick: false,
+    smokerClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false
     // roommateClick: false,
     // apartmentClick: false
   })
@@ -97,7 +121,13 @@ renderDishes() {
 
 handleToiletPaperClick() {
   this.setState({
-    toiletpaperClick: true
+    toiletpaperClick: true,
+    dishesClick: false,
+    sleepClick: false,
+    genderClick: false,
+    smokerClick: false,
+    ageClick: false,
+    walletClick: false
     // roommateClick: false,
     // apartmentClick: false
   })
@@ -113,7 +143,13 @@ renderToiletPaper() {
 
 handleAgeClick() {
   this.setState({
-    ageClick: true
+    ageClick: true,
+    toiletpaperClick: false,
+    dishesClick: false,
+    sleepClick: false,
+    genderClick: false,
+    smokerClick: false,
+    walletClick: false
     // roommateClick: false,
     // apartmentClick: false
   })
@@ -129,7 +165,13 @@ renderAge() {
 
 handleWalletClick() {
   this.setState({
-    walletClick: true
+    walletClick: true,
+    toiletpaperClick: false,
+    dishesClick: false,
+    sleepClick: false,
+    genderClick: false,
+    smokerClick: false,
+    ageClick: false,
     // roommateClick: false,
     // apartmentClick: false
   })

@@ -23,29 +23,10 @@ class Dashboard extends Component {
     }
   }
 
-
-  // componentDidMount() {
-  //     fetch('http://localhost:8000/users/restricted', {
-  //         method: 'GET',
-  //         headers: {
-  //             'Authorization': window.localStorage.getItem('token')
-  //         }
-  //     })
-  //     .then((results) => {
-  //         results.json().then((content) => {
-  //           browserHistory.push('/dashboard');
-  //         });
-  //     })
-  //     .catch((err) => {
-  //         browserHistory.push('/login');
-  //     });
-  // }
-
   handleApartmentClick(event) {
     this.setState({
       apartmentClick: true,
       roommateClick: false,
-      // smokerClick: false
     })
   }
 
@@ -72,22 +53,6 @@ class Dashboard extends Component {
       )
     }
   }
-
-  // handleSmokerClick() {
-  //   this.setState({
-  //     smokerClick: true,
-  //     roommateClick: false,
-  //     apartmentClick: false
-  //   })
-  // }
-  //
-  // renderSmoker() {
-  //   if(this.state.smokerClick) {
-  //     return(
-  //       <DashboardSmoker />
-  //     )
-  //   }
-  // }
 
   render(){
     return(
