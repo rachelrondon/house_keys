@@ -19,9 +19,6 @@ class NewUser extends Component {
     }
 
   handleChange(event) {
-    console.log(this.state)
-    console.log(event.target.name);
-    console.log(event.target.value);
     let newState = update(this.state, {
       user: {
         $merge: {
@@ -31,7 +28,6 @@ class NewUser extends Component {
     })
 
     this.setState(newState);
-    console.log(this.state);
   }
 
   handleSubmit(event) {
@@ -44,8 +40,14 @@ class NewUser extends Component {
         "Content-Type": 'application/json'
       }
     })
-    .then(() => {
-      browserHistory.push('/dashboard');
+    .then((results) => {
+      results.json().then((jwt) => {
+        window.localStorage.setItem('token', jwt.token);
+        browserHistory.push({
+          pathname: '/dashboard',
+          state: {user: this.state.user}
+        })
+      })
     })
     .catch((err) => {
       console.log(err);
