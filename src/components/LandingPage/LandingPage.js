@@ -6,6 +6,15 @@ class LandingPage extends Component {
       super(props);
   }
 
+  componentWillMount() {
+    if (localStorage.getItem('token')) {
+      window.localStorage.removeItem('token');
+    }
+    if(localStorage.getItem('user')) {
+      window.localStorage.removeItem('user');
+    }
+  }
+
   render(){
     return(
       <div className="landing-page-div">
