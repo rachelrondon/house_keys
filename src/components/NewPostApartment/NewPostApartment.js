@@ -56,7 +56,6 @@ class NewPostApartment extends Component {
         }
       }
     });
-
     this.setState(newState);
   }
 

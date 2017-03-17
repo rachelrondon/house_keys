@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import update from 'react-addons-update';
+
 import { Link, browserHistory } from "react-router";
 
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
+import DashboardSmoker from './DashboardSmoker';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -28,7 +31,7 @@ class Dashboard extends Component {
   handleApartmentClick(event) {
     this.setState({
       apartmentClick: true,
-      roommateClick: false
+      roommateClick: false,
     })
   }
 
@@ -40,10 +43,11 @@ class Dashboard extends Component {
     }
   }
 
-  handleRoommateClick(event) {
+  handleRoommateClick() {
     this.setState({
       roommateClick: true,
-      apartmentClick: false
+      apartmentClick: false,
+      // smokerClick: false
     })
   }
 
@@ -76,9 +80,7 @@ class Dashboard extends Component {
       </div>
       {this.renderApartment()}
       {this.renderRoommate()}
-
       <button onClick={this.logout.bind(this)}>Logout</button>
-
     </div>
     )
   }

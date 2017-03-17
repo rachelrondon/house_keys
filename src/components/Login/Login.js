@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Route, Router, browserHistory } from "react-router";
 import { Link } from "react-router";
+import { Route, Router, browserHistory } from "react-router";
 
 class Login extends Component {
   constructor(props) {
