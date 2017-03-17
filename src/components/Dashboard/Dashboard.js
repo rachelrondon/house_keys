@@ -12,6 +12,8 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
 
+    console.log(props)
+
     this.state = {
       apartments: [],
       roommates: [],
@@ -72,8 +74,11 @@ class Dashboard extends Component {
         <nav>
           <h1> Welcome, {this.state.user.first_name}</h1>
         </nav>
-        <Link to="user/new/apartment">New Apartment Post</Link><br />
-        <Link to="user/new/roommate">New Roomate Post</Link><br />
+        <div className="collection">
+          <Link className="collection-item" to="/user/new/apartment">Add New Apartment</Link><br />
+          <Link className="collection-item" to="/user/new/roommate">Add New Roommate</Link>
+        </div>
+
       <div>
         <button onClick={this.handleApartmentClick.bind(this)} >
           Apartment
