@@ -42,15 +42,16 @@ class NewUser extends Component {
     })
     .then((results) => {
       results.json().then((jwt) => {
+        let authUser = jwt.user;
         window.localStorage.setItem('token', jwt.token);
-        browserHistory.push({
-          pathname: '/dashboard',
-          state: {user: this.state.user}
-        })
-      })
+        window.localStorage.setItem('user', JSON.stringify(authUser));
+        browserHistory.push('/dashboard');
+        console.log(jwt.token)
+        console.log(jwt.user)
+      });
     })
     .catch((err) => {
-      console.log(err);
+        alert('Not authenticated!');
     });
   }
 
