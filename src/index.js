@@ -2,7 +2,7 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Route, Router, browserHistory } from "react-router";
 
-import './Vendor/milligram/dist/milligram.css';
+import './Vendor/milligram/css/milligram.css';
 import './Style/Style.css';
 
 // Here we are importing the ten views
@@ -15,6 +15,7 @@ import NewProfile from './components/NewProfile/NewProfile';
 import NewPostRoommate from "./components/NewPostRoommate/NewPostRoommate";
 import NewPostApartment from './components/NewPostApartment/NewPostApartment';
 import Restricted from './components/Restricted/Restricted'
+import GoogleMapsForm from './components/Services/GoogleMapsForm';
 
 ReactDom.render(
   <Router history={browserHistory}>
@@ -26,6 +27,7 @@ ReactDom.render(
     <Route path='/user/new' component={NewUser} />
     <Route path='/user/profile' component={NewProfile} />
     <Route path='/user/new/apartment' component={NewPostApartment} />
+    <Route path='/user/new/apartment' comnponent={GoogleMapsForm} />
     <Route path='/user/new/roommate' component={NewPostRoommate} />
   </Router>
   , document.getElementById("app"));
