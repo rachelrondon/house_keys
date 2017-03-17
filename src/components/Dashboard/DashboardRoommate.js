@@ -39,9 +39,9 @@ handleSmokerClick() {
     dishesClick: false,
     toiletpaperClick: false,
     ageClick: false,
-    walletClick: false
-    // roommateClick: false,
-    // apartmentClick: false
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
   })
 }
 
@@ -61,9 +61,9 @@ handleGenderClick() {
     dishesClick: false,
     toiletpaperClick: false,
     ageClick: false,
-    walletClick: false
-    // roommateClick: false,
-    // apartmentClick: false
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
   })
 }
 
@@ -83,9 +83,9 @@ handleSleepClick() {
     dishesClick: false,
     toiletpaperClick: false,
     ageClick: false,
-    walletClick: false
-    // roommateClick: false,
-    // apartmentClick: false
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
   })
 }
 
@@ -105,9 +105,9 @@ handleDishesClick() {
     smokerClick: false,
     toiletpaperClick: false,
     ageClick: false,
-    walletClick: false
-    // roommateClick: false,
-    // apartmentClick: false
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
   })
 }
 
@@ -127,9 +127,9 @@ handleToiletPaperClick() {
     genderClick: false,
     smokerClick: false,
     ageClick: false,
-    walletClick: false
-    // roommateClick: false,
-    // apartmentClick: false
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
   })
 }
 
@@ -149,9 +149,9 @@ handleAgeClick() {
     sleepClick: false,
     genderClick: false,
     smokerClick: false,
-    walletClick: false
-    // roommateClick: false,
-    // apartmentClick: false
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
   })
 }
 
@@ -172,8 +172,8 @@ handleWalletClick() {
     genderClick: false,
     smokerClick: false,
     ageClick: false,
-    // roommateClick: false,
-    // apartmentClick: false
+    roommateClick: false,
+    apartmentClick: false
   })
 }
 
@@ -260,7 +260,7 @@ renderWallet() {
           })} */}
       {/* </div> */}
     </div>
-      {/* <div className="container">
+      <div className="container">
         {this.state.roommates.map((roommate) => {
           console.log(roommate.id);
           return(
@@ -292,7 +292,7 @@ renderWallet() {
         </div>
           );
         })}
-    </div> */}
+    </div>
   </div>
   // </div>
     );
