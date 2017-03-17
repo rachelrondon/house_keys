@@ -20,7 +20,12 @@ class Dashboard extends Component {
   componentWillMount() {
     if (!localStorage.getItem('token')) {
         browserHistory.push('/login');
-    }
+    } 
+  }
+
+  logout() {
+    window.localStorage.removeItem('token');
+    browserHistory.push('/');
   }
 
   handleApartmentClick(event) {
@@ -58,8 +63,7 @@ class Dashboard extends Component {
     return(
       <div>
         <nav>
-          <h1>{this.state.message}</h1>
-          <h1> Welcome, Rachel</h1>
+          <h1> Welcome, {this.props.location.state.user.first_name}</h1>
         </nav>
         <Link to="user/new/apartment">New Apartment Post</Link><br />
         <Link to="user/new/roommate">New Roomate Post</Link><br />
@@ -76,6 +80,7 @@ class Dashboard extends Component {
       </div>
       {this.renderApartment()}
       {this.renderRoommate()}
+      <button onClick={this.logout.bind(this)}>Logout</button>
     </div>
     )
   }
