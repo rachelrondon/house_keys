@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
+import { Link, browserHistory } from "react-router";
 import update from 'react-addons-update';
-import { browserHistory } from 'react-router';
+
 
 class NewPostRoommate extends Component {
   constructor(props) {
@@ -10,8 +10,8 @@ class NewPostRoommate extends Component {
     this.state = {
       roommate: {
           title: '',
-          gender: 1,
-          smoker: 1,
+          gender: '',
+          smoker: '',
           sleep: 1,
           dishes: 1,
           toilet_paper: 1,
@@ -20,6 +20,12 @@ class NewPostRoommate extends Component {
           user_id: 1
       }
     };
+  }
+
+  componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
   }
 
 handleChange(event) {
@@ -54,6 +60,10 @@ handleSubmit(event) {
   });
 }
 
+checkSelectInput(e) {
+  console.log('hi', e)
+}
+
   render(){
     return(
       <div>
@@ -74,9 +84,9 @@ handleSubmit(event) {
           </div>
         <div>
           <h3>Gender</h3>
-          <select name="gender">
-            <option value='1' name="male" onChange={this.handleChange.bind(this)}>male</option>
-            <option value='2' name="female" onChange={this.handleChange.bind(this)}>female</option>
+          <select name="gender" onChange={this.checkSelectInput.bind(this)}>
+            <option value='1' name="male">male</option>
+            <option value='2' name="female">female</option>
           </select>
         </div>
         <div>
