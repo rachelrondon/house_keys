@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import DashboardSmoker from './DashboardSmoker';
+
 
 class DashboardRoommate extends Component {
   constructor(props) {
@@ -23,29 +25,80 @@ class DashboardRoommate extends Component {
   });
 }
 
+handleSmokerClick() {
+  this.setState({
+    smokerClick: true,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderSmoker() {
+  if(this.state.smokerClick) {
+    return(
+      <DashboardSmoker />
+    )
+  }
+}
+
 
   render(){
     return(
       <div>
-      <div className="container">
+        <div>
+          <div>
+            <button onClick={this.handleSmokerClick.bind(this)} >
+              Smoker
+            </button>
+          </div>
+        <div className="container">
+          <select name="smoker">
+            <option name="1">yes</option>
+            <option name="2">no</option>
+          </select>
+          {/* <div className="container">
+             {this.state.roommates.map((roommate) => {
+              console.log(roommate.id);
+              return(
+              <div key={roommate.id} className="">
+                <div>
+                  <h2>Smoker:{roommate.smoker}</h2>
+                </div>
+            </div>
+             );
+            })}
+        </div> */}
+          {/* {this.state.roommates.map((roommate) => {
+            console.log(roommate.id);
+            return(
+            <div key={roommate.id} className="">
+              <div>
+                <h2>Smoker:{roommate.smoker}</h2>
+              </div>
+          </div>
+           );
+          })} */}
+      </div>
+    </div>
+      {/* <div className="container">
         {this.state.roommates.map((roommate) => {
           console.log(roommate.id);
           return(
           <div key={roommate.id} className="">
             <div>
-              <h2>Title: {roommate.title}</h2>
+              <h2>Title:{roommate.title}</h2>
             </div>
             <div>
-              <h2>Gender: {roommate.gender}</h2>
+              <h2>Gender:{roommate.gender}</h2>
             </div>
             <div>
-              <h2>Smoker: {roommate.smoker}</h2>
+              <h2>Smoker:{roommate.smoker}</h2>
             </div>
             <div>
-              <h2>Sleep: {roommate.sleep}</h2>
+              <h2>Sleep:{roommate.sleep}</h2>
             </div>
             <div>
-              <h2>Dishes: {roommate.dishes}</h2>
+              <h2>Dishes:{roommate.dishes}</h2>
             </div>
             <div>
               <h2>Toilet Paper: {roommate.toilet_paper}</h2>
@@ -59,7 +112,7 @@ class DashboardRoommate extends Component {
         </div>
           );
         })}
-    </div>
+    </div> */}
   </div>
     );
   }

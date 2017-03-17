@@ -6,6 +6,7 @@ import { browserHistory } from 'react-router';
 
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
+import DashboardSmoker from './DashboardSmoker';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -43,7 +44,8 @@ class Dashboard extends Component {
   handleApartmentClick() {
     this.setState({
       apartmentClick: true,
-      roommateClick: false
+      roommateClick: false,
+      // smokerClick: false
     })
   }
 
@@ -58,7 +60,8 @@ class Dashboard extends Component {
   handleRoommateClick() {
     this.setState({
       roommateClick: true,
-      apartmentClick: false
+      apartmentClick: false,
+      // smokerClick: false
     })
   }
 
@@ -69,6 +72,22 @@ class Dashboard extends Component {
       )
     }
   }
+
+  // handleSmokerClick() {
+  //   this.setState({
+  //     smokerClick: true,
+  //     roommateClick: false,
+  //     apartmentClick: false
+  //   })
+  // }
+  //
+  // renderSmoker() {
+  //   if(this.state.smokerClick) {
+  //     return(
+  //       <DashboardSmoker />
+  //     )
+  //   }
+  // }
 
   render(){
     return(
