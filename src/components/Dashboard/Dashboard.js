@@ -4,7 +4,6 @@ import { Link } from "react-router";
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
 
-
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -17,30 +16,30 @@ class Dashboard extends Component {
     };
   }
 
-  componentWillMount() {
-    if (!localStorage.getItem('token')) {
-        browserHistory.push('/login');
-    }
-  }
+  // componentWillMount() {
+  //   if (!localStorage.getItem('token')) {
+  //       browserHistory.push('/login');
+  //   }
+  // }
 
-  componentDidMount() {
-      fetch('http://localhost:8000/', {
-          method: 'GET',
-          headers: {
-              'Authorization': window.localStorage.getItem('token')
-          }
-      })
-      .then((results) => {
-          results.json().then((content) => {
-            browserHistory.push('/dashboard');
-          });
-      })
-      .catch((err) => {
-          browserHistory.push('/login');
-      });
-  }
+  // componentDidMount() {
+  //     fetch('http://localhost:8000/dashboard', {
+  //         method: 'GET',
+  //         headers: {
+  //             'Authorization': window.localStorage.getItem('token')
+  //         }
+  //     })
+  //     .then((results) => {
+  //         results.json().then((content) => {
+  //           browserHistory.push('/dashboard');
+  //         });
+  //     })
+  //     .catch((err) => {
+  //         browserHistory.push('/login');
+  //     });
+  // }
 
-  handleApartmentClick(event) {
+  handleApartmentClick() {
     this.setState({
       apartmentClick: true,
       roommateClick: false
@@ -55,7 +54,7 @@ class Dashboard extends Component {
     }
   }
 
-  handleRoommateClick(event) {
+  handleRoommateClick() {
     this.setState({
       roommateClick: true,
       apartmentClick: false
