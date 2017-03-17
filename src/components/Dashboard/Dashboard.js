@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router";
+import { Link, browserHistory } from "react-router";
 
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
@@ -14,28 +14,28 @@ class Dashboard extends Component {
     };
   }
 
-  // componentWillMount() {
-  //   if (!localStorage.getItem('token')) {
-  //       browserHistory.push('/login');
-  //   }
-  // }
-
-  componentDidMount() {
-      fetch('http://localhost:8000/dashboard', {
-          method: 'GET',
-          headers: {
-              'Authorization': window.localStorage.getItem('token')
-          }
-      })
-      .then((results) => {
-          results.json().then((content) => {
-            browserHistory.push('/dashboard');
-          });
-      })
-      .catch((err) => {
-          browserHistory.push('/login');
-      });
+  componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
   }
+
+  // componentDidMount() {
+  //     fetch('http://localhost:8000/users/restricted', {
+  //         method: 'GET',
+  //         headers: {
+  //             'Authorization': window.localStorage.getItem('token')
+  //         }
+  //     })
+  //     .then((results) => {
+  //         results.json().then((content) => {
+  //           browserHistory.push('/dashboard');
+  //         });
+  //     })
+  //     .catch((err) => {
+  //         browserHistory.push('/login');
+  //     });
+  // }
 
   handleApartmentClick(event) {
     this.setState({
