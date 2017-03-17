@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DashboardSmoker from './DashboardSmoker';
 import DashboardGender from './DashboardGender';
+import DashboardSleep from './DashboardSleep';
 
 
 class DashboardRoommate extends Component {
@@ -58,6 +59,22 @@ renderGender() {
   }
 }
 
+handleSleepClick() {
+  this.setState({
+    sleepClick: true
+    // roommateClick: false,
+    // apartmentClick: false
+  })
+}
+
+renderSleep() {
+  if(this.state.sleepClick) {
+    return(
+      <DashboardSleep />
+    )
+  }
+}
+
 
   render(){
     return(
@@ -75,6 +92,12 @@ renderGender() {
             </button>
           </div>
           {this.renderGender()}
+          <div>
+            <button onClick={this.handleSleepClick.bind(this)} >
+              Sleep
+            </button>
+          </div>
+          {this.renderSleep()}
         {/* <div className="container">
           <select name="smoker">
             <option name="1">yes</option>
