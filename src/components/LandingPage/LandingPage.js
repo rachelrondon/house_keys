@@ -9,7 +9,7 @@ class LandingPage extends Component {
   render(){
     return(
       <div className="landing-page-div">
-        <div className="landing-page-logo"></div>
+        <div className="landing-page-logo"><img src="../img/House_Keys_Logo.svg" width="200px"/></div>
         <div className="landing-page-links">
           <div className="front-key"></div>
           <div className="back-key"></div>
