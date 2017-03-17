@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
+import update from 'react-addons-update';
+import { browserHistory } from 'react-router';
+
 
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
@@ -37,7 +40,7 @@ class Dashboard extends Component {
       });
   }
 
-  handleApartmentClick(event) {
+  handleApartmentClick() {
     this.setState({
       apartmentClick: true,
       roommateClick: false
@@ -52,7 +55,7 @@ class Dashboard extends Component {
     }
   }
 
-  handleRoommateClick(event) {
+  handleRoommateClick() {
     this.setState({
       roommateClick: true,
       apartmentClick: false
@@ -89,7 +92,6 @@ class Dashboard extends Component {
       </div>
       {this.renderApartment()}
       {this.renderRoommate()}
-
     </div>
     )
   }

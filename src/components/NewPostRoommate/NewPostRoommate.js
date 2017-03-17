@@ -10,14 +10,14 @@ class NewPostRoommate extends Component {
     this.state = {
       roommate: {
           title: '',
-          gender: 1,
-          smoker: 1,
-          sleep: 1,
-          dishes: 1,
-          toilet_paper: 1,
-          age: 1,
-          wallet: 1,
-          user_id: 1
+          gender: '',
+          smoker: '',
+          sleep: '',
+          dishes: '',
+          toilet_paper: '',
+          age: '',
+          wallet: '',
+          user_id: ''
       }
     };
   }
@@ -30,7 +30,6 @@ handleChange(event) {
       }
     }
   })
-
   this.setState(newState);
 }
 
@@ -50,7 +49,6 @@ handleSubmit(event) {
     browserHistory.push('/dashboard');
   })
   .catch((err) => {
-
   });
 }
 
