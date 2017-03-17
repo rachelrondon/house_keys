@@ -2,8 +2,8 @@ import React from "react";
 import ReactDom from "react-dom";
 import { Route, Router, browserHistory } from "react-router";
 
-import './Style/Style.css';
 import './Vendor/milligram/dist/milligram.css';
+import './Style/Style.css';
 
 // Here we are importing the 7 views
 
