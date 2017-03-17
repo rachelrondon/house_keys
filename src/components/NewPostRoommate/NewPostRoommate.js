@@ -17,7 +17,7 @@ class NewPostRoommate extends Component {
           toilet_paper: '',
           age: '',
           wallet: '',
-          user_id: ''
+          user_id: 1
       }
     };
   }
@@ -29,6 +29,7 @@ class NewPostRoommate extends Component {
   }
 
 handleChange(event) {
+  console.log(event.target.value)
   let newState = update(this.state, {
     roommate: {
       $merge: {
@@ -58,9 +59,6 @@ handleSubmit(event) {
   });
 }
 
-checkSelectInput(e) {
-  console.log('hi', e)
-}
 
   render(){
     return(
@@ -82,58 +80,65 @@ checkSelectInput(e) {
           </div>
         <div>
           <h3>Gender</h3>
-          <select name="gender" onChange={this.checkSelectInput.bind(this)}>
-            <option value='1' name="male">male</option>
-            <option value='2' name="female">female</option>
+          <select name="gender" onChange={this.handleChange.bind(this)}>
+            <option value=""></option>
+            <option value="male">male</option>
+            <option value="female">female</option>
           </select>
         </div>
         <div>
           <h3>Smoke?</h3>
-          <select name="smoker">
-            <option value='1' name="yes" onChange={this.handleChange.bind(this)}>yes</option>
-            <option value='2' name="no" onChange={this.handleChange.bind(this)}>no</option>
+          <select name="smoker" onChange={this.handleChange.bind(this)}>
+            <option value=""></option>
+            <option value="yes">yes</option>
+            <option value="no">no</option>
           </select>
         </div>
         <div>
           <h3>Sleep</h3>
-          <select name="sleep">
-            <option value='1' name="before 10pm" onChange={this.handleChange.bind(this)}>before 10pm</option>
-            <option value='2' name="around 10pm" onChange={this.handleChange.bind(this)}>around 10pm</option>
-            <option value='3' name="after midnight" onChange={this.handleChange.bind(this)}>after midnight</option>
+          <select name="sleep" onChange={this.handleChange.bind(this)}>
+            <option value=""></option>
+            <option value="before 10pm">before 10pm</option>
+            <option value="around 10pm">around 10pm</option>
+            <option value="after midnight">after midnight</option>
           </select>
         </div>
         <div>
           <h3>Dishes</h3>
-          <select name="dishes">
-            <option value='1' name="After every meal" onChange={this.handleChange.bind(this)}>After every meal</option>
-            <option value='2' name="Everday" onChange={this.handleChange.bind(this)}>Everday</option>
-            <option value='3' name="When the sink is full" onChange={this.handleChange.bind(this)}>When the sink is full</option>
-            <option value='4' name="What are dishes?!" onChange={this.handleChange.bind(this)}>What are dishes?!</option>
+          <select name="dishes" onChange={this.handleChange.bind(this)}>
+            <option value=""></option>
+            <option value="After every meal">After every meal</option>
+            <option value="Everday">Everday</option>
+            <option value="When the sink is full">When the sink is full</option>
+            <option value="What are dishes?!">What are dishes?!</option>
           </select>
         </div>
         <div>
           <h3>Toilet Paper</h3>
-          <select name="toilet_paper">
-            <option value='1' name="Scotts" onChange={this.handleChange.bind(this)}>Scotts</option>
-            <option value='2' name="Charmin" onChange={this.handleChange.bind(this)}>Charmin</option>
-            <option value='3' name="Generic" onChange={this.handleChange.bind(this)}>Generic</option>
+          <select name="toilet_paper" onChange={this.handleChange.bind(this)}>
+            <option value=""></option>
+            <option value="Scotts">Scotts</option>
+            <option value="Charmin">Charmin</option>
+            <option value="Generic">Generic</option>
           </select>
         </div>
         <div>
           <h3>Age</h3>
-          <select name="age">
-            <option value='1' name="21 -30" onChange={this.handleChange.bind(this)}>21 -30</option>
-            <option value='2' name="31 - 40" onChange={this.handleChange.bind(this)}>31 - 40</option>
-            <option value='3' name="41 +" onChange={this.handleChange.bind(this)}>41 +</option>
+          <select name="age" onChange={this.handleChange.bind(this)}>
+            <option value=""></option>
+            <option value="21 -30">21 -30</option>
+            <option value="31 - 40">31 - 40</option>
+            <option value="41 +">41 +</option>
           </select>
         </div>
         <div>
           <h3>Wallet</h3>
-          <select name="wallet">
-            <option value='1' name="$800 - $1000" onChange={this.handleChange.bind(this)}>$800 - $1000</option>
-            <option value='2' name="$1001 - $1500" onChange={this.handleChange.bind(this)}>$1001 - $1500</option>
-            <option value='3' name="$1501 - $2000" onChange={this.handleChange.bind(this)}>$1501 - $2000</option>
-            <option value='4' name="$2000 +" onChange={this.handleChange.bind(this)}>$2000 +</option>
+          <select name="wallet" onChange={this.handleChange.bind(this)}>
+            <option value=""></option>
+            <option value="$800 - $1000">$800 - $1000</option>
+            <option value="$1001 - $1500">$1001 - $1500</option>
+            <option value="$1501 - $2000">$1501 - $2000</option>
+            <option value="$2000 +">$2000 +</option>
           </select>
         </div>
         <button href="/dashboard" type="submit">Submit</button>

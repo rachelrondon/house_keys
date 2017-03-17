@@ -83,7 +83,7 @@ class Dashboard extends Component {
     return(
       <div>
         <nav>
-          <h1> Welcome, {this.props.location.state.user.first_name}</h1>
+          <h1> Welcome, </h1>
         </nav>
         <div className="collection">
           <Link className="collection-item" to="/user/new/apartment">Add New Apartment</Link><br />
