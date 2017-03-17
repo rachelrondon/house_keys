@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import update from 'react-addons-update';
+import { Link } from "react-router";
+import { browserHistory } from 'react-router';
+
 
 class DashboardRoommate extends Component {
   constructor(props) {
@@ -6,7 +10,7 @@ class DashboardRoommate extends Component {
 
     this.state = {
       roommates: []
-    };
+    }
   }
 
   componentDidMount() {
@@ -20,7 +24,7 @@ class DashboardRoommate extends Component {
   })
   .catch((err) => {
     console.log(err);
-  });
+  })
 }
 
 
@@ -36,8 +40,7 @@ class DashboardRoommate extends Component {
               <h2>Title: {roommate.title}</h2>
             </div>
             <div>
-              <h2>Gender: {roommate.gender.male}</h2>
-              <h2>Gender: {roommate.gender.female}</h2>
+              <h2>Gender: {roommate.gender}</h2>
             </div>
             <div>
               <h2>Smoker: {roommate.smoker}</h2>
@@ -49,7 +52,7 @@ class DashboardRoommate extends Component {
               <h2>Dishes: {roommate.dishes}</h2>
             </div>
             <div>
-              <h2>Toilet Paper: {roommate.toilet_paper}</h2>
+              <h2>Toilet_paper: {roommate.toliet_paper}</h2>
             </div>
             <div>
               <h2>Age:{roommate.age}</h2>
@@ -58,11 +61,11 @@ class DashboardRoommate extends Component {
               <h2>Wallet:{roommate.wallet}</h2>
             </div>
         </div>
-          );
+          )
         })}
     </div>
   </div>
-    );
+    )
   }
 }
 

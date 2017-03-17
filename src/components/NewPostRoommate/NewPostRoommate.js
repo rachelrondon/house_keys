@@ -14,7 +14,7 @@ class NewPostRoommate extends Component {
           smoker: 1,
           sleep: 1,
           dishes: 1,
-          toliet_paper: 1,
+          toilet_paper: 1,
           age: 1,
           wallet: 1,
           user_id: 1
@@ -88,7 +88,7 @@ handleSubmit(event) {
         </div>
         <div>
           <h3>Sleep</h3>
-          <select name="Sleep">
+          <select name="sleep">
             <option value='1' name="before 10pm" onChange={this.handleChange.bind(this)}>before 10pm</option>
             <option value='2' name="around 10pm" onChange={this.handleChange.bind(this)}>around 10pm</option>
             <option value='3' name="after midnight" onChange={this.handleChange.bind(this)}>after midnight</option>
@@ -96,7 +96,7 @@ handleSubmit(event) {
         </div>
         <div>
           <h3>Dishes</h3>
-          <select name="Dishes">
+          <select name="dishes">
             <option value='1' name="After every meal" onChange={this.handleChange.bind(this)}>After every meal</option>
             <option value='2' name="Everday" onChange={this.handleChange.bind(this)}>Everday</option>
             <option value='3' name="When the sink is full" onChange={this.handleChange.bind(this)}>When the sink is full</option>
@@ -105,7 +105,7 @@ handleSubmit(event) {
         </div>
         <div>
           <h3>Toilet Paper</h3>
-          <select name="Toliet_paper">
+          <select name="toilet_paper">
             <option value='1' name="Scotts" onChange={this.handleChange.bind(this)}>Scotts</option>
             <option value='2' name="Charmin" onChange={this.handleChange.bind(this)}>Charmin</option>
             <option value='3' name="Generic" onChange={this.handleChange.bind(this)}>Generic</option>
@@ -121,7 +121,7 @@ handleSubmit(event) {
         </div>
         <div>
           <h3>Wallet</h3>
-          <select name="Wallet">
+          <select name="wallet">
             <option value='1' name="$800 - $1000" onChange={this.handleChange.bind(this)}>$800 - $1000</option>
             <option value='2' name="$1001 - $1500" onChange={this.handleChange.bind(this)}>$1001 - $1500</option>
             <option value='3' name="$1501 - $2000" onChange={this.handleChange.bind(this)}>$1501 - $2000</option>
