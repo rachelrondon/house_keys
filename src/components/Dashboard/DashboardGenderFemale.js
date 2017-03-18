@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DashboardMale extends Component {
+class DashboardFemale extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +10,7 @@ class DashboardMale extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates/male`, {
+  fetch(`http://localhost:8000/roommates/female`, {
     method: 'GET'
   })
   .then((results) => {
@@ -47,7 +47,7 @@ class DashboardMale extends Component {
                 <h2>Dishes:{roommate.dishes}</h2>
               </div>
               <div>
-                <h2>Toilet Paper: {roommate.toilet_paper}</h2>
+                <h2>Toilet Paper:{roommate.toilet_paper}</h2>
               </div>
               <div>
                 <h2>Age:{roommate.age}</h2>
@@ -64,4 +64,4 @@ class DashboardMale extends Component {
   }
 }
 
-export default DashboardMale;
+export default DashboardFemale;

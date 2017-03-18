@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DashboardSmoker from './DashboardSmoker';
 import DashboardGenderMale from './DashboardGenderMale';
+import DashboardGenderFemale from './DashboardGenderFemale';
 import DashboardSleep from './DashboardSleep';
 import DashboardDishes from './DashboardDishes';
 import DashboardToiletPaper from './DashboardToiletPaper';
@@ -35,6 +36,7 @@ handleSmokerClick() {
   this.setState({
     smokerClick: true,
     genderMaleClick: false,
+    genderFemaleClick: false,
     sleepClick: false,
     dishesClick: false,
     toiletpaperClick: false,
@@ -56,6 +58,7 @@ renderSmoker() {
 handleGenderMaleClick() {
   this.setState({
     genderMaleClick: true,
+    genderFemaleClick: false,
     smokerClick: false,
     sleepClick: false,
     dishesClick: false,
@@ -65,6 +68,29 @@ handleGenderMaleClick() {
     roommateClick: false,
     apartmentClick: false
   })
+}
+
+handleGenderFemaleClick() {
+  this.setState({
+    genderFemaleClick: true,
+    genderMaleClick: false,
+    smokerClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderGenderFemale () {
+  if(this.state.genderFemaleClick) {
+    return(
+      <DashboardGenderFemale />
+    )
+  }
 }
 
 renderGenderMale() {
@@ -79,6 +105,7 @@ handleSleepClick() {
   this.setState({
     sleepClick: true,
     genderMaleClick: false,
+    genderFemaleClick: false,
     smokerClick: false,
     dishesClick: false,
     toiletpaperClick: false,
@@ -102,6 +129,7 @@ handleDishesClick() {
     dishesClick: true,
     sleepClick: false,
     genderMaleClick: false,
+    genderFemaleClick: false,
     smokerClick: false,
     toiletpaperClick: false,
     ageClick: false,
@@ -125,6 +153,7 @@ handleToiletPaperClick() {
     dishesClick: false,
     sleepClick: false,
     genderMaleClick: false,
+    genderFemaleClick: false,
     smokerClick: false,
     ageClick: false,
     walletClick: false,
@@ -148,6 +177,7 @@ handleAgeClick() {
     dishesClick: false,
     sleepClick: false,
     genderMaleClick: false,
+    genderFemaleClick: false,
     smokerClick: false,
     walletClick: false,
     roommateClick: false,
@@ -170,6 +200,7 @@ handleWalletClick() {
     dishesClick: false,
     sleepClick: false,
     genderMaleClick: false,
+    genderFemaleClick: false,
     smokerClick: false,
     ageClick: false,
     roommateClick: false,
@@ -201,6 +232,12 @@ renderWallet() {
             </button>
           </div>
           {this.renderGenderMale()}
+          <div>
+            <button onClick={this.handleGenderFemaleClick.bind(this)} >
+              Female
+            </button>
+          </div>
+          {this.renderGenderFemale()}
           <div>
             <button onClick={this.handleSleepClick.bind(this)} >
               Sleep
@@ -260,7 +297,7 @@ renderWallet() {
           })} */}
       {/* </div> */}
     </div>
-      <div className="container">
+      {/* <div className="container">
         {this.state.roommates.map((roommate) => {
           console.log(roommate.id);
           return(
@@ -292,7 +329,7 @@ renderWallet() {
         </div>
           );
         })}
-    </div>
+    </div> */}
   </div>
     );
   }
