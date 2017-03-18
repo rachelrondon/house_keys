@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DashboardSmoker extends Component {
+class DashboardSleepBefore10PM extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +10,7 @@ class DashboardSmoker extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates/smoker`, {
+  fetch(`http://localhost:8000/roommates/sleepbefore10`, {
     method: 'GET'
   })
   .then((results) => {
@@ -22,7 +22,6 @@ class DashboardSmoker extends Component {
     console.log(err);
   });
 }
-
   render(){
     return(
       <div>
@@ -64,4 +63,4 @@ class DashboardSmoker extends Component {
   }
 }
 
-export default DashboardSmoker;
+export default DashboardSleepBefore10PM;
