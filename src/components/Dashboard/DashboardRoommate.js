@@ -9,7 +9,7 @@ import DashboardGenderFemale from './DashboardGenderFemale';
 import DashboardSleepBefore10PM from './DashboardSleepBefore10PM';
 import DashboardDishes from './DashboardDishes';
 import DashboardToiletPaper from './DashboardToiletPaper';
-import DashboardAge from './DashboardAge';
+// import DashboardAge from './DashboardAge';
 import DashboardWallet from './DashboardWallet';
 
 import DashboardAge21to30 from "./DashboardAge21to30";
