@@ -285,7 +285,7 @@ renderWallet() {
               <h2>Dishes: {roommate.dishes}</h2>
             </div>
             <div>
-              <h2>Toilet_paper: {roommate.toilet_paper}</h2>
+              <h2>Toilet Paper: {roommate.toilet_paper}</h2>
             </div>
             <div>
               <h2>Age: {roommate.age}</h2>

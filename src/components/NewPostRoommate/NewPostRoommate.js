@@ -16,8 +16,7 @@ class NewPostRoommate extends Component {
           dishes: '',
           toilet_paper: '',
           age: '',
-          wallet: '',
-          user_id: 1
+          wallet: ''
       }
     };
   }
@@ -82,33 +81,33 @@ handleSubmit(event) {
           <h3>Gender</h3>
           <select name="gender" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="male">male</option>
-            <option value="female">female</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
           </select>
         </div>
         <div>
           <h3>Smoke?</h3>
           <select name="smoker" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="yes">yes</option>
-            <option value="no">no</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
           </select>
         </div>
         <div>
           <h3>Sleep</h3>
           <select name="sleep" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="before 10pm">before 10pm</option>
-            <option value="around 10pm">around 10pm</option>
-            <option value="after midnight">after midnight</option>
+            <option value="Before 10pm">Before 10pm</option>
+            <option value="Around 10pm">Around 10pm</option>
+            <option value="After Midnight">After Midnight</option>
           </select>
         </div>
         <div>
           <h3>Dishes</h3>
           <select name="dishes" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="After every meal">After every meal</option>
-            <option value="Everday">Everday</option>
+            <option value="After Every Meal">After Every Meal</option>
+            <option value="Everyday">Everyday</option>
             <option value="When the sink is full">When the sink is full</option>
             <option value="What are dishes?!">What are dishes?!</option>
           </select>
@@ -126,9 +125,9 @@ handleSubmit(event) {
           <h3>Age</h3>
           <select name="age" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="21 -30">21 -30</option>
+            <option value="21 - 30">21 - 30</option>
             <option value="31 - 40">31 - 40</option>
-            <option value="41 +">41 +</option>
+            <option value="41+">41+</option>
           </select>
         </div>
         <div>
@@ -138,7 +137,7 @@ handleSubmit(event) {
             <option value="$800 - $1000">$800 - $1000</option>
             <option value="$1001 - $1500">$1001 - $1500</option>
             <option value="$1501 - $2000">$1501 - $2000</option>
-            <option value="$2000 +">$2000 +</option>
+            <option value="$2000+">$2000+</option>
           </select>
         </div>
         <button href="/dashboard" type="submit">Submit</button>
