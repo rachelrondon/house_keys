@@ -7,6 +7,7 @@ import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
 import DashboardSmoker from './DashboardSmoker';
 
+
 class Dashboard extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,8 @@ class Dashboard extends Component {
 
     this.state = {
       apartments: [],
-      roommates: []
+      roommates: [],
+      user: {}
     };
   }
 
@@ -23,28 +25,15 @@ class Dashboard extends Component {
     if (!localStorage.getItem('token')) {
         browserHistory.push('/login');
     } else {
-      console.log(this.props.location.state)
+      console.log('Dashboard User', userObj)
+      let userObj = JSON.parse(window.localStorage.user);
+      this.setState({user: userObj})
     }
   }
 
-  // componentDidMount() {
-  //     fetch('http://localhost:8000/dashboard', {
-  //         method: 'GET',
-  //         headers: {
-  //             'Authorization': window.localStorage.getItem('token')
-  //         }
-  //     })
-  //     .then((results) => {
-  //         results.json().then((content) => {
-  //           browserHistory.push('/dashboard');
-  //         });
-  //     })
-  //     .catch((err) => {
-  //         browserHistory.push('/login');
-  //     });
-  // }
   logout() {
     window.localStorage.removeItem('token');
+    window.localStorage.removeItem('user');
     browserHistory.push('/');
   }
 
@@ -83,7 +72,7 @@ class Dashboard extends Component {
     return(
       <div>
         <nav>
-          <h1> Welcome, </h1>
+          <h1> Welcome, {this.state.user.first_name}</h1>
         </nav>
         <div className="collection">
           <Link className="collection-item" to="/user/new/apartment">Add New Apartment</Link><br />

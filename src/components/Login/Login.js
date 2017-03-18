@@ -9,7 +9,6 @@ class Login extends Component {
     this.state = {
         email: '',
         password: '',
-        user: {}
     };
   }
 
@@ -37,12 +36,11 @@ class Login extends Component {
     })
     .then((results) => {
       results.json().then((jwt) => {
+        let authUser = jwt.user;
         window.localStorage.setItem('token', jwt.token);
-        this.setState({user: jwt.user});
-        browserHistory.push({
-          pathname: '/dashboard',
-          state: {user: this.state.user}
-        });
+        window.localStorage.setItem('user', JSON.stringify(authUser));
+        console.log('Local User:', authUser)
+        browserHistory.push('/dashboard');
       });
     })
     .catch((err) => {
