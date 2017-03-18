@@ -1,7 +1,11 @@
 import React, { Component } from "react";
+
 import DashboardSmoker from './DashboardSmoker';
+import DashboardNonSmoker from './DashboardNonSmoker';
+
 import DashboardGenderMale from './DashboardGenderMale';
 import DashboardGenderFemale from './DashboardGenderFemale';
+
 import DashboardSleep from './DashboardSleep';
 import DashboardDishes from './DashboardDishes';
 import DashboardToiletPaper from './DashboardToiletPaper';
@@ -51,6 +55,31 @@ renderSmoker() {
   if(this.state.smokerClick) {
     return(
       <DashboardSmoker />
+    )
+  }
+}
+
+
+handleNonSmokerClick() {
+  this.setState({
+    nonSmokerClick: true,
+    smokerClick: false,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderNonSmoker() {
+  if(this.state.nonSmokerClick) {
+    return(
+      <DashboardNonSmoker />
     )
   }
 }
@@ -226,6 +255,12 @@ renderWallet() {
             </button>
           </div>
           {this.renderSmoker()}
+          <div>
+            <button onClick={this.handleNonSmokerClick.bind(this)} >
+              Non Smoker
+            </button>
+          </div>
+          {this.renderNonSmoker()}
           <div>
             <button onClick={this.handleGenderMaleClick.bind(this)} >
               Male
