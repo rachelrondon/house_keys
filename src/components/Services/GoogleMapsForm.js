@@ -9,35 +9,47 @@ class GoogleMapsForm extends Component {
   constructor(props) {
     super(props)
 
-    this.state={
-      address: ''
-    }
+    this.state = {
+      address: '',
+      latLong: ''
+    };
   }
   // this is sample code to find json object in
   // google mapes geocode
-  handleSubmit(event) {
+
+  searchLatLong(location) {
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${key}`)
+    .then(r => r.json())
+    .then((data) => {
+      this.setState({ latLong: `${data.results[0].geometry.location.lat} ${data.results[0].geometry.location.lng}` })
+      console.log(this.state.latLong);
+      // console.log("latitude for the boys:", newTaco.results[0].geometry.location.lat);
+      // console.log("where my tudes at?:", newTaco.results[0].geometry.location.lat);
+    })
+  };
+
+  handleLatLong(event) {
     console.log('i\'ve been clicked!');
     event.preventDefault();
+    this.searchLatLong(this.state.address);
+    this.setState({ address: '' });
+  }
 
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=1600+Pennsylvania+Ave+NW,+Washington,+DC+20500&key=${key}`)
-      .then((taco) => taco.json()
-        .then((newTaco) => {
-            console.log(newTaco);
-            // console.log("latitude for the boys:", newTaco.results[0].geometry.location.lat);
-            // console.log("where my tudes at?:", newTaco.results[0].geometry.location.lat);
-        })
-      );
-    }
+
 
   render() {
-    return(
+    return (
       <div>
-        <form>
-          <button onClick={this.handleSubmit.bind(this)}>
-            click me
-          </button>
-        </form>
-      </div>
+          <form onSubmit={this.handleLatLong.bind(this)}>
+            <input
+              type="text"
+              value={this.state.address}
+              onChange={e => this.setState({address: e.target.value})}
+              placeholder="search address..." /><br/>
+            <input type="submit" value="Search"/>
+          </form>
+        </div>
+
       // <div>
       //   <iframe
       //     width="600"

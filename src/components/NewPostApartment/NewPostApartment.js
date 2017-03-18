@@ -49,6 +49,7 @@ class NewPostApartment extends Component {
   }
 
   handleChange(event) {
+
     let newState = update(this.state, {
       apartment: {
         $merge: {
@@ -80,7 +81,10 @@ class NewPostApartment extends Component {
                 Address
               </div>
               <div className="">
-                <input name="address" type="text" placeholder="Address" onChange={this.handleChange.bind(this)}></input>
+                <input name="address"
+                       type="text"
+                       placeholder="Address"
+                       onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Rent
