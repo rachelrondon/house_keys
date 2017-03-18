@@ -6,12 +6,11 @@ import DashboardNonSmoker from './DashboardNonSmoker';
 import DashboardGenderMale from './DashboardGenderMale';
 import DashboardGenderFemale from './DashboardGenderFemale';
 
-import DashboardSleep from './DashboardSleep';
+import DashboardSleepBefore10PM from './DashboardSleepBefore10PM';
 import DashboardDishes from './DashboardDishes';
 import DashboardToiletPaper from './DashboardToiletPaper';
 import DashboardAge from './DashboardAge';
 import DashboardWallet from './DashboardWallet';
-
 
 class DashboardRoommate extends Component {
   constructor(props) {
@@ -130,9 +129,9 @@ renderGenderMale() {
   }
 }
 
-handleSleepClick() {
+handleSleepBefore10PMClick() {
   this.setState({
-    sleepClick: true,
+    SleepBefore10PMClick: true,
     genderMaleClick: false,
     genderFemaleClick: false,
     smokerClick: false,
@@ -145,10 +144,10 @@ handleSleepClick() {
   })
 }
 
-renderSleep() {
-  if(this.state.sleepClick) {
+renderSleepBefore10PM() {
+  if(this.state.SleepBefore10PMClick) {
     return(
-      <DashboardSleep />
+      <DashboardSleepBefore10PM />
     )
   }
 }
@@ -274,11 +273,11 @@ renderWallet() {
           </div>
           {this.renderGenderFemale()}
           <div>
-            <button onClick={this.handleSleepClick.bind(this)} >
-              Sleep
+            <button onClick={this.handleSleepBefore10PMClick.bind(this)} >
+              Sleep Before 10PM
             </button>
           </div>
-          {this.renderSleep()}
+          {this.renderSleepBefore10PM()}
           <div>
             <button onClick={this.handleDishesClick.bind(this)} >
               Dishes
