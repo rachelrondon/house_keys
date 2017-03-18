@@ -22,6 +22,12 @@ class NewPostApartment extends Component {
       };
     }
 
+  componentWillMount() {
+    if (!localStorage.getItem('token')) {
+        browserHistory.push('/login');
+    }
+  }
+
   handleSubmit(event) {
     event.preventDefault();
 
@@ -50,7 +56,6 @@ class NewPostApartment extends Component {
         }
       }
     });
-
     this.setState(newState);
   }
 
@@ -60,7 +65,10 @@ class NewPostApartment extends Component {
           <nav>
             <h2 className=""> Add Apartment</h2>
           </nav>
-           <Link to="/dashboard">Back to Home</Link>
+            <div className="collection">
+              <Link className="collection-item" to="/dashboard">Back to Home</Link>
+            </div>
+
             <form onSubmit={this.handleSubmit.bind(this)} className="">
               <div className="">
                 Title

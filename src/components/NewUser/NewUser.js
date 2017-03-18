@@ -9,17 +9,16 @@ class NewUser extends Component {
 
       this.state = {
         user: {
-          firstname: '',
-          lastname: '',
+          first_name: '',
+          last_name: '',
           email: '',
-          username: ''
+          username: '',
+          password_digest: ''
         }
       };
     }
 
   handleChange(event) {
-    console.log(event.target.name);
-    console.log(event.target.value);
     let newState = update(this.state, {
       user: {
         $merge: {
@@ -29,29 +28,30 @@ class NewUser extends Component {
     })
 
     this.setState(newState);
-    console.log(this.state);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    
-    fetch(`http://localhost:8000/users`, {
-      method: 'POST',
-      body: JSON.stringify({
-        firstname: this.state.user.firstname,
-        lastname: this.state.user.lastname,
-        email: this.state.user.email,
-        username: this.state.user.username
-      }),
+
+    fetch(`http://localhost:8000/users/new`, {
+      method: "POST",
+      body: JSON.stringify({user: this.state.user}),
       headers: {
-        'Content-type': 'application/json'
+        "Content-Type": 'application/json'
       }
     })
-    .then(() => {
-      browserHistory.push('/dashboard');
+    .then((results) => {
+      results.json().then((jwt) => {
+        let authUser = jwt.user;
+        window.localStorage.setItem('token', jwt.token);
+        window.localStorage.setItem('user', JSON.stringify(authUser));
+        browserHistory.push('/dashboard');
+        console.log(jwt.token)
+        console.log(jwt.user)
+      });
     })
     .catch((err) => {
-      console.log(err);
+        alert('Not authenticated!');
     });
   }
 
@@ -65,13 +65,13 @@ class NewUser extends Component {
                 First Name
               </div>
               <div className="">
-                <input name="firstname" placeholder="first name" onChange={this.handleChange.bind(this)}></input>
+                <input name="first_name" placeholder="first name" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Last Name
               </div>
               <div className="">
-                <input  name="lastname" placeholder="last name" onChange={this.handleChange.bind(this)}></input>
+                <input  name="last_name" placeholder="last name" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Email
@@ -85,12 +85,12 @@ class NewUser extends Component {
               <div className="">
                 <input name="username" placeholder="username" onChange={this.handleChange.bind(this)}></input>
               </div>
-              {/* <div className="">
+              <div className="">
                 Password
               </div>
               <div className="">
-                <input placeholder="password"></input>
-              </div> */}
+                <input onChange={this.handleChange.bind(this)} name="password_digest" placeholder="password"></input>
+              </div>
               <button href="/dashboard" type="submit">Submit</button>
             </form>
           </nav>
