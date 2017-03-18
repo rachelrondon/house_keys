@@ -12,6 +12,8 @@ import DashboardToiletPaper from './DashboardToiletPaper';
 import DashboardAge from './DashboardAge';
 import DashboardWallet from './DashboardWallet';
 
+import DashboardAge21to30 from "./DashboardAge21to30";
+
 class DashboardRoommate extends Component {
   constructor(props) {
     super(props);
@@ -198,9 +200,9 @@ renderToiletPaper() {
   }
 }
 
-handleAgeClick() {
+handleAge21to30Click() {
   this.setState({
-    ageClick: true,
+    age21to30Click: true,
     toiletpaperClick: false,
     dishesClick: false,
     sleepClick: false,
@@ -213,10 +215,10 @@ handleAgeClick() {
   })
 }
 
-renderAge() {
-  if(this.state.ageClick) {
+renderAge21to30() {
+  if(this.state.age21to30Click) {
     return(
-      <DashboardAge />
+      <DashboardAge21to30 />
     )
   }
 }
@@ -291,11 +293,11 @@ renderWallet() {
           </div>
           {this.renderToiletPaper()}
           <div>
-            <button onClick={this.handleAgeClick.bind(this)} >
-              Age
+            <button onClick={this.handleAge21to30Click.bind(this)} >
+              Age 21 - 30
             </button>
           </div>
-          {this.renderAge()}
+          {this.renderAge21to30()}
           <div>
             <button onClick={this.handleWalletClick.bind(this)} >
               Wallet
