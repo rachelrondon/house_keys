@@ -16,8 +16,7 @@ class NewPostRoommate extends Component {
           dishes: '',
           toilet_paper: '',
           age: '',
-          wallet: '',
-          user_id: 1
+          wallet: ''
       }
     };
   }
@@ -82,25 +81,25 @@ handleSubmit(event) {
           <h3>Gender</h3>
           <select name="gender" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="male">male</option>
-            <option value="female">female</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
           </select>
         </div>
         <div>
           <h3>Smoke?</h3>
           <select name="smoker" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="yes">yes</option>
-            <option value="no">no</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
           </select>
         </div>
         <div>
           <h3>Sleep</h3>
           <select name="sleep" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="before 10pm">before 10pm</option>
-            <option value="around 10pm">around 10pm</option>
-            <option value="after midnight">after midnight</option>
+            <option value="Before 10pm">Before 10pm</option>
+            <option value="Around 10pm">Around 10pm</option>
+            <option value="After Midnight">After midnight</option>
           </select>
         </div>
         <div>

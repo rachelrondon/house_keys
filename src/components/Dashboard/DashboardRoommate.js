@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import update from 'react-addons-update';
+import { Link } from "react-router";
+import { browserHistory } from 'react-router';
 
 import DashboardSmoker from './DashboardSmoker';
 import DashboardNonSmoker from './DashboardNonSmoker';
@@ -393,7 +396,7 @@ renderWallet() {
           })} */}
       {/* </div> */}
     </div>
-      {/* <div className="container">
+      <div className="container">
         {this.state.roommates.map((roommate) => {
           console.log(roommate.id);
           return(
@@ -414,7 +417,7 @@ renderWallet() {
               <h2>Dishes:{roommate.dishes}</h2>
             </div>
             <div>
-              <h2>Toilet Paper: {roommate.toilet_paper}</h2>
+              <h2>Toilet Paper:{roommate.toilet_paper}</h2>
             </div>
             <div>
               <h2>Age:{roommate.age}</h2>
@@ -425,7 +428,7 @@ renderWallet() {
         </div>
           );
         })}
-    </div> */}
+    </div>
   </div>
     );
   }
