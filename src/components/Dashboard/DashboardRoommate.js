@@ -31,6 +31,7 @@ import DashboardRMAge21to30 from "./DashboardRMAge21to30";
 
 import DashboardRent800to1000 from "./DashboardRent800to1000";
 import DashboardRent1001to1500 from "./DashboardRent1001to1500";
+import DashboardRent1501to2000 from "./DashboardRent1501to2000";
 
 class DashboardRoommate extends Component {
   constructor(props) {
@@ -130,7 +131,7 @@ renderRM21to30() {
 
 handleRent800to1000Click() {
   this.setState({
-    Rent800to1000Click: true,
+    rent800to1000Click: true,
     genderMaleClick: false,
     genderFemaleClick: false,
     sleepClick: false,
@@ -174,6 +175,28 @@ renderRent1001to1500() {
   }
 }
 
+handleRent1501to2000Click() {
+  this.setState({
+    rent1501to2000Click: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderRent1501to2000() {
+  if(this.state.rent1501to2000Click) {
+    return(
+      <DashboardRent1501to2000 />
+    )
+  }
+}
 
 handleSmokerClick() {
   this.setState({
@@ -627,6 +650,13 @@ renderWallet() {
         </button>
       </div>
       {this.renderRent1001to1500()}
+
+      <div>
+        <button onClick={this.handleRent1501to2000Click.bind(this)} >
+          Rent $1501 to $2000
+        </button>
+      </div>
+      {this.renderRent1501to2000()}
 
           <div>
             <button onClick={this.handleWalletClick.bind(this)} >
