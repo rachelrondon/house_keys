@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 
 const key = process.env.API_KEY;
 
@@ -19,7 +19,7 @@ class GoogleMapsForm extends Component {
     console.log('i\'ve been clicked!');
     event.preventDefault();
 
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=33+Charles+St,+Malverne,+NY+11565&key=${key}`)
+    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=1600+Pennsylvania+Ave+NW,+Washington,+DC+20500&key=${key}`)
       .then((taco) => taco.json()
         .then((newTaco) => {
             console.log(newTaco);
@@ -33,7 +33,7 @@ class GoogleMapsForm extends Component {
     return(
       <div>
         <form>
-          <button onClick={this.handleSumbit.bind(this)}>
+          <button onClick={this.handleSubmit.bind(this)}>
             click me
           </button>
         </form>
