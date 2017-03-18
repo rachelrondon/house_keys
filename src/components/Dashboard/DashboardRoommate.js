@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import update from 'react-addons-update';
+import { Link } from "react-router";
+import { browserHistory } from 'react-router';
+
 import DashboardSmoker from './DashboardSmoker';
 import DashboardGender from './DashboardGender';
 import DashboardSleep from './DashboardSleep';
@@ -14,7 +18,7 @@ class DashboardRoommate extends Component {
 
     this.state = {
       roommates: []
-    };
+    }
   }
 
   componentDidMount() {
@@ -28,7 +32,7 @@ class DashboardRoommate extends Component {
   })
   .catch((err) => {
     console.log(err);
-  });
+  })
 }
 
 handleSmokerClick() {
@@ -266,36 +270,37 @@ renderWallet() {
           return(
           <div key={roommate.id} className="">
             <div>
-              <h2>Title:{roommate.title}</h2>
+              <h2>Title: {roommate.title}</h2>
             </div>
             <div>
-              <h2>Gender:{roommate.gender}</h2>
+              <h2>Gender: {roommate.gender}</h2>
             </div>
             <div>
-              <h2>Smoker:{roommate.smoker}</h2>
+              <h2>Smoker: {roommate.smoker}</h2>
             </div>
             <div>
-              <h2>Sleep:{roommate.sleep}</h2>
+              <h2>Sleep: {roommate.sleep}</h2>
             </div>
             <div>
-              <h2>Dishes:{roommate.dishes}</h2>
+              <h2>Dishes: {roommate.dishes}</h2>
             </div>
             <div>
-              <h2>Toilet Paper: {roommate.toilet_paper}</h2>
+              <h2>Toilet_paper: {roommate.toilet_paper}</h2>
             </div>
             <div>
-              <h2>Age:{roommate.age}</h2>
+              <h2>Age: {roommate.age}</h2>
             </div>
             <div>
-              <h2>Wallet:{roommate.wallet}</h2>
+              <h2>Wallet: {roommate.wallet}</h2>
             </div>
         </div>
-          );
+          )
         })}
     </div>
   </div>
+    )
   // </div>
-    );
+    // );
   }
 }
 
