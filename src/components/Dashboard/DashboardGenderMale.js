@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DashboardGender extends Component {
+class DashboardMale extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +10,7 @@ class DashboardGender extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates`, {
+  fetch(`http://localhost:8000/roommates/male`, {
     method: 'GET'
   })
   .then((results) => {
@@ -32,7 +32,7 @@ class DashboardGender extends Component {
           return(
           <div key={roommate.id} className="">
             <div>
-              <h2>Gender:{roommate.gender.male}</h2>
+              <h2>Gender:{roommate.gender}</h2>
             </div>
         </div>
          );
@@ -43,4 +43,4 @@ class DashboardGender extends Component {
   }
 }
 
-export default DashboardGender;
+export default DashboardMale;

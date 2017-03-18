@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import update from 'react-addons-update';
 
 import { Link, browserHistory } from "react-router";
+
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
 import DashboardSmoker from './DashboardSmoker';
+
 
 class Dashboard extends Component {
   constructor(props) {
@@ -22,7 +24,6 @@ class Dashboard extends Component {
   componentWillMount() {
     if (!localStorage.getItem('token')) {
         browserHistory.push('/login');
-
     } else {
       console.log('Dashboard User', userObj)
       let userObj = JSON.parse(window.localStorage.user);
@@ -55,6 +56,7 @@ class Dashboard extends Component {
     this.setState({
       roommateClick: true,
       apartmentClick: false,
+      // smokerClick: false
     })
   }
 

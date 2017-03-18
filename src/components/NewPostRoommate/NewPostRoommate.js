@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, browserHistory } from "react-router";
 import update from 'react-addons-update';
 
+
 class NewPostRoommate extends Component {
   constructor(props) {
     super(props);
