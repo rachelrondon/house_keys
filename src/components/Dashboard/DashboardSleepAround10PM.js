@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DashboardNonSmoker extends Component {
+class DashboardSleepAround10PM extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +10,7 @@ class DashboardNonSmoker extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates/nonsmoker`, {
+  fetch(`http://localhost:8000/roommates/smoker`, {
     method: 'GET'
   })
   .then((results) => {
@@ -32,36 +32,36 @@ class DashboardNonSmoker extends Component {
             return(
             <div key={roommate.id} className="">
               <div>
-                <h2>Title:{roommate.title}</h2>
+                <h2>Title: {roommate.title}</h2>
               </div>
               <div>
-                <h2>Gender:{roommate.gender}</h2>
+                <h2>Gender: {roommate.gender}</h2>
               </div>
               <div>
-                <h2>Smoker:{roommate.smoker}</h2>
+                <h2>Smoker: {roommate.smoker}</h2>
               </div>
               <div>
-                <h2>Sleep:{roommate.sleep}</h2>
+                <h2>Sleep: {roommate.sleep}</h2>
               </div>
               <div>
-                <h2>Dishes:{roommate.dishes}</h2>
+                <h2>Dishes: {roommate.dishes}</h2>
               </div>
               <div>
                 <h2>Toilet Paper: {roommate.toilet_paper}</h2>
               </div>
               <div>
-                <h2>Age:{roommate.age}</h2>
+                <h2>Age: {roommate.age}</h2>
               </div>
               <div>
-                <h2>Wallet:{roommate.wallet}</h2>
+                <h2>Wallet: {roommate.wallet}</h2>
               </div>
           </div>
             );
           })}
-      </div>
+        </div>
   </div>
     );
   }
 }
 
-export default DashboardNonSmoker;
+export default DashboardSleepAround10PM;

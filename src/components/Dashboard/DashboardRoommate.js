@@ -3,6 +3,8 @@ import update from 'react-addons-update';
 import { Link } from "react-router";
 import { browserHistory } from 'react-router';
 
+import Dashboard from './Dashboard';
+
 import DashboardSmoker from './DashboardSmoker';
 import DashboardNonSmoker from './DashboardNonSmoker';
 
@@ -10,14 +12,22 @@ import DashboardGenderMale from './DashboardGenderMale';
 import DashboardGenderFemale from './DashboardGenderFemale';
 
 import DashboardSleepBefore10PM from './DashboardSleepBefore10PM';
-import DashboardDishes from './DashboardDishes';
+import DashboardSleepAround10PM from './DashboardSleepAround10PM';
+
+import DashboardDishesAfterEveryMeal from './DashboardDishesAfterEveryMeal';
+import DashboardDishesSinkFull from './DashboardDishesSinkFull';
+
 import DashboardToiletPaper from './DashboardToiletPaper';
+
+import DashboardCharmin from './DashboardCharmin';
 // import DashboardAge from './DashboardAge';
 import DashboardWallet from './DashboardWallet';
 
 import DashboardAge21to30 from "./DashboardAge21to30";
 import DashboardAge31to40 from "./DashboardAge31to40";
 import DashboardAge40Plus from "./DashboardAge40Plus";
+
+import DashboardRMAge21to30 from "./DashboardRMAge21to30";
 
 class DashboardRoommate extends Component {
   constructor(props) {
@@ -40,6 +50,79 @@ class DashboardRoommate extends Component {
   .catch((err) => {
     console.log(err);
   });
+}
+
+
+handleDishesAfterEveryMealClick() {
+  this.setState({
+    dishesAfterEveryMealClick: true,
+    smokerClick: false,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderDishesAfterEveryMeal() {
+  if(this.state.dishesAfterEveryMealClick) {
+    return(
+      <DashboardDishesAfterEveryMeal />
+    )
+  }
+}
+
+
+handleDishesSinkFullClick() {
+  this.setState({
+    dishesSinkFullClick: true,
+    smokerClick: false,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderDishesSinkFull() {
+  if(this.state.dishesSinkFullClick) {
+    return(
+      <DashboardDishesSinkFull />
+    )
+  }
+}
+
+handleRM21to30Click() {
+  this.setState({
+    RM21to30Click: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderRM21to30() {
+  if(this.state.RM21to30Click) {
+    return(
+      <DashboardRMAge21to30 />
+    )
+  }
 }
 
 handleSmokerClick() {
@@ -105,6 +188,29 @@ handleGenderMaleClick() {
   })
 }
 
+handleCharminClick() {
+  this.setState({
+    charminClick: true,
+    genderMaleClick: false,
+    smokerClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderCharmin () {
+  if(this.state.charminClick) {
+    return(
+      <DashboardCharmin />
+    )
+  }
+}
+
 handleGenderFemaleClick() {
   this.setState({
     genderFemaleClick: true,
@@ -139,6 +245,7 @@ renderGenderMale() {
 handleSleepBefore10PMClick() {
   this.setState({
     SleepBefore10PMClick: true,
+    SleepAround10PMClick: false,
     genderMaleClick: false,
     genderFemaleClick: false,
     smokerClick: false,
@@ -158,6 +265,31 @@ renderSleepBefore10PM() {
     )
   }
 }
+
+handleSleepAround10PMClick() {
+  this.setState({
+    SleepAround10PMClick: true,
+    SleepBefore10PMClick: false,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    smokerClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderSleepAround10PM() {
+  if(this.state.SleepAround10PMClick) {
+    return(
+      <DashboardSleepAround10PM />
+    )
+  }
+}
+
 
 handleDishesClick() {
   this.setState({
@@ -274,6 +406,31 @@ renderAge40Plus () {
   }
 }
 
+
+handleGenderFemaleClick() {
+  this.setState({
+    genderFemaleClick: true,
+    genderMaleClick: false,
+    smokerClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderGenderFemale () {
+  if(this.state.genderFemaleClick) {
+    return(
+      <DashboardGenderFemale />
+    )
+  }
+}
+
+
 handleWalletClick() {
   this.setState({
     walletClick: true,
@@ -300,67 +457,112 @@ renderWallet() {
   render(){
     return(
       <div>
-        <div>
+
+          <div>
+            <button onClick={this.handleDishesAfterEveryMealClick.bind(this)} >
+              Dishes After Every Meal
+            </button>
+          </div>
+          {this.renderDishesAfterEveryMeal()}
+
+          <div>
+            <button onClick={this.handleDishesSinkFullClick.bind(this)} >
+              Dishes Sink Full
+            </button>
+          </div>
+          {this.renderDishesSinkFull()}
+
+          <div>
+            <button onClick={this.handleCharminClick.bind(this)} >
+              Charmin
+            </button>
+          </div>
+          {this.renderCharmin()}
+
           <div>
             <button onClick={this.handleSmokerClick.bind(this)} >
               Smoker
             </button>
           </div>
           {this.renderSmoker()}
+
           <div>
             <button onClick={this.handleNonSmokerClick.bind(this)} >
               Non Smoker
             </button>
           </div>
           {this.renderNonSmoker()}
+
           <div>
             <button onClick={this.handleGenderMaleClick.bind(this)} >
               Male
             </button>
           </div>
           {this.renderGenderMale()}
+
           <div>
             <button onClick={this.handleGenderFemaleClick.bind(this)} >
               Female
             </button>
           </div>
           {this.renderGenderFemale()}
+
           <div>
             <button onClick={this.handleSleepBefore10PMClick.bind(this)} >
               Sleep Before 10PM
             </button>
           </div>
           {this.renderSleepBefore10PM()}
+
+          <div>
+            <button onClick={this.handleSleepAround10PMClick.bind(this)} >
+              Sleep Around 10PM
+            </button>
+          </div>
+          {this.renderSleepAround10PM()}
+
           <div>
             <button onClick={this.handleDishesClick.bind(this)} >
               Dishes
             </button>
           </div>
           {this.renderDishes()}
+
           <div>
             <button onClick={this.handleToiletPaperClick.bind(this)} >
               Toilet Paper
             </button>
           </div>
           {this.renderToiletPaper()}
+
           <div>
             <button onClick={this.handleAge21to30Click.bind(this)} >
-              Age 21 - 30
+              Age 21 - 30 - Do Not Use
             </button>
           </div>
           {this.renderAge21to30()}
+
           <div>
             <button onClick={this.handleAge31to40Click.bind(this)} >
               Age 31 - 40
             </button>
           </div>
           {this.renderAge31to40()}
+
           <div>
             <button onClick={this.handleAge40PlusClick.bind(this)} >
               Age 40 +
             </button>
           </div>
           {this.renderAge40Plus()}
+
+          <div>
+            <button onClick={this.handleRM21to30Click.bind(this)} >
+              Age 21 to 30
+            </button>
+          </div>
+          {this.renderRM21to30()}
+
           <div>
             <button onClick={this.handleWalletClick.bind(this)} >
               Wallet
@@ -395,35 +597,35 @@ renderWallet() {
            );
           })} */}
       {/* </div> */}
-    </div>
-      <div className="container">
+    {/* </div> */}
+     <div className="container">
         {this.state.roommates.map((roommate) => {
           console.log(roommate.id);
           return(
           <div key={roommate.id} className="">
             <div>
-              <h2>Title:{roommate.title}</h2>
+              <h2>Title: {roommate.title}</h2>
             </div>
             <div>
-              <h2>Gender:{roommate.gender}</h2>
+              <h2>Gender: {roommate.gender}</h2>
             </div>
             <div>
-              <h2>Smoker:{roommate.smoker}</h2>
+              <h2>Smoker: {roommate.smoker}</h2>
             </div>
             <div>
-              <h2>Sleep:{roommate.sleep}</h2>
+              <h2>Sleep: {roommate.sleep}</h2>
             </div>
             <div>
-              <h2>Dishes:{roommate.dishes}</h2>
+              <h2>Dishes: {roommate.dishes}</h2>
             </div>
             <div>
-              <h2>Toilet Paper:{roommate.toilet_paper}</h2>
+              <h2>Toilet Paper: {roommate.toilet_paper}</h2>
             </div>
             <div>
-              <h2>Age:{roommate.age}</h2>
+              <h2>Age: {roommate.age}</h2>
             </div>
             <div>
-              <h2>Wallet:{roommate.wallet}</h2>
+              <h2>Wallet: {roommate.wallet}</h2>
             </div>
         </div>
           );

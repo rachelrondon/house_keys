@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DashboardFemale extends Component {
+class DishesAfterEveryMeal extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +10,7 @@ class DashboardFemale extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates/female`, {
+  fetch(`http://localhost:8000/roommates`, {
     method: 'GET'
   })
   .then((results) => {
@@ -64,4 +64,4 @@ class DashboardFemale extends Component {
   }
 }
 
-export default DashboardFemale;
+export default DishesAfterEveryMeal;
