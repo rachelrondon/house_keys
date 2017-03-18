@@ -294,8 +294,8 @@ renderWallet() {
         })}
     </div>
   </div>
-  );
- }
+    );
+  }
 }
 
 export default DashboardRoommate;

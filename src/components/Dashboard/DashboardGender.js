@@ -32,7 +32,7 @@ class DashboardGender extends Component {
           return(
           <div key={roommate.id} className="">
             <div>
-              <h2>Gender:{roommate.gender}</h2>
+              <h2>Gender:{roommate.gender.male}</h2>
             </div>
         </div>
          );

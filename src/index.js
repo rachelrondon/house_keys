@@ -5,6 +5,8 @@ import { Route, Router, browserHistory } from "react-router";
 import './Vendor/milligram/css/milligram.css';
 import './Style/Style.css';
 
+// Here we are importing the 7 views
+
 // Here we are importing the ten views
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';

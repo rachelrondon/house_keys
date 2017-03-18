@@ -6,26 +6,33 @@ import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
 import DashboardSmoker from './DashboardSmoker';
 
-
-
 class Dashboard extends Component {
   constructor(props) {
     super(props);
 
+    console.log(props)
+
     this.state = {
       apartments: [],
       roommates: [],
+      user: {}
     };
   }
 
   componentWillMount() {
     if (!localStorage.getItem('token')) {
         browserHistory.push('/login');
+
+    } else {
+      console.log('Dashboard User', userObj)
+      let userObj = JSON.parse(window.localStorage.user);
+      this.setState({user: userObj})
     }
   }
 
   logout() {
     window.localStorage.removeItem('token');
+    window.localStorage.removeItem('user');
     browserHistory.push('/');
   }
 
@@ -63,10 +70,13 @@ class Dashboard extends Component {
     return(
       <div>
         <nav>
-          <h1> Welcome, {this.props.location.state.user.first_name}</h1>
+          <h1> Welcome, {this.state.user.first_name}</h1>
         </nav>
-        <Link to="user/new/apartment">New Apartment Post</Link><br />
-        <Link to="user/new/roommate">New Roomate Post</Link><br />
+        <div className="collection">
+          <Link className="collection-item" to="/user/new/apartment">Add New Apartment</Link><br />
+          <Link className="collection-item" to="/user/new/roommate">Add New Roommate</Link>
+        </div>
+
       <div>
         <button onClick={this.handleApartmentClick.bind(this)} >
           Apartment
