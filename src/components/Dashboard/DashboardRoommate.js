@@ -13,6 +13,7 @@ import DashboardGenderFemale from './DashboardGenderFemale';
 
 import DashboardSleepBefore10PM from './DashboardSleepBefore10PM';
 import DashboardSleepAround10PM from './DashboardSleepAround10PM';
+import DashboardSleepAfterMidnight from './DashboardSleepAfterMidnight';
 
 import DashboardDishesAfterEveryMeal from './DashboardDishesAfterEveryMeal';
 import DashboardDishesSinkFull from './DashboardDishesSinkFull';
@@ -439,6 +440,30 @@ renderGenderMale() {
   }
 }
 
+handleSleepAfterMidnightClick() {
+  this.setState({
+    SleepAfterMidnightClick: true,
+    SleepAround10PMClick: false,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    smokerClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderSleepAfterMidnight() {
+  if(this.state.SleepAfterMidnightClick) {
+    return(
+      <DashboardSleepAfterMidnight />
+    )
+  }
+}
+
 handleSleepBefore10PMClick() {
   this.setState({
     SleepBefore10PMClick: true,
@@ -740,6 +765,13 @@ renderWallet() {
             </button>
           </div>
           {this.renderSleepBefore10PM()}
+
+      <div>
+        <button onClick={this.handleSleepAfterMidnightClick.bind(this)} >
+          Sleep After Midnight
+        </button>
+      </div>
+      {this.renderSleepAfterMidnight()}
 
           <div>
             <button onClick={this.handleSleepAround10PMClick.bind(this)} >
