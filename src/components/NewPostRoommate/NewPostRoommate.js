@@ -114,7 +114,7 @@ handleSubmit(event) {
           <select name="dishes" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
             <option value="After every meal">After every meal</option>
-            <option value="Everday">Everday</option>
+            <option value="Everyday">Everyday</option>
             <option value="When the sink is full">When the sink is full</option>
             <option value="What are dishes?!">What are dishes?!</option>
           </select>
