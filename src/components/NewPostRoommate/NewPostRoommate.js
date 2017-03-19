@@ -76,7 +76,7 @@ handleSubmit(event) {
             Title
           </div>
           <div>
-            <input name="title" placeholder="title" onChange={this.handleChange.bind(this)}></input>
+            <input type="text" name="title" placeholder="title" onChange={this.handleChange.bind(this)}></input>
           </div>
           <div className="">
             Email
@@ -106,14 +106,18 @@ handleSubmit(event) {
             <option value=""></option>
             <option value="Before 10pm">Before 10pm</option>
             <option value="Around 10pm">Around 10pm</option>
-            <option value="After Midnight">After midnight</option>
+            <option value="After Midnight">After Midnight</option>
           </select>
         </div>
         <div>
           <h3>Dishes</h3>
           <select name="dishes" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
+<<<<<<< HEAD
             <option value="After every meal">After every meal</option>
+=======
+            <option value="After Every Meal">After Every Meal</option>
+>>>>>>> 840856133cd92cefb33ff7fa11409777cc05bd5b
             <option value="Everyday">Everyday</option>
             <option value="When the sink is full">When the sink is full</option>
             <option value="What are dishes?!">What are dishes?!</option>
@@ -132,9 +136,9 @@ handleSubmit(event) {
           <h3>Age</h3>
           <select name="age" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="21 -30">21 -30</option>
+            <option value="21 - 30">21 - 30</option>
             <option value="31 - 40">31 - 40</option>
-            <option value="41 +">41 +</option>
+            <option value="41+">41+</option>
           </select>
         </div>
         <div>
@@ -144,7 +148,7 @@ handleSubmit(event) {
             <option value="$800 - $1000">$800 - $1000</option>
             <option value="$1001 - $1500">$1001 - $1500</option>
             <option value="$1501 - $2000">$1501 - $2000</option>
-            <option value="$2000 +">$2000 +</option>
+            <option value="$2000+">$2000+</option>
           </select>
         </div>
         <button href="/dashboard" type="submit">Submit</button>
