@@ -10,7 +10,7 @@ class DashboardDishesSinkFull extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates/smoker`, {
+  fetch(`http://localhost:8000/roommates/dishessinkfull`, {
     method: 'GET'
   })
   .then((results) => {
