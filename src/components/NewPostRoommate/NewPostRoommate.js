@@ -10,6 +10,7 @@ class NewPostRoommate extends Component {
     this.state = {
       roommate: {
           title: '',
+          email: '',
           gender: '',
           smoker: '',
           sleep: '',
@@ -77,15 +78,21 @@ handleSubmit(event) {
           <div>
             <input type="text" name="title" placeholder="title" onChange={this.handleChange.bind(this)}></input>
           </div>
-        <div>
-          <h3>Gender</h3>
-          <select name="gender" onChange={this.handleChange.bind(this)}>
-            <option value=""></option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-          </select>
-        </div>
-        <div>
+          <div className="">
+            Email
+          </div>
+          <div className="">
+            <input name="email" type="text" placeholder="Email" onChange={this.handleChange.bind(this)}></input>
+          </div>
+          <div>
+            <h3>Gender</h3>
+            <select name="gender" onChange={this.handleChange.bind(this)}>
+              <option value=""></option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div>
           <h3>Smoke?</h3>
           <select name="smoker" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
