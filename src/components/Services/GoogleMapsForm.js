@@ -9,43 +9,49 @@ class GoogleMapsForm extends Component {
   constructor(props) {
     super(props)
 
-    this.state={
-      address: ''
-    }
+    this.state = {
+      address: '',
+      latLong: ''
+    };
   }
-  // this is sample code to find json object in
-  // google mapes geocode
-  handleSubmit(event) {
-    console.log('i\'ve been clicked!');
-    event.preventDefault();
 
-    fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=1600+Pennsylvania+Ave+NW,+Washington,+DC+20500&key=${key}`)
-      .then((taco) => taco.json()
-        .then((newTaco) => {
-            console.log(newTaco);
-            // console.log("latitude for the boys:", newTaco.results[0].geometry.location.lat);
-            // console.log("where my tudes at?:", newTaco.results[0].geometry.location.lat);
-        })
-      );
-    }
+  // ******* SAMPLE FOR GOOGLE MAPS GEOCODE *********
+
+  // searchLatLong(location) {
+  //   fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${key}`)
+  //   .then(r => r.json())
+  //   .then((data) => {
+  //     this.setState({ latLong: `${data.results[0].geometry.location.lat} ${data.results[0].geometry.location.lng}` })
+  //     console.log(this.state.latLong);
+  //     // console.log("latitude for the boys:", newTaco.results[0].geometry.location.lat);
+  //     // console.log("where my tudes at?:", newTaco.results[0].geometry.location.lat);
+  //   })
+  // };
+  //
+  // handleLatLong(event) {
+  //   console.log('i\'ve been clicked!');
+  //   event.preventDefault();
+  //   this.searchLatLong(this.state.address);
+  //   this.setState({ address: '' });
+  // }
+
+
 
   render() {
-    return(
+    let address = this.props.address
+    if (!address) {
+      address = 'New York'
+    }
+    console.log(address)
+    return (
       <div>
-        <form>
-          <button onClick={this.handleSubmit.bind(this)}>
-            click me
-          </button>
-        </form>
+        <iframe
+          width="600"
+          height="450"
+          frameBorder="0"
+          src={`https://www.google.com/maps/embed/v1/place?key=${key}&q=${address}`} >
+        </iframe>
       </div>
-      // <div>
-      //   <iframe
-      //     width="600"
-      //     height="450"
-      //     frameBorder="0"
-      //     src={`https://www.google.com/maps/embed/v1/place?key=${key}&q=33+Charles+St,+Malverne,+NY`} >
-      //   </iframe>
-      // </div>
 
 
     )

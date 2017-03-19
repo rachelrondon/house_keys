@@ -51,8 +51,8 @@ class DashboardApartments extends Component {
         })}
     </div>
   </div>
-    );
-  }
+  );
+}
 }
 
 export default DashboardApartments;

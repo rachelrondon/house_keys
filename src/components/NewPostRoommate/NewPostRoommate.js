@@ -75,7 +75,7 @@ handleSubmit(event) {
             Title
           </div>
           <div>
-            <input name="title" placeholder="title" onChange={this.handleChange.bind(this)}></input>
+            <input type="text" name="title" placeholder="title" onChange={this.handleChange.bind(this)}></input>
           </div>
         <div>
           <h3>Gender</h3>
