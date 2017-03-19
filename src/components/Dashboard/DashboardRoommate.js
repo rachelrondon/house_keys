@@ -20,6 +20,7 @@ import DashboardDishesSinkFull from './DashboardDishesSinkFull';
 import DashboardToiletPaper from './DashboardToiletPaper';
 
 import DashboardCharmin from './DashboardCharmin';
+import DashboardScotts from './DashboardScotts';
 // import DashboardAge from './DashboardAge';
 import DashboardWallet from './DashboardWallet';
 
@@ -284,6 +285,29 @@ handleGenderMaleClick() {
     roommateClick: false,
     apartmentClick: false
   })
+}
+
+handleScottsClick() {
+  this.setState({
+    scottsClick: true,
+    genderMaleClick: false,
+    smokerClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderScotts () {
+  if(this.state.scottsClick) {
+    return(
+      <DashboardScotts />
+    )
+  }
 }
 
 handleCharminClick() {
@@ -576,6 +600,15 @@ renderWallet() {
             </button>
           </div>
           {this.renderCharmin()}
+
+
+
+        <div>
+          <button onClick={this.handleScottsClick.bind(this)} >
+            Scotts
+          </button>
+        </div>
+        {this.renderScotts()}
 
           <div>
             <button onClick={this.handleSmokerClick.bind(this)} >
