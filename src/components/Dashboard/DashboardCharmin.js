@@ -10,7 +10,7 @@ class DashboardCharmin extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates/smoker`, {
+  fetch(`http://localhost:8000/roommates/charmin`, {
     method: 'GET'
   })
   .then((results) => {
