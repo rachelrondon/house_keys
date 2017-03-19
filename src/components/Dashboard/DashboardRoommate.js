@@ -797,7 +797,7 @@ renderSleepAround10PM() {
     return(
       <div>
         <div className="db-buttons">
-          <div className="db-gender">
+          <div className="db-gender">Gender
             <div>
                 <button className="db-button" onClick={this.handleGenderMaleClick.bind(this)} >
                   Male
@@ -811,7 +811,7 @@ renderSleepAround10PM() {
             </div>
           </div>
 
-          <div className="db-age">
+          <div className="db-age">Age
             <dl>
               <div>
                 <dt>
@@ -839,7 +839,7 @@ renderSleepAround10PM() {
             </dl>
           </div>
 
-          <div className="db-smoke">
+          <div className="db-smoke">Smoke?
             <div>
               <button className="db-button" onClick={this.handleSmokerClick.bind(this)} >
                 Smoker
@@ -853,7 +853,7 @@ renderSleepAround10PM() {
             </div>
           </div>
 
-          <div className="db-sleeping">
+          <div className="db-sleeping">Bedtime
             <dl>
               <div>
                 <dt>
@@ -873,7 +873,7 @@ renderSleepAround10PM() {
 
               <div>
                 <dt>
-                  <button onClick={this.handleSleepAround10PMClick.bind(this)} >
+                  <button className="db-button" onClick={this.handleSleepAround10PMClick.bind(this)} >
                     Sleep Around 10PM
                   </button>
                 </dt>
@@ -881,7 +881,7 @@ renderSleepAround10PM() {
             </dl>
           </div>
 
-          <div className="db-rent">
+          <div className="db-rent">Rent
             <div>
               <dt>
                 <button className="db-button" onClick={this.handleRent800to1000Click.bind(this)} >
@@ -915,7 +915,7 @@ renderSleepAround10PM() {
             </div>
           </div>
 
-          <div className="db-dishes">
+          <div className="db-dishes">Dishes
             <div>
                 <button className="db-button" onClick={this.handleDishesAfterEveryMealClick.bind(this)} >
                   Dishes After Every Meal
@@ -941,22 +941,22 @@ renderSleepAround10PM() {
             </div>
         </div>
 
-          <div className="db-toilet-paper">
+          <div className="db-toilet-paper">Toilet Paper
               <div>
                   <button className="db-button" onClick={this.handleCharminClick.bind(this)} >
-                    Charmin Toilet Paper
+                    Charmin
                   </button>
               </div>
 
               <div>
                   <button className="db-button" onClick={this.handleScottsClick.bind(this)} >
-                    Scotts Toilet Paper
+                    Scotts
                   </button>
               </div>
 
               <div>
                   <button className="db-button" onClick={this.handleGenericClick.bind(this)} >
-                    Generic Toilet Paper
+                    Generic
                   </button>
               </div>
           </div>

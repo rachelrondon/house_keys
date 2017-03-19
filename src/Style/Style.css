@@ -91,5 +91,10 @@ body {
 
 .db-buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.db-button {
+  width: 100%;
 }
