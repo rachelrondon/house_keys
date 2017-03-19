@@ -14,15 +14,8 @@ class NewPostApartment extends Component {
 
       // console.log(props);
       this.state = {
-        apartment: {
-          title: '',
-          address: '',
-          rent: 500,
-          description: '',
-          photo: '',
-          user_id: 1
-        },
-        latlong: ''
+        apartment: {},
+        latLong: ''
       };
     }
 
