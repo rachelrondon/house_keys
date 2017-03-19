@@ -56,7 +56,6 @@ class Dashboard extends Component {
     this.setState({
       roommateClick: true,
       apartmentClick: false,
-      // smokerClick: false
     })
   }
 
@@ -64,6 +63,7 @@ class Dashboard extends Component {
     if(this.state.roommateClick) {
       return(
         <DashboardRoommate />
+      
       )
     }
   }
