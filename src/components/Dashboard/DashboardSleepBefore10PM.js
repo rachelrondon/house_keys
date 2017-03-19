@@ -25,40 +25,6 @@ class DashboardSleepBefore10PM extends Component {
   render(){
     return(
       <div>
-        <div className="container">
-          {this.state.roommates.map((roommate) => {
-            console.log(roommate.id);
-            return(
-              <div key={roommate.id} className="">
-                <div>
-                  <h2>Title: {roommate.title}</h2>
-                </div>
-                <div>
-                  <h2>Gender: {roommate.gender}</h2>
-                </div>
-                <div>
-                  <h2>Smoker: {roommate.smoker}</h2>
-                </div>
-                <div>
-                  <h2>Sleep: {roommate.sleep}</h2>
-                </div>
-                <div>
-                  <h2>Dishes: {roommate.dishes}</h2>
-                </div>
-                <div>
-                  <h2>Toilet Paper: {roommate.toilet_paper}</h2>
-                </div>
-                <div>
-                  <h2>Age: {roommate.age}</h2>
-                </div>
-                <div>
-                  <h2>Wallet: {roommate.wallet}</h2>
-                </div>
-            </div>
-            );
-          })}
-      </div>
-
            {this.state.roommates.map((roommate) => {
              console.log(roommate.id);
              return(
@@ -86,7 +52,6 @@ class DashboardSleepBefore10PM extends Component {
                      <td>{roommate.toilet_paper}</td>
                      <td>{roommate.age}</td>
                      <td>{roommate.wallet}</td>
-                     <td>{roommate.email}</td>
                    </tr>
                  </tbody>
               </table>

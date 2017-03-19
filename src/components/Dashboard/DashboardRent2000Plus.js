@@ -54,7 +54,6 @@ class DashboardRent2000plus extends Component {
                      <td>{roommate.toilet_paper}</td>
                      <td>{roommate.age}</td>
                      <td>{roommate.wallet}</td>
-                     <td>{roommate.email}</td>
                    </tr>
                  </tbody>
               </table>

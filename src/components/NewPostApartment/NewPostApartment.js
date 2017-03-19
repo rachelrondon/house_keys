@@ -126,6 +126,12 @@ render(){
             <div className="">
               <input name="photo" type="text" placeholder="Add photo" onChange={this.handleChange.bind(this)}></input>
             </div>
+            <div className="">
+              Email
+            </div>
+            <div className="">
+              <input name="email" type="text" placeholder="Email" onChange={this.handleChange.bind(this)}></input>
+            </div>
             <button  type="submit">Submit</button>
           </form>
           <GoogleMapsForm address={this.state.apartment.address} />
