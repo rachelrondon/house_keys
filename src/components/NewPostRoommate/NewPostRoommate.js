@@ -113,7 +113,7 @@ handleSubmit(event) {
           <h3>Dishes</h3>
           <select name="dishes" onChange={this.handleChange.bind(this)}>
             <option value=""></option>
-            <option value="After Every Meal">After Every Meal</option>
+            <option value="After every meal">After every meal</option>
             <option value="Everyday">Everyday</option>
             <option value="When the sink is full">When the sink is full</option>
             <option value="What are dishes?!">What are dishes?!</option>
@@ -146,6 +146,12 @@ handleSubmit(event) {
             <option value="$1501 - $2000">$1501 - $2000</option>
             <option value="$2000+">$2000+</option>
           </select>
+        </div>
+        <div>
+          <h3>Email</h3>
+          <input
+            name="email"
+            onChange={this.handleChange.bind(this)}></input>
         </div>
         <button href="/dashboard" type="submit">Submit</button>
       </form>
