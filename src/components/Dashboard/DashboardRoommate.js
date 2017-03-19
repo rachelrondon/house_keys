@@ -3,13 +3,36 @@ import update from 'react-addons-update';
 import { Link } from "react-router";
 import { browserHistory } from 'react-router';
 
+import Dashboard from './Dashboard';
+
+// List of 21 components that render onClick
 import DashboardSmoker from './DashboardSmoker';
-import DashboardGender from './DashboardGender';
-import DashboardSleep from './DashboardSleep';
-import DashboardDishes from './DashboardDishes';
-import DashboardToiletPaper from './DashboardToiletPaper';
-import DashboardAge from './DashboardAge';
-import DashboardWallet from './DashboardWallet';
+import DashboardNonSmoker from './DashboardNonSmoker';
+
+import DashboardGenderMale from './DashboardGenderMale';
+import DashboardGenderFemale from './DashboardGenderFemale';
+
+import DashboardSleepBefore10PM from './DashboardSleepBefore10PM';
+import DashboardSleepAround10PM from './DashboardSleepAround10PM';
+import DashboardSleepAfterMidnight from './DashboardSleepAfterMidnight';
+
+import DashboardDishesAfterEveryMeal from './DashboardDishesAfterEveryMeal';
+import DashboardDishesSinkFull from './DashboardDishesSinkFull';
+import DashboardDishesEveryday from './DashboardDishesEveryday';
+import DashboardWhatAreDishes from './DashboardWhatAreDishes';
+
+import DashboardCharmin from './DashboardCharmin';
+import DashboardScotts from './DashboardScotts';
+import DashboardGeneric from './DashboardGeneric';
+
+import DashboardRMAge21to30 from "./DashboardRMAge21to30";
+import DashboardAge31to40 from "./DashboardAge31to40";
+import DashboardAge40Plus from "./DashboardAge40Plus";
+
+import DashboardRent800to1000 from "./DashboardRent800to1000";
+import DashboardRent1001to1500 from "./DashboardRent1001to1500";
+import DashboardRent1501to2000 from "./DashboardRent1501to2000";
+import DashboardRent2000Plus from "./DashboardRent2000Plus";
 
 
 class DashboardRoommate extends Component {
@@ -18,7 +41,7 @@ class DashboardRoommate extends Component {
 
     this.state = {
       roommates: []
-    }
+    };
   }
 
   componentDidMount() {
@@ -32,20 +55,419 @@ class DashboardRoommate extends Component {
   })
   .catch((err) => {
     console.log(err);
+  });
+}
+
+// Beginning of Age Components
+handleRM21to30Click() {
+  this.setState({
+    RM21to30Click: true,
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
   })
 }
 
+renderRM21to30() {
+  if(this.state.RM21to30Click) {
+    return(
+      <DashboardRMAge21to30 />
+    )
+  }
+}
+
+handleAge31to40Click() {
+  this.setState({
+    age31to40Click: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    RM21to30Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderAge31to40() {
+  if(this.state.age31to40Click) {
+    return(
+      <DashboardAge31to40 />
+    )
+  }
+}
+
+handleAge40PlusClick() {
+  this.setState({
+    age40PlusClick: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderAge40Plus () {
+  if(this.state.age40PlusClick) {
+    return(
+      <DashboardAge40Plus />
+    )
+  }
+}
+// End of Age Components
+
+
+// Beginning of Components related to washing dishes
+handleWhatAreDishesClick() {
+  this.setState({
+    whatAreDishesClick: true,
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesSinkFullClick: false,
+    dishesEverydayClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderWhatAreDishes() {
+  if(this.state.whatAreDishesClick) {
+    return(
+      <DashboardWhatAreDishes />
+    )
+  }
+}
+
+handleDishesAfterEveryMealClick() {
+  this.setState({
+    dishesAfterEveryMealClick: true,
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderDishesAfterEveryMeal() {
+  if(this.state.dishesAfterEveryMealClick) {
+    return(
+      <DashboardDishesAfterEveryMeal />
+    )
+  }
+}
+
+handleDishesSinkFullClick() {
+  this.setState({
+    dishesSinkFullClick: true,
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderDishesSinkFull() {
+  if(this.state.dishesSinkFullClick) {
+    return(
+      <DashboardDishesSinkFull />
+    )
+  }
+}
+
+handleDishesEverydayClick() {
+  this.setState({
+    dishesEverydayClick: true,
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderDishesEveryday() {
+  if(this.state.dishesEverydayClick) {
+    return(
+      <DashboardDishesEveryday />
+    )
+  }
+}
+
+// End of Components related to washing dishes
+
+
+// Beginning of Components related to rent
+
+handleRent2000PlusClick() {
+  this.setState({
+    Rent2000PlusClick: true,
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+  })
+}
+
+renderRent2000Plus() {
+  if(this.state.Rent2000PlusClick) {
+    return(
+      <DashboardRent2000Plus />
+    )
+  }
+}
+
+
+handleRent800to1000Click() {
+  this.setState({
+    Rent800to1000Click: true,
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderRent800to1000() {
+  if(this.state.Rent800to1000Click) {
+    return(
+      <DashboardRent800to1000 />
+    )
+  }
+}
+
+handleRent1001to1500Click() {
+  this.setState({
+    Rent1001to1500Click: true,
+    Rent800to1000Click: false,
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderRent1001to1500() {
+  if(this.state.Rent1001to1500Click) {
+    return(
+      <DashboardRent1001to1500 />
+    )
+  }
+}
+
+handleRent1501to2000Click() {
+  this.setState({
+    rent1501to2000Click: true,
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+
+renderRent1501to2000() {
+  if(this.state.rent1501to2000Click) {
+    return(
+      <DashboardRent1501to2000 />
+    )
+  }
+}
+// End of Components related to rent
+
+// Beginning of Components related to smoking
 handleSmokerClick() {
   this.setState({
     smokerClick: true,
-    genderClick: false,
-    sleepClick: false,
-    dishesClick: false,
-    toiletpaperClick: false,
-    ageClick: false,
-    walletClick: false,
-    roommateClick: false,
-    apartmentClick: false
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
   })
 }
 
@@ -57,251 +479,548 @@ renderSmoker() {
   }
 }
 
-handleGenderClick() {
+handleNonSmokerClick() {
   this.setState({
-    genderClick: true,
+    nonSmokerClick: true,
     smokerClick: false,
-    sleepClick: false,
-    dishesClick: false,
-    toiletpaperClick: false,
-    ageClick: false,
-    walletClick: false,
-    roommateClick: false,
-    apartmentClick: false
+    genderFemaleClick: false,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
   })
 }
 
-renderGender() {
-  if(this.state.genderClick) {
+renderNonSmoker() {
+  if(this.state.nonSmokerClick) {
     return(
-      <DashboardGender />
+      <DashboardNonSmoker />
+    )
+  }
+}
+// End of Components related to smoking
+
+// Beginning of Components related to gender
+handleGenderMaleClick() {
+  this.setState({
+    genderMaleClick: true,
+    genderFemaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderGenderMale() {
+  if(this.state.genderMaleClick) {
+    return(
+      <DashboardGenderMale />
     )
   }
 }
 
-handleSleepClick() {
+handleGenderFemaleClick() {
   this.setState({
-    sleepClick: true,
-    genderClick: false,
+    genderFemaleClick: true,
+    genderMaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
     smokerClick: false,
-    dishesClick: false,
-    toiletpaperClick: false,
-    ageClick: false,
-    walletClick: false,
-    roommateClick: false,
-    apartmentClick: false
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
   })
 }
 
-renderSleep() {
-  if(this.state.sleepClick) {
+renderGenderFemale () {
+  if(this.state.genderFemaleClick) {
     return(
-      <DashboardSleep />
+      <DashboardGenderFemale />
+    )
+  }
+}
+// End of Components related to gender
+
+// Beginning of Components related to toilet paper
+handleScottsClick() {
+  this.setState({
+    scottsClick: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderScotts () {
+  if(this.state.scottsClick) {
+    return(
+      <DashboardScotts />
     )
   }
 }
 
-handleDishesClick() {
+handleGenericClick() {
   this.setState({
-    dishesClick: true,
-    sleepClick: false,
-    genderClick: false,
+    genericClick: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
     smokerClick: false,
-    toiletpaperClick: false,
-    ageClick: false,
-    walletClick: false,
-    roommateClick: false,
-    apartmentClick: false
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
   })
 }
 
-renderDishes() {
-  if(this.state.dishesClick) {
+renderGeneric () {
+  if(this.state.genericClick) {
     return(
-      <DashboardDishes />
+      <DashboardGeneric />
     )
   }
 }
 
-handleToiletPaperClick() {
+handleCharminClick() {
   this.setState({
-    toiletpaperClick: true,
-    dishesClick: false,
-    sleepClick: false,
-    genderClick: false,
+    charminClick: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
     smokerClick: false,
-    ageClick: false,
-    walletClick: false,
-    roommateClick: false,
-    apartmentClick: false
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
   })
 }
 
-renderToiletPaper() {
-  if(this.state.toiletpaperClick) {
+renderCharmin () {
+  if(this.state.charminClick) {
     return(
-      <DashboardToiletPaper />
+      <DashboardCharmin />
+    )
+  }
+}
+// End of Components related to toilet paper
+
+
+// Beginning of components related to sleeping
+handleSleepAfterMidnightClick() {
+  this.setState({
+    SleepAfterMidnightClick: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
+    smokerClick: false,
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAround10PMClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
+  })
+}
+
+renderSleepAfterMidnight() {
+  if(this.state.SleepAfterMidnightClick) {
+    return(
+      <DashboardSleepAfterMidnight />
     )
   }
 }
 
-handleAgeClick() {
+handleSleepBefore10PMClick() {
   this.setState({
-    ageClick: true,
-    toiletpaperClick: false,
-    dishesClick: false,
-    sleepClick: false,
-    genderClick: false,
+    SleepBefore10PMClick: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
     smokerClick: false,
-    walletClick: false,
-    roommateClick: false,
-    apartmentClick: false
+    nonSmokerClick: false,
+    SleepAround10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
   })
 }
 
-renderAge() {
-  if(this.state.ageClick) {
+renderSleepBefore10PM() {
+  if(this.state.SleepBefore10PMClick) {
     return(
-      <DashboardAge />
+      <DashboardSleepBefore10PM />
     )
   }
 }
 
-handleWalletClick() {
+handleSleepAround10PMClick() {
   this.setState({
-    walletClick: true,
-    toiletpaperClick: false,
-    dishesClick: false,
-    sleepClick: false,
-    genderClick: false,
+    SleepAround10PMClick: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    RM21to30Click: false,
+    age31to40Click: false,
+    age40PlusClick: false,
     smokerClick: false,
-    ageClick: false,
-    roommateClick: false,
-    apartmentClick: false
+    nonSmokerClick: false,
+    SleepBefore10PMClick: false,
+    SleepAfterMidnightClick: false,
+    scottsClick: false,
+    genericClick: false,
+    charminClick: false,
+    dishesSinkFullClick: false,
+    dishesAfterEveryMealClick: false,
+    dishesEverydayClick: false,
+    whatAreDishesClick: false,
+    Rent800to1000Click: false,
+    Rent1001to1500Click: false,
+    rent1501to2000Click: false,
+    Rent2000PlusClick: false
   })
 }
 
-renderWallet() {
-  if(this.state.walletClick) {
+renderSleepAround10PM() {
+  if(this.state.SleepAround10PMClick) {
     return(
-      <DashboardWallet />
+      <DashboardSleepAround10PM />
     )
   }
 }
+// End of components related to sleeping
 
   render(){
     return(
       <div>
-        <div>
-          <div>
-            <button onClick={this.handleSmokerClick.bind(this)} >
-              Smoker
-            </button>
+        <div className="db-buttons">
+          <div className="db-gender">
+            <div>
+                <button className="db-button" onClick={this.handleGenderMaleClick.bind(this)} >
+                  Male
+                </button>
+            </div>
+
+            <div>
+                <button className="db-button" onClick={this.handleGenderFemaleClick.bind(this)} >
+                 Female
+                </button>
+            </div>
           </div>
-          {this.renderSmoker()}
-          <div>
-            <button onClick={this.handleGenderClick.bind(this)} >
-              Gender
-            </button>
+
+          <div className="db-age">
+            <dl>
+              <div>
+                <dt>
+                  <button className="db-button" onClick={this.handleAge31to40Click.bind(this)} >
+                    Age 31 - 40
+                  </button>
+                </dt>
+              </div>
+
+              <div>
+                <dt>
+                  <button className="db-button" onClick={this.handleAge40PlusClick.bind(this)} >
+                    Age 40 +
+                  </button>
+                </dt>
+              </div>
+
+              <div>
+                <dt>
+                  <button className="db-button" onClick={this.handleRM21to30Click.bind(this)} >
+                    Age 21 to 30
+                  </button>
+                </dt>
+              </div>
+            </dl>
           </div>
-          {this.renderGender()}
-          <div>
-            <button onClick={this.handleSleepClick.bind(this)} >
-              Sleep
-            </button>
+
+          <div className="db-smoke">
+            <div>
+              <button className="db-button" onClick={this.handleSmokerClick.bind(this)} >
+                Smoker
+              </button>
+            </div>
+
+            <div>
+              <button className="db-button" onClick={this.handleNonSmokerClick.bind(this)} >
+                Non Smoker
+              </button>
+            </div>
           </div>
-          {this.renderSleep()}
-          <div>
-            <button onClick={this.handleDishesClick.bind(this)} >
-              Dishes
-            </button>
+
+          <div className="db-sleeping">
+            <dl>
+              <div>
+                <dt>
+                  <button className="db-button" onClick={this.handleSleepBefore10PMClick.bind(this)} >
+                    Sleep Before 10PM
+                  </button>
+                </dt>
+              </div>
+
+              <div>
+                <dt>
+                  <button className="db-button" onClick={this.handleSleepAfterMidnightClick.bind(this)} >
+                    Sleep After Midnight
+                  </button>
+                </dt>
+              </div>
+
+              <div>
+                <dt>
+                  <button onClick={this.handleSleepAround10PMClick.bind(this)} >
+                    Sleep Around 10PM
+                  </button>
+                </dt>
+              </div>
+            </dl>
           </div>
-          {this.renderDishes()}
-          <div>
-            <button onClick={this.handleToiletPaperClick.bind(this)} >
-              Toilet Paper
-            </button>
+
+          <div className="db-rent">
+            <div>
+              <dt>
+                <button className="db-button" onClick={this.handleRent800to1000Click.bind(this)} >
+                  Rent $800 to $1000
+                </button>
+              </dt>
+            </div>
+
+            <div>
+              <dt>
+                <button className="db-button" onClick={this.handleRent1001to1500Click.bind(this)} >
+                  Rent $1001 to $1500
+                </button>
+              </dt>
+            </div>
+
+            <div>
+              <dt>
+                <button className="db-button" onClick={this.handleRent1501to2000Click.bind(this)} >
+                  Rent $1501 to $2000
+                </button>
+              </dt>
+            </div>
+
+            <div>
+              <dt>
+                <button className="db-button" onClick={this.handleRent2000PlusClick.bind(this)} >
+                  Rent $2000
+                </button>
+              </dt>
+            </div>
           </div>
-          {this.renderToiletPaper()}
-          <div>
-            <button onClick={this.handleAgeClick.bind(this)} >
-              Age
-            </button>
+
+          <div className="db-dishes">
+            <div>
+                <button className="db-button" onClick={this.handleDishesAfterEveryMealClick.bind(this)} >
+                  Dishes After Every Meal
+                </button>
+            </div>
+
+            <div>
+                <button className="db-button" onClick={this.handleDishesSinkFullClick.bind(this)} >
+                  Dishes Sink Full
+                </button>
+            </div>
+
+            <div>
+                <button className="db-button" onClick={this.handleWhatAreDishesClick.bind(this)} >
+                  What Are Dishes ?
+                </button>
+            </div>
+
+            <div>
+                <button className="db-button" onClick={this.handleDishesEverydayClick.bind(this)} >
+                  Dishes Everyday
+                </button>
+            </div>
+        </div>
+
+          <div className="db-toilet-paper">
+              <div>
+                  <button className="db-button" onClick={this.handleCharminClick.bind(this)} >
+                    Charmin Toilet Paper
+                  </button>
+              </div>
+
+              <div>
+                  <button className="db-button" onClick={this.handleScottsClick.bind(this)} >
+                    Scotts Toilet Paper
+                  </button>
+              </div>
+
+              <div>
+                  <button className="db-button" onClick={this.handleGenericClick.bind(this)} >
+                    Generic Toilet Paper
+                  </button>
+              </div>
           </div>
-          {this.renderAge()}
-          <div>
-            <button onClick={this.handleWalletClick.bind(this)} >
-              Wallet
-            </button>
-          </div>
-          {this.renderWallet()}
-        {/* <div className="container">
-          <select name="smoker">
-            <option name="1">yes</option>
-            <option name="2">no</option>
-          </select> */}
-          {/* <div className="container">
-             {this.state.roommates.map((roommate) => {
+        </div>
+        {this.renderGenderMale()}
+        {this.renderGenderFemale()}
+        {this.renderDishesAfterEveryMeal()}
+        {this.renderDishesSinkFull()}
+        {this.renderWhatAreDishes()}
+        {this.renderDishesEveryday()}
+        {this.renderCharmin()}
+        {this.renderScotts()}
+        {this.renderGeneric()}
+        {this.renderSmoker()}
+        {this.renderNonSmoker()}
+        {this.renderSleepBefore10PM()}
+        {this.renderSleepAfterMidnight()}
+        {this.renderSleepAround10PM()}
+        {this.renderAge31to40()}
+        {this.renderAge40Plus()}
+        {this.renderRM21to30()}
+        {this.renderRent800to1000()}
+        {this.renderRent1001to1500()}
+        {this.renderRent1501to2000()}
+        {this.renderRent2000Plus()}
+
+         {/* <div className="container">
+            {this.state.roommates.map((roommate) => {
               console.log(roommate.id);
               return(
               <div key={roommate.id} className="">
-                <div>
-                  <h2>Smoker:{roommate.smoker}</h2>
-                </div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Gender</th>
+                      <th>Smoker?</th>
+                      <th>Sleeping Patterns</th>
+                      <th>Dish-Washing Habits</th>
+                      <th>Toilet Paper Preference</th>
+                      <th>Age</th>
+                      <th>Wallet</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{roommate.title}</td>
+                      <td>{roommate.gender}</td>
+                      <td>{roommate.smoker}</td>
+                      <td>{roommate.sleep}</td>
+                      <td>{roommate.dishes}</td>
+                      <td>{roommate.toilet_paper}</td>
+                      <td>{roommate.age}</td>
+                      <td>{roommate.wallet}</td>
+                    </tr>
+                  </tbody>
+               </table>
             </div>
-             );
+              );
             })}
         </div> */}
-          {/* {this.state.roommates.map((roommate) => {
-            console.log(roommate.id);
-            return(
-            <div key={roommate.id} className="">
-              <div>
-                <h2>Smoker:{roommate.smoker}</h2>
-              </div>
-          </div>
-           );
-          })} */}
-      {/* </div> */}
-    </div>
-      <div className="container">
-        {this.state.roommates.map((roommate) => {
-          console.log(roommate.id);
-          return(
-          <div key={roommate.id} className="">
-            <div>
-              <h2>Title: {roommate.title}</h2>
-            </div>
-            <div>
-              <h2>Gender: {roommate.gender}</h2>
-            </div>
-            <div>
-              <h2>Smoker: {roommate.smoker}</h2>
-            </div>
-            <div>
-              <h2>Sleep: {roommate.sleep}</h2>
-            </div>
-            <div>
-              <h2>Dishes: {roommate.dishes}</h2>
-            </div>
-            <div>
-              <h2>Toilet_paper: {roommate.toilet_paper}</h2>
-            </div>
-            <div>
-              <h2>Age: {roommate.age}</h2>
-            </div>
-            <div>
-              <h2>Wallet: {roommate.wallet}</h2>
-            </div>
-        </div>
-          )
-        })}
-    </div>
-  </div>
-    )
-  // </div>
-    // );
-  }
-}
+      </div>
+        );
+      }
+    }
 
 export default DashboardRoommate;

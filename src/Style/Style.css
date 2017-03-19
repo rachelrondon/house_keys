@@ -80,3 +80,10 @@ body {
 /*.latLong {
   display: none;
 }*/
+
+/*Dashboard Buttons*/
+
+.db-buttons {
+  display: flex;
+  justify-content: space-between;
+}
