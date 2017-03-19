@@ -10,7 +10,7 @@ class DashboardSleepAround10PM extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates/smoker`, {
+  fetch(`http://localhost:8000/roommates/sleeparound10`, {
     method: 'GET'
   })
   .then((results) => {
