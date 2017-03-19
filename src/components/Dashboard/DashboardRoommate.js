@@ -812,6 +812,11 @@ renderSleepAround10PM() {
 
           <div className="db-age selection-titles">Age
             <div>
+              <div>
+                <button className="db-button" onClick={this.handleRM21to30Click.bind(this)} >
+                  Age 21 to 30
+                </button>
+              </div>
               <button className="db-button" onClick={this.handleAge31to40Click.bind(this)} >
                 Age 31 - 40
               </button>
@@ -819,11 +824,6 @@ renderSleepAround10PM() {
             <div>
               <button className="db-button" onClick={this.handleAge40PlusClick.bind(this)} >
                 Age 40 +
-              </button>
-            </div>
-            <div>
-              <button className="db-button" onClick={this.handleRM21to30Click.bind(this)} >
-                Age 21 to 30
               </button>
             </div>
           </div>
