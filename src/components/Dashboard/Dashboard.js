@@ -25,9 +25,9 @@ class Dashboard extends Component {
     if (!localStorage.getItem('token')) {
         browserHistory.push('/login');
     } else {
-      // console.log('Dashboard User', userObj)
-      // let userObj = JSON.parse(window.localStorage.user);
-      // this.setState({user: userObj})
+      console.log('Dashboard User', userObj)
+      let userObj = JSON.parse(window.localStorage.user);
+      this.setState({user: userObj})
     }
   }
 
