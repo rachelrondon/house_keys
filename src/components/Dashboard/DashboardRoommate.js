@@ -51,9 +51,7 @@ handleSmokerClick() {
     dishesClick: false,
     toiletpaperClick: false,
     ageClick: false,
-    walletClick: false,
-    roommateClick: false,
-    apartmentClick: false
+    walletClick: false
   })
 }
 
@@ -400,7 +398,7 @@ renderWallet() {
         {this.state.roommates.map((roommate) => {
           console.log(roommate.id);
           return(
-          <div key={roommate.id} className="">
+          <div key={roommate.id} id="roommate-container">
             <div>
               <h2>Title: {roommate.title}</h2>
             </div>
@@ -423,7 +421,7 @@ renderWallet() {
               <h2>Age: {roommate.age}</h2>
             </div>
             <div>
-              <h2>Wallet:{roommate.wallet}</h2>
+              <h2>Wallet: {roommate.wallet}</h2>
             </div>
         </div>
           );

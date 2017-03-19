@@ -2,6 +2,11 @@ body {
   background-color: #F4F1EA;
 }
 
+.apartment-photo {
+  height: 200px;
+  widows: 200px;
+}
+
 /*  Landing Page Styling */
 
 .landing-page-links {
@@ -74,5 +79,6 @@ body {
   bottom: 0;
   width: 110%;
 }
+
 
 /* End of Landing Page Styling */
