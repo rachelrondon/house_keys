@@ -95,43 +95,6 @@ render(){
           <Link className="collection-item" to="/dashboard">Back to Home</Link>
         </div>
 
-        <form onSubmit={this.handleSubmit.bind(this)} className="">
-          <div className="">
-            Title
-          </div>
-          <div className="">
-            <input name="title" type="text" placeholder="Title" onChange={this.handleChange.bind(this)}></input>
-          </div>
-          <div className="">
-            Address
-          </div>
-          <div className="">
-            <input name="address" type="text" placeholder="Address" onChange={this.handleChange.bind(this)}></input>
-          </div>
-          <div className="latLong" className="latLong" name="latLong" onChange={this.handleChange.bind(this)}>
-            {this.state.latLong}
-          </div>
-          <div className="">
-            Rent
-          </div>
-          <div className="">
-            <input  name="rent" type="number" placeholder="Rent" onChange={this.handleChange.bind(this)}></input>
-          </div>
-          <div className="">
-            Description
-          </div>
-          <div className="">
-            <input name="description" type="text" placeholder="Description" onChange={this.handleChange.bind(this)}></input>
-          </div>
-          <div className="">
-            Photo
-          </div>
-          <div className="">
-            <input name="photo" type="text" placeholder="Add photo" onChange={this.handleChange.bind(this)}></input>
-          </div>
-          <button  type="submit">Submit</button>
-        </form>
-
           <form onSubmit={this.handleSubmit.bind(this)} className="">
             <div className="">
               Title
@@ -166,7 +129,6 @@ render(){
             <button  type="submit">Submit</button>
           </form>
           <GoogleMapsForm address={this.state.apartment.address} />
-
       </div>
     )
   }
