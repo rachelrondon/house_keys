@@ -10,7 +10,7 @@ class DashboardRent800to1000 extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates/smoker`, {
+  fetch(`http://localhost:8000/roommates/rent800to1000`, {
     method: 'GET'
   })
   .then((results) => {
