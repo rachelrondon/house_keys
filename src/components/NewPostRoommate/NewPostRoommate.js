@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { Link, browserHistory } from "react-router";
 import update from 'react-addons-update';
@@ -146,12 +147,6 @@ handleSubmit(event) {
             <option value="$1501 - $2000">$1501 - $2000</option>
             <option value="$2000+">$2000+</option>
           </select>
-        </div>
-        <div>
-          <h3>Email</h3>
-          <input
-            name="email"
-            onChange={this.handleChange.bind(this)}></input>
         </div>
         <button href="/dashboard" type="submit">Submit</button>
       </form>
