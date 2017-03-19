@@ -11,8 +11,6 @@ const key = process.env.API_KEY;
 class NewPostApartment extends Component {
     constructor(props) {
       super(props)
-
-      // console.log(props);
       this.state = {
         apartment: {},
         latLong: ''
@@ -65,14 +63,14 @@ class NewPostApartment extends Component {
         }
       },
     });
-    // this.searchLatLong(this.state.apartment.address)
+    this.searchLatLong(this.state.apartment.address)
     console.log('Lat Long:', this.state.latLong)
     this.setState(newState);
   }
 
   handleSubmit(location) {
     location.preventDefault();
-    console.log(this.state)
+    console.log('Lat long:', this.state.latlong)
     this.searchLatLong(this.state.apartment.address)
     this.databaseSubmit();
   };
