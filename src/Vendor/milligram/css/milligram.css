@@ -37,6 +37,10 @@ blockquote *:last-child {
   margin-bottom: 0;
 }
 
+/*.button, .db-button {
+  width: 100%;
+}*/
+
 .button,
 button,
 input[type='button'],

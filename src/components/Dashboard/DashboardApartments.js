@@ -28,34 +28,34 @@ class DashboardApartments extends Component {
 render(){
   return(
   <div>
-    <div className="container">
-      {this.state.apartments.map((apartment) => {
-        return(
-        <div key={apartment.id} className="">
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Address</th>
-                <th>Rent</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{apartment.title}</td>
-                <td>{apartment.address}</td>
-                <td>$ {apartment.rent}</td>
-                <td>{apartment.description}</td>
-              </tr>
-            </tbody>
-          </table>
-          <img className="apartment-photo" src={apartment.photo} />
-        </div>
-      );
-      })}
+      <div className="container">
+        {this.state.apartments.map((apartment) => {
+          return(
+          <div key={apartment.id} className="">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Address</th>
+                  <th>Rent</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{apartment.title}</td>
+                  <td>{apartment.address}</td>
+                  <td>$ {apartment.rent}</td>
+                  <td>{apartment.description}</td>
+                </tr>
+              </tbody>
+            </table>
+            <img className="apartment-photo" src={apartment.photo} />
+          </div>
+        );
+        })}
+    </div>
   </div>
-</div>
   );
 }
 }

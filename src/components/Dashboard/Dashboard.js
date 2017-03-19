@@ -6,6 +6,7 @@ import { Link, browserHistory } from "react-router";
 import DashboardApartments from './DashboardApartments';
 import DashboardRoommate from './DashboardRoommate';
 import DashboardSmoker from './DashboardSmoker';
+import Navigation from '../Navigation/Navigation';
 
 
 class Dashboard extends Component {
@@ -28,12 +29,6 @@ class Dashboard extends Component {
       let userObj = JSON.parse(window.localStorage.user);
       this.setState({user: userObj})
     }
-  }
-
-  logout() {
-    window.localStorage.removeItem('token');
-    window.localStorage.removeItem('user');
-    browserHistory.push('/');
   }
 
   handleApartmentClick(event) {
@@ -72,28 +67,26 @@ class Dashboard extends Component {
   render(){
     return(
       <div>
-        <nav>
-          <h1> Welcome, {this.state.user.first_name}</h1>
-        </nav>
-        <div className="collection">
-          <Link className="collection-item" to="/user/new/apartment">Add New Apartment</Link><br />
-          <Link className="collection-item" to="/user/new/roommate">Add New Roommate</Link>
+      <Navigation
+        user={this.state.user}
+        className="welcome"
+      />
+
+      <div className="roommate-apartment-button">
+        <div className="params-view">
+          <button onClick={this.handleApartmentClick.bind(this)} >
+            Apartment
+          </button>
         </div>
-
-      <div>
-        <button onClick={this.handleApartmentClick.bind(this)} >
-          Apartment
-        </button>
+        <div className="params-view">
+          <button onClick={this.handleRoommateClick.bind(this)} >
+            Roommate
+          </button>
+        </div>
       </div>
 
-      <div>
-        <button onClick={this.handleRoommateClick.bind(this)} >
-          Roommate
-        </button>
-      </div>
       {this.renderApartment()}
       {this.renderRoommate()}
-      <button onClick={this.logout.bind(this)}>Logout</button>
     </div>
     )
   }

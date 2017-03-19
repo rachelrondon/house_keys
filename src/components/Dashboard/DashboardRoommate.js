@@ -797,55 +797,43 @@ renderSleepAround10PM() {
     return(
       <div>
         <div className="db-buttons">
-          <div className="db-gender">Gender
+          <div className="db-gender selection-titles">Gender
             <div>
-                <button className="db-button" onClick={this.handleGenderMaleClick.bind(this)} >
-                  Male
-                </button>
+              <button className="db-button" onClick={this.handleGenderMaleClick.bind(this)} >
+                Male
+              </button>
             </div>
-
             <div>
-                <button className="db-button" onClick={this.handleGenderFemaleClick.bind(this)} >
-                 Female
-                </button>
+              <button className="db-button" onClick={this.handleGenderFemaleClick.bind(this)} >
+               Female
+              </button>
             </div>
           </div>
 
-          <div className="db-age">Age
-            <dl>
-              <div>
-                <dt>
-                  <button className="db-button" onClick={this.handleAge31to40Click.bind(this)} >
-                    Age 31 - 40
-                  </button>
-                </dt>
-              </div>
-
-              <div>
-                <dt>
-                  <button className="db-button" onClick={this.handleAge40PlusClick.bind(this)} >
-                    Age 40 +
-                  </button>
-                </dt>
-              </div>
-
-              <div>
-                <dt>
-                  <button className="db-button" onClick={this.handleRM21to30Click.bind(this)} >
-                    Age 21 to 30
-                  </button>
-                </dt>
-              </div>
-            </dl>
+          <div className="db-age selection-titles">Age
+            <div>
+              <button className="db-button" onClick={this.handleAge31to40Click.bind(this)} >
+                Age 31 - 40
+              </button>
+            </div>
+            <div>
+              <button className="db-button" onClick={this.handleAge40PlusClick.bind(this)} >
+                Age 40 +
+              </button>
+            </div>
+            <div>
+              <button className="db-button" onClick={this.handleRM21to30Click.bind(this)} >
+                Age 21 to 30
+              </button>
+            </div>
           </div>
 
-          <div className="db-smoke">Smoke?
+          <div className="db-smoke selection-titles">Smoke?
             <div>
               <button className="db-button" onClick={this.handleSmokerClick.bind(this)} >
                 Smoker
               </button>
             </div>
-
             <div>
               <button className="db-button" onClick={this.handleNonSmokerClick.bind(this)} >
                 Non Smoker
@@ -853,112 +841,86 @@ renderSleepAround10PM() {
             </div>
           </div>
 
-          <div className="db-sleeping">Bedtime
-            <dl>
-              <div>
-                <dt>
-                  <button className="db-button" onClick={this.handleSleepBefore10PMClick.bind(this)} >
-                    Sleep Before 10PM
-                  </button>
-                </dt>
-              </div>
-
-              <div>
-                <dt>
-                  <button className="db-button" onClick={this.handleSleepAfterMidnightClick.bind(this)} >
-                    Sleep After Midnight
-                  </button>
-                </dt>
-              </div>
-
-              <div>
-                <dt>
-                  <button className="db-button" onClick={this.handleSleepAround10PMClick.bind(this)} >
-                    Sleep Around 10PM
-                  </button>
-                </dt>
-              </div>
-            </dl>
-          </div>
-
-          <div className="db-rent">Rent
+          <div className="db-sleeping selection-titles">Sleeping arrangements
             <div>
-              <dt>
-                <button className="db-button" onClick={this.handleRent800to1000Click.bind(this)} >
-                  Rent $800 to $1000
-                </button>
-              </dt>
+              <button className="db-button" onClick={this.handleSleepBefore10PMClick.bind(this)} >
+                Sleep Before 10PM
+              </button>
             </div>
-
             <div>
-              <dt>
-                <button className="db-button" onClick={this.handleRent1001to1500Click.bind(this)} >
-                  Rent $1001 to $1500
-                </button>
-              </dt>
+              <button className="db-button" onClick={this.handleSleepAfterMidnightClick.bind(this)} >
+                Sleep After Midnight
+              </button>
             </div>
-
             <div>
-              <dt>
-                <button className="db-button" onClick={this.handleRent1501to2000Click.bind(this)} >
-                  Rent $1501 to $2000
-                </button>
-              </dt>
-            </div>
-
-            <div>
-              <dt>
-                <button className="db-button" onClick={this.handleRent2000PlusClick.bind(this)} >
-                  Rent $2000
-                </button>
-              </dt>
+              <button className="db-button" onClick={this.handleSleepAround10PMClick.bind(this)} >
+                Sleep Around 10PM
+              </button>
             </div>
           </div>
 
-          <div className="db-dishes">Dishes
+          <div className="db-rent selection-titles">Rent
             <div>
-                <button className="db-button" onClick={this.handleDishesAfterEveryMealClick.bind(this)} >
-                  Dishes After Every Meal
-                </button>
+              <button className="db-button" onClick={this.handleRent800to1000Click.bind(this)} >
+                Rent $800 to $1000
+              </button>
             </div>
-
             <div>
-                <button className="db-button" onClick={this.handleDishesSinkFullClick.bind(this)} >
-                  Dishes Sink Full
-                </button>
+              <button className="db-button" onClick={this.handleRent1001to1500Click.bind(this)} >
+                Rent $1001 to $1500
+              </button>
             </div>
-
             <div>
-                <button className="db-button" onClick={this.handleWhatAreDishesClick.bind(this)} >
-                  What Are Dishes ?
-                </button>
+              <button className="db-button" onClick={this.handleRent1501to2000Click.bind(this)} >
+                Rent $1501 to $2000
+              </button>
             </div>
-
             <div>
-                <button className="db-button" onClick={this.handleDishesEverydayClick.bind(this)} >
-                  Dishes Everyday
-                </button>
+              <button className="db-button" onClick={this.handleRent2000PlusClick.bind(this)} >
+                Rent $2000
+              </button>
             </div>
-        </div>
+          </div>
 
-          <div className="db-toilet-paper">Toilet Paper
-              <div>
-                  <button className="db-button" onClick={this.handleCharminClick.bind(this)} >
-                    Charmin
-                  </button>
-              </div>
+          <div className="db-dishes selection-titles">Dishes?
+            <div>
+              <button className="db-button" onClick={this.handleDishesAfterEveryMealClick.bind(this)} >
+                Dishes After Every Meal
+              </button>
+            </div>
+            <div>
+              <button className="db-button" onClick={this.handleDishesSinkFullClick.bind(this)} >
+                Dishes Sink Full
+              </button>
+            </div>
+            <div>
+              <button className="db-button" onClick={this.handleWhatAreDishesClick.bind(this)} >
+                What Are Dishes ?
+              </button>
+            </div>
+            <div>
+              <button className="db-button" onClick={this.handleDishesEverydayClick.bind(this)} >
+                Dishes Everyday
+              </button>
+            </div>
+          </div>
 
-              <div>
-                  <button className="db-button" onClick={this.handleScottsClick.bind(this)} >
-                    Scotts
-                  </button>
-              </div>
-
-              <div>
-                  <button className="db-button" onClick={this.handleGenericClick.bind(this)} >
-                    Generic
-                  </button>
-              </div>
+          <div className="db-toilet-paper selection-titles">Toilet Paper Preference
+            <div>
+              <button className="db-button" onClick={this.handleCharminClick.bind(this)} >
+                Charmin
+              </button>
+            </div>
+            <div>
+              <button className="db-button" onClick={this.handleScottsClick.bind(this)} >
+                Scotts
+              </button>
+            </div>
+            <div>
+              <button className="db-button" onClick={this.handleGenericClick.bind(this)} >
+                Generic
+              </button>
+            </div>
           </div>
         </div>
         {this.renderGenderMale()}
