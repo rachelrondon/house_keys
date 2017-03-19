@@ -40,6 +40,7 @@ render(){
                 <th>Address</th>
                 <th>Rent</th>
                 <th>Description</th>
+                <th>Contact</th>
               </tr>
             </thead>
             <tbody>
@@ -48,6 +49,7 @@ render(){
                 <td>{apartment.address}</td>
                 <td>$ {apartment.rent}</td>
                 <td>{apartment.description}</td>
+                <td><a href={"mailto:" + apartment.email}>Email</a></td>
               </tr>
             </tbody>
           </table>
