@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 
+import GoogleMapsForm from '../Services/GoogleMapsForm';
 
 class DashboardApartments extends Component {
   constructor(props) {
@@ -51,6 +52,9 @@ render(){
             </tbody>
           </table>
           <img className="apartment-photo" src={apartment.photo} />
+          <div className="map">
+            <GoogleMapsForm address={apartment.address}/>
+          </div>
         </div>
       );
       })}
