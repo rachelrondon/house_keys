@@ -76,3 +76,11 @@ body {
 }
 
 /* End of Landing Page Styling */
+
+
+/*Dashboard Buttons*/
+
+.db-buttons {
+  display: flex;
+  justify-content: space-between;
+}

@@ -77,7 +77,7 @@ handleRM21to30Click() {
     dishesSinkFullClick: false,
     dishesAfterEveryMealClick: false,
     dishesEverydayClick: false,
-    whatAreDishesClick: true,
+    whatAreDishesClick: false,
     Rent800to1000Click: false,
     Rent1001to1500Click: false,
     rent1501to2000Click: false,
@@ -250,7 +250,7 @@ handleDishesSinkFullClick() {
     charminClick: false,
     dishesAfterEveryMealClick: false,
     dishesEverydayClick: false,
-    whatAreDishesClick: true,
+    whatAreDishesClick: false,
     Rent800to1000Click: false,
     Rent1001to1500Click: false,
     rent1501to2000Click: false,
@@ -284,7 +284,7 @@ handleDishesEverydayClick() {
     charminClick: false,
     dishesSinkFullClick: false,
     dishesAfterEveryMealClick: false,
-    whatAreDishesClick: true,
+    whatAreDishesClick: false,
     Rent800to1000Click: false,
     Rent1001to1500Click: false,
     rent1501to2000Click: false,
@@ -803,14 +803,12 @@ renderSleepAround10PM() {
                   Male
                 </button>
             </div>
-            {this.renderGenderMale()}
 
             <div>
                 <button className="db-button" onClick={this.handleGenderFemaleClick.bind(this)} >
-                  Female
+                 Female
                 </button>
             </div>
-            {this.renderGenderFemale()}
           </div>
 
           <div className="db-dishes">
@@ -819,51 +817,44 @@ renderSleepAround10PM() {
                   Dishes After Every Meal
                 </button>
             </div>
-            {this.renderDishesAfterEveryMeal()}
 
             <div>
                 <button className="db-button" onClick={this.handleDishesSinkFullClick.bind(this)} >
                   Dishes Sink Full
                 </button>
             </div>
-            {this.renderDishesSinkFull()}
 
             <div>
                 <button className="db-button" onClick={this.handleWhatAreDishesClick.bind(this)} >
                   What Are Dishes ?
                 </button>
             </div>
-            {this.renderWhatAreDishes()}
 
             <div>
                 <button className="db-button" onClick={this.handleDishesEverydayClick.bind(this)} >
                   Dishes Everyday
                 </button>
             </div>
-            {this.renderDishesEveryday()}
         </div>
 
           <div className="db-toilet-paper">
               <div>
                   <button className="db-button" onClick={this.handleCharminClick.bind(this)} >
-                    Charmin
+                    Charmin Toilet Paper
                   </button>
               </div>
-              {this.renderCharmin()}
 
               <div>
                   <button className="db-button" onClick={this.handleScottsClick.bind(this)} >
-                    Scotts
+                    Scotts Toilet Paper
                   </button>
               </div>
-              {this.renderScotts()}
 
               <div>
                   <button className="db-button" onClick={this.handleGenericClick.bind(this)} >
-                    Generic
+                    Generic Toilet Paper
                   </button>
               </div>
-              {this.renderGeneric()}
           </div>
 
           <div className="db-smoke">
@@ -872,14 +863,12 @@ renderSleepAround10PM() {
                   Smoker
                 </button>
             </div>
-            {this.renderSmoker()}
 
             <div>
               <button className="db-button" onClick={this.handleNonSmokerClick.bind(this)} >
                 Non Smoker
               </button>
             </div>
-            {this.renderNonSmoker()}
           </div>
 
           <div className="db-sleeping">
@@ -891,7 +880,6 @@ renderSleepAround10PM() {
                   </button>
                 </dt>
             </div>
-            {this.renderSleepBefore10PM()}
 
             <div>
               <dt>
@@ -900,7 +888,6 @@ renderSleepAround10PM() {
                 </button>
               </dt>
             </div>
-            {this.renderSleepAfterMidnight()}
 
             <div>
               <dt>
@@ -910,7 +897,6 @@ renderSleepAround10PM() {
               </dt>
             </div>
             </dl>
-            {this.renderSleepAround10PM()}
           </div>
 
           <div className="db-age">
@@ -922,7 +908,6 @@ renderSleepAround10PM() {
                 </button>
               </dt>
             </div>
-            {this.renderAge31to40()}
 
             <div>
               <dt>
@@ -931,7 +916,6 @@ renderSleepAround10PM() {
                 </button>
               </dt>
             </div>
-            {this.renderAge40Plus()}
 
             <div>
               <dt>
@@ -940,7 +924,6 @@ renderSleepAround10PM() {
                 </button>
               </dt>
             </div>
-            {this.renderRM21to30()}
           </dl>
           </div>
 
@@ -952,7 +935,6 @@ renderSleepAround10PM() {
                 </button>
               </dt>
             </div>
-            {this.renderRent800to1000()}
 
             <div>
               <dt>
@@ -961,7 +943,6 @@ renderSleepAround10PM() {
                 </button>
               </dt>
             </div>
-            {this.renderRent1001to1500()}
 
             <div>
               <dt>
@@ -970,7 +951,6 @@ renderSleepAround10PM() {
                 </button>
               </dt>
             </div>
-            {this.renderRent1501to2000()}
 
             <div>
               <dt>
@@ -979,11 +959,31 @@ renderSleepAround10PM() {
                 </button>
               </dt>
             </div>
-            {this.renderRent2000Plus()}
           </div>
         </div>
+        {this.renderGenderMale()}
+        {this.renderGenderFemale()}
+        {this.renderDishesAfterEveryMeal()}
+        {this.renderDishesSinkFull()}
+        {this.renderWhatAreDishes()}
+        {this.renderDishesEveryday()}
+        {this.renderCharmin()}
+        {this.renderScotts()}
+        {this.renderGeneric()}
+        {this.renderSmoker()}
+        {this.renderNonSmoker()}
+        {this.renderSleepBefore10PM()}
+        {this.renderSleepAfterMidnight()}
+        {this.renderSleepAround10PM()}
+        {this.renderAge31to40()}
+        {this.renderAge40Plus()}
+        {this.renderRM21to30()}
+        {this.renderRent800to1000()}
+        {this.renderRent1001to1500()}
+        {this.renderRent1501to2000()}
+        {this.renderRent2000Plus()}
 
-         <div className="container">
+         {/* <div className="container">
             {this.state.roommates.map((roommate) => {
               console.log(roommate.id);
               return(
@@ -1017,7 +1017,7 @@ renderSleepAround10PM() {
             </div>
               );
             })}
-        </div>
+        </div> */}
       </div>
         );
       }
