@@ -20,8 +20,6 @@ import DashboardDishesSinkFull from './DashboardDishesSinkFull';
 import DashboardDishesEveryday from './DashboardDishesEveryday';
 import DashboardWhatAreDishes from './DashboardWhatAreDishes';
 
-import DashboardToiletPaper from './DashboardToiletPaper';
-
 import DashboardCharmin from './DashboardCharmin';
 import DashboardScotts from './DashboardScotts';
 import DashboardGeneric from './DashboardGeneric';
@@ -208,7 +206,7 @@ renderRent2000Plus() {
 
 handleRent800to1000Click() {
   this.setState({
-    rent800to1000Click: true,
+    Rent800to1000Click: true,
     genderMaleClick: false,
     genderFemaleClick: false,
     sleepClick: false,
@@ -536,28 +534,6 @@ renderSleepAround10PM() {
 //   }
 // }
 
-handleToiletPaperClick() {
-  this.setState({
-    toiletpaperClick: true,
-    dishesClick: false,
-    sleepClick: false,
-    genderMaleClick: false,
-    genderFemaleClick: false,
-    smokerClick: false,
-    ageClick: false,
-    walletClick: false,
-    roommateClick: false,
-    apartmentClick: false
-  })
-}
-
-renderToiletPaper() {
-  if(this.state.toiletpaperClick) {
-    return(
-      <DashboardToiletPaper />
-    )
-  }
-}
 
 handleAge31to40Click() {
   this.setState({
@@ -786,13 +762,6 @@ renderWallet() {
             </button>
           </div>
           {this.renderDishes()} */}
-
-          <div>
-            <button onClick={this.handleToiletPaperClick.bind(this)} >
-              Toilet Paper
-            </button>
-          </div>
-          {this.renderToiletPaper()}
 
           <div>
             <button onClick={this.handleAge21to30Click.bind(this)} >
