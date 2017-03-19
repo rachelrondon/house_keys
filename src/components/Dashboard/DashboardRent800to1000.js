@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class DashboardSleepBefore10PM extends Component {
+class DashboardRent800to1000 extends Component {
   constructor(props) {
     super(props);
 
@@ -10,7 +10,7 @@ class DashboardSleepBefore10PM extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates/sleepbefore10`, {
+  fetch(`http://localhost:8000/roommates/rent800to1000`, {
     method: 'GET'
   })
   .then((results) => {
@@ -22,6 +22,7 @@ class DashboardSleepBefore10PM extends Component {
     console.log(err);
   });
 }
+
   render(){
     return(
       <div>
@@ -65,4 +66,4 @@ class DashboardSleepBefore10PM extends Component {
   }
 }
 
-export default DashboardSleepBefore10PM;
+export default DashboardRent800to1000;
