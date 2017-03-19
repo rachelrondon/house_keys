@@ -21,6 +21,7 @@ import DashboardToiletPaper from './DashboardToiletPaper';
 
 import DashboardCharmin from './DashboardCharmin';
 import DashboardScotts from './DashboardScotts';
+import DashboardGeneric from './DashboardGeneric';
 // import DashboardAge from './DashboardAge';
 import DashboardWallet from './DashboardWallet';
 
@@ -309,6 +310,31 @@ renderScotts () {
     )
   }
 }
+
+
+handleGenericClick() {
+  this.setState({
+    genericClick: true,
+    genderMaleClick: false,
+    smokerClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderGeneric () {
+  if(this.state.genericClick) {
+    return(
+      <DashboardGeneric />
+    )
+  }
+}
+
 
 handleCharminClick() {
   this.setState({
@@ -609,6 +635,13 @@ renderWallet() {
           </button>
         </div>
         {this.renderScotts()}
+
+        <div>
+          <button onClick={this.handleGenericClick.bind(this)} >
+            Generic
+          </button>
+        </div>
+        {this.renderGeneric()}
 
           <div>
             <button onClick={this.handleSmokerClick.bind(this)} >
