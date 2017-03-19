@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 
 
@@ -24,35 +25,39 @@ class DashboardApartments extends Component {
   });
 }
 
-render(){
-  return(
-  <div>
-    <div className="container">
-      {this.state.apartments.map((apartment) => {
-        return(
-        <div key={apartment.id} className="">
-          <div>
-            <h2>Title: {apartment.title}</h2>
+  render(){
+    return(
+    <div>
+      <div className="container">
+        {this.state.apartments.map((apartment) => {
+          return(
+          <div key={apartment.id} className="">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Address</th>
+                  <th>Rent</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{apartment.title}</td>
+                  <td>{apartment.address}</td>
+                  <td>$ {apartment.rent}</td>
+                  <td>{apartment.description}</td>
+                </tr>
+              </tbody>
+            </table>
+            <img className="apartment-photo" src={apartment.photo} />
           </div>
-          <div>
-            <h2>Address: {apartment.address}</h2>
-          </div>
-          <div>
-            <h2>Rent: ${apartment.rent}</h2>
-          </div>
-          <div>
-            <h2>Description: {apartment.description}</h2>
-          </div>
-          <div>
-            <img src={apartment.photo} />
-          </div>
-        </div>
-      );
-      })}
+        );
+        })}
+    </div>
   </div>
-</div>
-  );
-}
+    );
+  }
 }
 
 export default DashboardApartments;

@@ -36,29 +36,20 @@ class GoogleMapsForm extends Component {
   // }
 
   render() {
+    let address = this.props.address
+    if (!address) {
+      address = 'New York'
+    }
+    console.log(address)
     return (
-      // <div>
-      //     <form onSubmit={this.handleLatLong.bind(this)}>
-      //       <input
-      //         type="text"
-      //         value={this.state.address}
-      //         onChange={e => this.setState({address: e.target.value})}
-      //         placeholder="search address..." /><br/>
-      //       <input type="submit" value="Search"/>
-      //     </form>
-      //   </div>
-
-      // ******* Sample viewport for google maps window *******
       <div>
         <iframe
           width="600"
           height="450"
           frameBorder="0"
-          src={`https://www.google.com/maps/embed/v1/place?key=${key}&q=33+Charles+St,+Malverne,+NY`} >
+          src={`https://www.google.com/maps/embed/v1/place?key=${key}&q=${address}`} >
         </iframe>
       </div>
-
-
     )
   }
 }
