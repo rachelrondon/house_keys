@@ -5,6 +5,7 @@ import update from 'react-addons-update';
 
 import GoogleMapsForm from '../Services/GoogleMapsForm';
 
+
 const key = process.env.API_KEY;
 
 class NewPostApartment extends Component {
@@ -21,7 +22,7 @@ class NewPostApartment extends Component {
           photo: '',
           user_id: 1
         },
-        latLong: ''
+        latlong: ''
       };
     }
 
@@ -36,7 +37,7 @@ class NewPostApartment extends Component {
     fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${key}`)
     .then(r => r.json())
     .then((data) => {
-      this.setState({ latLong: `${data.results[0].geometry.location.lat} ${data.results[0].geometry.location.lng}` })
+      this.setState({ latlong: `${data.results[0].geometry.location.lat} ${data.results[0].geometry.location.lng}` })
       // console.log("latitude for the boys:", newTaco.results[0].geometry.location.lat);
       // console.log("where my tudes at?:", newTaco.results[0].geometry.location.lat);
     })
@@ -48,14 +49,13 @@ class NewPostApartment extends Component {
       method: "POST",
       body: JSON.stringify({
         apartment: this.state.apartment,
-        latLong: this.state.latLong
+        latlong: this.state.latlong
       }),
       headers: {
         "Content-Type": 'application/json'
       }
     })
     .then(() => {
-      alert('apartment data:', this.state.apartment)
       browserHistory.push('/dashboard');
     })
     .catch((err) => {
@@ -70,16 +70,17 @@ class NewPostApartment extends Component {
         $merge: {
           [event.target.name]: event.target.value
         }
-      }
+      },
     });
-    this.searchLatLong(this.state.apartment.address)
-    console.log('this worked!', this.state)
+    // this.searchLatLong(this.state.apartment.address)
+    console.log('Lat Long:', this.state.latLong)
     this.setState(newState);
   }
 
   handleSubmit(location) {
     location.preventDefault();
     console.log(this.state)
+    this.searchLatLong(this.state.apartment.address)
     this.databaseSubmit();
   };
 
