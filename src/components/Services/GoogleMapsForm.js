@@ -33,7 +33,7 @@ class GoogleMapsForm extends Component {
   //   event.preventDefault();
   //   this.searchLatLong(this.state.address);
   //   this.setState({ address: '' });
-  }
+  // }
 
 
 

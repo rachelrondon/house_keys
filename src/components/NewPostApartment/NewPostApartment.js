@@ -15,6 +15,7 @@ class NewPostApartment extends Component {
       this.state = {
         apartment: {
           title: '',
+          email: '',
           address: '',
           rent: 500,
           description: '',
@@ -55,8 +56,8 @@ class NewPostApartment extends Component {
       }
     })
     .then(() => {
-      alert('apartment data:', this.state.apartment)
-      // browserHistory.push('/dashboard');
+      // alert('apartment data:', this.state.apartment)
+      browserHistory.push('/dashboard');
     })
     .catch((err) => {
       console.log(err);
@@ -88,47 +89,53 @@ class NewPostApartment extends Component {
         <nav>
           <h2 className=""> Add Apartment</h2>
         </nav>
-          <div className="collection">
-            <Link className="collection-item" to="/dashboard">Back to Home</Link>
-          </div>
+        <div className="collection">
+          <Link className="collection-item" to="/dashboard">Back to Home</Link>
+        </div>
 
-          <form onSubmit={this.handleSubmit.bind(this)} className="">
-            <div className="">
-              Title
-            </div>
-            <div className="">
-              <input name="title" type="text" placeholder="Title" onChange={this.handleChange.bind(this)}></input>
-            </div>
-            <div className="">
-              Address
-            </div>
-            <div className="">
-              <input name="address" type="text" placeholder="Address" onChange={this.handleChange.bind(this)}></input>
-            </div>
-            <div className="latLong" className="latLong" name="latLong" onChange={this.handleChange.bind(this)}>
-              {this.state.latLong}
-            </div>
-            <div className="">
-              Rent
-            </div>
-            <div className="">
-              <input  name="rent" type="number" placeholder="Rent" onChange={this.handleChange.bind(this)}></input>
-            </div>
-            <div className="">
-              Description
-            </div>
-            <div className="">
-              <input name="description" type="text" placeholder="Description" onChange={this.handleChange.bind(this)}></input>
-            </div>
-            <div className="">
-              Photo
-            </div>
-            <div className="">
-              <input name="photo" type="text" placeholder="Add photo" onChange={this.handleChange.bind(this)}></input>
-            </div>
-            <button  type="submit">Submit</button>
-          </form>
-          <GoogleMapsForm />
+        <form onSubmit={this.handleSubmit.bind(this)} className="">
+          <div className="">
+            Title
+          </div>
+          <div className="">
+            <input name="title" type="text" placeholder="Title" onChange={this.handleChange.bind(this)}></input>
+          </div>
+          <div className="">
+            Email
+          </div>
+          <div className="">
+            <input name="email" type="text" placeholder="Email" onChange={this.handleChange.bind(this)}></input>
+          </div>
+          <div className="">
+            Address
+          </div>
+          <div className="">
+            <input name="address" type="text" placeholder="Address" onChange={this.handleChange.bind(this)}></input>
+          </div>
+          <div className="latLong" className="latLong" name="latLong" onChange={this.handleChange.bind(this)}>
+            {this.state.latLong}
+          </div>
+          <div className="">
+            Rent
+          </div>
+          <div className="">
+            <input  name="rent" type="number" placeholder="Rent" onChange={this.handleChange.bind(this)}></input>
+          </div>
+          <div className="">
+            Description
+          </div>
+          <div className="">
+            <input name="description" type="text" placeholder="Description" onChange={this.handleChange.bind(this)}></input>
+          </div>
+          <div className="">
+            Photo
+          </div>
+          <div className="">
+            <input name="photo" type="text" placeholder="Add photo" onChange={this.handleChange.bind(this)}></input>
+          </div>
+          <button href="/dashboard" type="submit">Submit</button>
+        </form>
+        <GoogleMapsForm />
       </div>
     )
   }

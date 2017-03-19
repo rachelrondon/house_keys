@@ -77,13 +77,74 @@ body {
 
 /* End of Landing Page Styling */
 
-/*.latLong {
-  display: none;
-}*/
+/******************************/
 
-/*Dashboard Buttons*/
+/* Dashboard Views */
+
+.selection-titles {
+  text-align: center;
+  margin-left: 2px;
+}
+
+.roommate-apartment-button {
+  display: flex;
+}
+
+.params-view {
+  margin-right: 5px;
+}
+/* END dashboard views */
+
+/*************************************/
+
+/* param Buttons*/
 
 .db-buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.db-button {
+  width: 100%;
+}
+/* END param buttons*/
+
+/*************************************/
+
+/* Nav Views */
+
+.nav-header {
+  width: 120%;
+  margin: -10px;
+  background-color: #333333;
+  color: white;
+  border-bottom: 2px solid #222;
+  margin-bottom: 20px;
+  padding: 25px;
+}
+
+.navTitle{
+  display: flex;
+}
+
+.collection {
+  display: flex;
+}
+
+.collection-item {
+  margin-right: 10px;
+  color: white;
+}
+
+.logoutButton {
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+/* END nav views */
+
+.latLong {
+  display: none;
 }
