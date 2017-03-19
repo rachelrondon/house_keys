@@ -65,31 +65,31 @@ class NewUser extends Component {
                 First Name
               </div>
               <div className="">
-                <input name="first_name" placeholder="first name" onChange={this.handleChange.bind(this)}></input>
+                <input type="text"  name="first_name" placeholder="First Name" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Last Name
               </div>
               <div className="">
-                <input  name="last_name" placeholder="last name" onChange={this.handleChange.bind(this)}></input>
+                <input type="text"   name="last_name" placeholder="Last Name" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Email
               </div>
               <div className="">
-                <input name="email" placeholder="email" onChange={this.handleChange.bind(this)}></input>
+                <input type="text"  name="email" placeholder="Email" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Username
               </div>
               <div className="">
-                <input name="username" placeholder="username" onChange={this.handleChange.bind(this)}></input>
+                <input type="text" name="username" placeholder="Username" onChange={this.handleChange.bind(this)}></input>
               </div>
               <div className="">
                 Password
               </div>
               <div className="">
-                <input onChange={this.handleChange.bind(this)} name="password_digest" placeholder="password"></input>
+                <input type="password" onChange={this.handleChange.bind(this)} name="password_digest" placeholder="Password"></input>
               </div>
               <button href="/dashboard" type="submit">Submit</button>
             </form>
