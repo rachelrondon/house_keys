@@ -16,6 +16,7 @@ import DashboardSleepAround10PM from './DashboardSleepAround10PM';
 
 import DashboardDishesAfterEveryMeal from './DashboardDishesAfterEveryMeal';
 import DashboardDishesSinkFull from './DashboardDishesSinkFull';
+import DashboardDishesEveryday from './DashboardDishesEveryday';
 
 import DashboardToiletPaper from './DashboardToiletPaper';
 
@@ -105,6 +106,30 @@ renderDishesSinkFull() {
   if(this.state.dishesSinkFullClick) {
     return(
       <DashboardDishesSinkFull />
+    )
+  }
+}
+
+handleDishesEverydayClick() {
+  this.setState({
+    dishesEverydayClick: true,
+    smokerClick: false,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderDishesEveryday() {
+  if(this.state.dishesEverydayClick) {
+    return(
+      <DashboardDishesEveryday />
     )
   }
 }
@@ -619,6 +644,13 @@ renderWallet() {
             </button>
           </div>
           {this.renderDishesSinkFull()}
+
+      <div>
+        <button onClick={this.handleDishesEverydayClick.bind(this)} >
+          Dishes Everyday
+        </button>
+      </div>
+      {this.renderDishesEveryday()}
 
           <div>
             <button onClick={this.handleCharminClick.bind(this)} >
