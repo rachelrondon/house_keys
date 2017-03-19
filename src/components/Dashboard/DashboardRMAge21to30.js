@@ -42,6 +42,7 @@ class DashboardRMAge21to30 extends Component {
                      <th>Toilet Paper Preference</th>
                      <th>Age</th>
                      <th>Wallet</th>
+                     <th>Contact</th>
                    </tr>
                  </thead>
                  <tbody>
@@ -54,6 +55,7 @@ class DashboardRMAge21to30 extends Component {
                      <td>{roommate.toilet_paper}</td>
                      <td>{roommate.age}</td>
                      <td>{roommate.wallet}</td>
+                     <td><a href={"mailto:" + roommate.email}>Email</a></td>
                    </tr>
                  </tbody>
               </table>
