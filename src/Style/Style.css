@@ -155,9 +155,17 @@ body {
   top: 10px;
 }
 
-
-
 /* END nav views */
+
+/* Card styling */
+
+/*.container {
+  width: 100px;
+  height: 175px;
+}*/
+
+/* END of Cards */
+
 
 .latLong {
   display: none;

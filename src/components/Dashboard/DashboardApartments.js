@@ -31,32 +31,21 @@ render(){
     <div className="container">
       {this.state.apartments.map((apartment) => {
         return(
-        <div key={apartment.id} className="">
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Address</th>
-                <th>Rent</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{apartment.title}</td>
-                <td>{apartment.address}</td>
-                <td>$ {apartment.rent}</td>
-                <td>{apartment.description}</td>
-              </tr>
-            </tbody>
-          </table>
-          <img className="apartment-photo" src={apartment.photo} />
-        </div>
-      );
+          <div key={apartment.id} className="aptCard">
+            <h4>{apartment.title}</h4>
+            <div><strong>Address</strong></div>
+            <div>{apartment.address}</div>
+            <div><strong>Rent</strong></div>
+            <div>$ {apartment.rent}</div>
+            <div><strong>Description</strong></div>
+            <div>{apartment.description}</div>
+            <img className="apartment-photo" src={apartment.photo} />
+            <div className="googleMap"></div>
+          </div>
+        );
       })}
     </div>
   </div>
-</div>
   );
   }
 }

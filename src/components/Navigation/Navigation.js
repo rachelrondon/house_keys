@@ -20,7 +20,7 @@ class Navigation extends Component {
       <div className="nav-header">
         <nav>
           <div className="navTitle">
-            <img className="navLogo" src="../img/House_Keys_Logo-Nav.svg" width="200px"/>
+            <img className="navLogo" src="../img/House_Keys_Logo-Nav.svg"/>
             <h1> Welcome, {this.props.user.first_name}</h1>
           </div>
           <div className="collection">
