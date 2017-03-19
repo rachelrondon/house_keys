@@ -17,6 +17,7 @@ import DashboardSleepAround10PM from './DashboardSleepAround10PM';
 import DashboardDishesAfterEveryMeal from './DashboardDishesAfterEveryMeal';
 import DashboardDishesSinkFull from './DashboardDishesSinkFull';
 import DashboardDishesEveryday from './DashboardDishesEveryday';
+import DashboardWhatAreDishes from './DashboardWhatAreDishes';
 
 import DashboardToiletPaper from './DashboardToiletPaper';
 
@@ -60,6 +61,30 @@ class DashboardRoommate extends Component {
   });
 }
 
+handleWhatAreDishesClick() {
+  this.setState({
+    whatAreDishesClick: true,
+    smokerClick: false,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderWhatAreDishes() {
+  if(this.state.whatAreDishesClick) {
+    return(
+      <DashboardWhatAreDishes />
+    )
+  }
+}
+
 
 handleDishesAfterEveryMealClick() {
   this.setState({
@@ -84,7 +109,6 @@ renderDishesAfterEveryMeal() {
     )
   }
 }
-
 
 handleDishesSinkFullClick() {
   this.setState({
@@ -644,6 +668,13 @@ renderWallet() {
             </button>
           </div>
           {this.renderDishesSinkFull()}
+
+      <div>
+        <button onClick={this.handleWhatAreDishesClick.bind(this)} >
+          What Are Dishes ?
+        </button>
+      </div>
+      {this.renderWhatAreDishes()}
 
       <div>
         <button onClick={this.handleDishesEverydayClick.bind(this)} >
