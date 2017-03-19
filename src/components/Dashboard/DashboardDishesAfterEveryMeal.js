@@ -10,7 +10,7 @@ class DishesAfterEveryMeal extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://localhost:8000/roommates`, {
+  fetch(`http://localhost:8000/roommates/disheseverymeal`, {
     method: 'GET'
   })
   .then((results) => {
