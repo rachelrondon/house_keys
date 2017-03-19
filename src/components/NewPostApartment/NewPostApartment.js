@@ -17,6 +17,7 @@ class NewPostApartment extends Component {
           rent: 500,
           description: '',
           photo: '',
+          email: '',
           user_id: 1
         }
       };
@@ -99,6 +100,12 @@ class NewPostApartment extends Component {
               </div>
               <div className="">
                 <input name="photo" type="text" placeholder="Add photo" onChange={this.handleChange.bind(this)}></input>
+              </div>
+              <div className="">
+                Email
+              </div>
+              <div className="">
+                <input name="email" type="email" placeholder="email" onChange={this.handleChange.bind(this)}></input>
               </div>
               <button href="/dashboard" type="submit">Submit</button>
             </form>
