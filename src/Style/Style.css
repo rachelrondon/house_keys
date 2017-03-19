@@ -130,8 +130,14 @@ body {
   padding: 25px;
 }
 
+
 .navTitle{
   display: flex;
+  align-items: center;
+}
+
+.navTitle h1 {
+  line-height: 100%;
 }
 
 .collection {
