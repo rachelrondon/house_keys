@@ -24,47 +24,35 @@ class DashboardApartments extends Component {
   });
 }
 
-  render(){
-    return(
-    <div>
-      <div className="container">
-         {this.state.roommates.map((roommate) => {
-           console.log(roommate.id);
-           return(
-           <div key={roommate.id} className="">
-             <table>
-               <thead>
-                 <tr>
-                   <th>Title</th>
-                   <th>Gender</th>
-                   <th>Smoker?</th>
-                   <th>Sleeping Patterns</th>
-                   <th>Dish-Washing Habits</th>
-                   <th>Toilet Paper Preference</th>
-                   <th>Age</th>
-                   <th>Wallet</th>
-                 </tr>
-               </thead>
-               <tbody>
-                 <tr>
-                   <td>{roommate.title}</td>
-                   <td>{roommate.gender}</td>
-                   <td>{roommate.smoker}</td>
-                   <td>{roommate.sleep}</td>
-                   <td>{roommate.dishes}</td>
-                   <td>{roommate.toilet_paper}</td>
-                   <td>{roommate.age}</td>
-                   <td>{roommate.wallet}</td>
-                 </tr>
-               </tbody>
-            </table>
-         </div>
-           );
-         })}
-     </div>
+render(){
+  return(
+  <div>
+    <div className="container">
+      {this.state.apartments.map((apartment) => {
+        return(
+        <div key={apartment.id} className="">
+          <div>
+            <h2>Title: {apartment.title}</h2>
+          </div>
+          <div>
+            <h2>Address: {apartment.address}</h2>
+          </div>
+          <div>
+            <h2>Rent: ${apartment.rent}</h2>
+          </div>
+          <div>
+            <h2>Description: {apartment.description}</h2>
+          </div>
+          <div>
+            <img src={apartment.photo} />
+          </div>
+        </div>
+      );
+      })}
   </div>
-    );
-  }
+</div>
+  );
+}
 }
 
 export default DashboardApartments;
