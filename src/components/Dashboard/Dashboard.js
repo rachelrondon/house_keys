@@ -25,9 +25,8 @@ class Dashboard extends Component {
     if (!localStorage.getItem('token')) {
         browserHistory.push('/login');
     } else {
-      // console.log('Dashboard User', userObj)
-      // let userObj = JSON.parse(window.localStorage.user);
-      // this.setState({user: userObj})
+      let userObj = JSON.parse(window.localStorage.user);
+      this.setState({user: userObj})
     }
   }
 
@@ -56,7 +55,6 @@ class Dashboard extends Component {
     this.setState({
       roommateClick: true,
       apartmentClick: false,
-      // smokerClick: false
     })
   }
 
@@ -64,6 +62,7 @@ class Dashboard extends Component {
     if(this.state.roommateClick) {
       return(
         <DashboardRoommate />
+
       )
     }
   }
