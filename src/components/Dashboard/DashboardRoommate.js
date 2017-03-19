@@ -32,6 +32,7 @@ import DashboardRMAge21to30 from "./DashboardRMAge21to30";
 import DashboardRent800to1000 from "./DashboardRent800to1000";
 import DashboardRent1001to1500 from "./DashboardRent1001to1500";
 import DashboardRent1501to2000 from "./DashboardRent1501to2000";
+import DashboardRent2000Plus from "./DashboardRent2000Plus";
 
 class DashboardRoommate extends Component {
   constructor(props) {
@@ -128,6 +129,30 @@ renderRM21to30() {
     )
   }
 }
+
+handleRent2000PlusClick() {
+  this.setState({
+    Rent2000PlusClick: true,
+    genderMaleClick: false,
+    genderFemaleClick: false,
+    sleepClick: false,
+    dishesClick: false,
+    toiletpaperClick: false,
+    ageClick: false,
+    walletClick: false,
+    roommateClick: false,
+    apartmentClick: false
+  })
+}
+
+renderRent2000Plus() {
+  if(this.state.Rent2000PlusClick) {
+    return(
+      <DashboardRent2000Plus />
+    )
+  }
+}
+
 
 handleRent800to1000Click() {
   this.setState({
@@ -364,28 +389,28 @@ renderSleepAround10PM() {
 }
 
 
-handleDishesClick() {
-  this.setState({
-    dishesClick: true,
-    sleepClick: false,
-    genderMaleClick: false,
-    genderFemaleClick: false,
-    smokerClick: false,
-    toiletpaperClick: false,
-    ageClick: false,
-    walletClick: false,
-    roommateClick: false,
-    apartmentClick: false
-  })
-}
+// handleDishesClick() {
+//   this.setState({
+//     dishesClick: true,
+//     sleepClick: false,
+//     genderMaleClick: false,
+//     genderFemaleClick: false,
+//     smokerClick: false,
+//     toiletpaperClick: false,
+//     ageClick: false,
+//     walletClick: false,
+//     roommateClick: false,
+//     apartmentClick: false
+//   })
+// }
 
-renderDishes() {
-  if(this.state.dishesClick) {
-    return(
-      <DashboardDishes />
-    )
-  }
-}
+// renderDishes() {
+//   if(this.state.dishesClick) {
+//     return(
+//       <DashboardDishes />
+//     )
+//   }
+// }
 
 handleToiletPaperClick() {
   this.setState({
@@ -594,12 +619,12 @@ renderWallet() {
           </div>
           {this.renderSleepAround10PM()}
 
-          <div>
+          {/* <div>
             <button onClick={this.handleDishesClick.bind(this)} >
               Dishes
             </button>
           </div>
-          {this.renderDishes()}
+          {this.renderDishes()} */}
 
           <div>
             <button onClick={this.handleToiletPaperClick.bind(this)} >
@@ -657,6 +682,14 @@ renderWallet() {
         </button>
       </div>
       {this.renderRent1501to2000()}
+
+      <div>
+        <button onClick={this.handleRent2000PlusClick.bind(this)} >
+          Rent $2000
+        </button>
+      </div>
+      {this.renderRent2000Plus()}
+
 
           <div>
             <button onClick={this.handleWalletClick.bind(this)} >
