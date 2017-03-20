@@ -30,7 +30,7 @@ class DashboardAge31to40 extends Component {
            {this.state.roommates.map((roommate) => {
              console.log(roommate.id);
              return(
-<<<<<<< HEAD
+
              <div key={roommate.id} className="">
                <table>
                  <thead>
@@ -60,7 +60,6 @@ class DashboardAge31to40 extends Component {
                  </tbody>
               </table>
            </div>
-=======
                <div key={roommate.id} className="">
                  <table>
                    <thead>
@@ -91,7 +90,7 @@ class DashboardAge31to40 extends Component {
                    </tbody>
                 </table>
              </div>
->>>>>>> 3fa3bb4b59a0f2c929873d1ef05a377a962712d3
+
              );
            })}
        </div>

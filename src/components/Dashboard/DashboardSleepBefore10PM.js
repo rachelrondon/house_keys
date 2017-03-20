@@ -25,10 +25,8 @@ class DashboardSleepBefore10PM extends Component {
   render(){
     return(
       <div>
-<<<<<<< HEAD
-=======
+
         <div className="container">
->>>>>>> 3fa3bb4b59a0f2c929873d1ef05a377a962712d3
            {this.state.roommates.map((roommate) => {
              console.log(roommate.id);
              return(
