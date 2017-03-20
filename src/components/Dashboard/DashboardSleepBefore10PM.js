@@ -25,74 +25,33 @@ class DashboardSleepBefore10PM extends Component {
   render(){
     return(
       <div>
-        <div className="container">
-          {this.state.roommates.map((roommate) => {
-            console.log(roommate.id);
-            return(
-              <div key={roommate.id} className="">
-                <div>
-                  <h2>Title: {roommate.title}</h2>
-                </div>
-                <div>
-                  <h2>Gender: {roommate.gender}</h2>
-                </div>
-                <div>
-                  <h2>Smoker: {roommate.smoker}</h2>
-                </div>
-                <div>
-                  <h2>Sleep: {roommate.sleep}</h2>
-                </div>
-                <div>
-                  <h2>Dishes: {roommate.dishes}</h2>
-                </div>
-                <div>
-                  <h2>Toilet Paper: {roommate.toilet_paper}</h2>
-                </div>
-                <div>
-                  <h2>Age: {roommate.age}</h2>
-                </div>
-                <div>
-                  <h2>Wallet: {roommate.wallet}</h2>
-                </div>
-            </div>
-            );
-          })}
-      </div>
-
+        <div className="roommateContainer">
            {this.state.roommates.map((roommate) => {
              console.log(roommate.id);
              return(
-             <div key={roommate.id} className="">
-               <table>
-                 <thead>
-                   <tr>
-                     <th>Title</th>
-                     <th>Gender</th>
-                     <th>Smoker?</th>
-                     <th>Sleeping Patterns</th>
-                     <th>Dish-Washing Habits</th>
-                     <th>Toilet Paper Preference</th>
-                     <th>Age</th>
-                     <th>Wallet</th>
-                   </tr>
-                 </thead>
-                 <tbody>
-                   <tr>
-                     <td>{roommate.title}</td>
-                     <td>{roommate.gender}</td>
-                     <td>{roommate.smoker}</td>
-                     <td>{roommate.sleep}</td>
-                     <td>{roommate.dishes}</td>
-                     <td>{roommate.toilet_paper}</td>
-                     <td>{roommate.age}</td>
-                     <td>{roommate.wallet}</td>
-                   </tr>
-                 </tbody>
-              </table>
-           </div>
+               <div key={roommate.id} className="roommateCard">
+                 <h4>{roommate.title}</h4>
+                 <div><strong>Gender</strong></div>
+                 <div>{roommate.gender}</div>
+                 <div><strong>Smoker</strong></div>
+                 <div>{roommate.smoker}</div>
+                 <div><strong>Sleeping Patterns</strong></div>
+                 <div>{roommate.sleep}</div>
+                 <div><strong>Dish-Washing Habits</strong></div>
+                 <div>{roommate.dishes}</div>
+                 <div><strong>Toiler Paper</strong></div>
+                 <div>{roommate.toilet_paper}</div>
+                 <div><strong>Age</strong></div>
+                 <div>{roommate.age}</div>
+                 <div><strong>Wallet</strong></div>
+                 <div>{roommate.wallet}</div>
+                 <div><a href={"mailto:" + roommate.email}>Email</a></div>
+                 <br/>
+               </div>
              );
            })}
        </div>
+     </div>
     );
   }
 }
