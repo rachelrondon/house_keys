@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 
 import GoogleMapsForm from '../Services/GoogleMapsForm';
@@ -26,73 +25,30 @@ class DashboardApartments extends Component {
   });
 }
 
-<<<<<<< HEAD
-  render(){
-    return(
-    <div>
-      <div className="container">
-        {this.state.apartments.map((apartment) => {
-          return(
-          <div key={apartment.id} className="">
-            <table>
-              <thead>
-                <tr>
-                  <th>Title</th>
-                  <th>Address</th>
-                  <th>Rent</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{apartment.title}</td>
-                  <td>{apartment.address}</td>
-                  <td>$ {apartment.rent}</td>
-                  <td>{apartment.description}</td>
-                </tr>
-              </tbody>
-            </table>
-            <img className="apartment-photo" src={apartment.photo} />
-          </div>
-        );
-        })}
-    </div>
-=======
 render(){
   return(
   <div>
-    <div className="container">
+    <div className="aptContainer">
       {this.state.apartments.map((apartment) => {
         return(
-        <div key={apartment.id} className="">
-          <table>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Address</th>
-                <th>Rent</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{apartment.title}</td>
-                <td>{apartment.address}</td>
-                <td>$ {apartment.rent}</td>
-                <td>{apartment.description}</td>
-              </tr>
-            </tbody>
-          </table>
-          <img className="apartment-photo" src={apartment.photo} />
-          <div className="map">
-            <GoogleMapsForm address={apartment.address}/>
+          <div key={apartment.id} className="aptCard">
+            <h4>{apartment.title}</h4>
+            <img className="aptPhoto" src={apartment.photo} />
+            <div><strong>Address</strong></div>
+            <div>{apartment.address}</div>
+            <div><strong>Rent</strong></div>
+            <div>$ {apartment.rent}</div>
+            <div><strong>Description</strong></div>
+            <div>{apartment.description}</div>
+            <div><strong>Contact</strong></div>
+            <div><a href={"mailto:" + apartment.email}>Email</a></div>
+            <GoogleMapsForm className="map" address={apartment.address}/>
           </div>
-        </div>
-      );
+        );
       })}
->>>>>>> 3fa3bb4b59a0f2c929873d1ef05a377a962712d3
+    </div>
   </div>
-    );
+  );
   }
 }
 

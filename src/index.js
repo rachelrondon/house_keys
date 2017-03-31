@@ -18,7 +18,7 @@ import NewPostApartment from './components/NewPostApartment/NewPostApartment';
 import GoogleMapsForm from './components/Services/GoogleMapsForm';
 
 ReactDom.render(
-  <Router history={browserHistory}>
+  Router history={browserHistory}>
     <Route path='/' component={LandingPage} />
     <Route path='/dashboard' component={Dashboard} />
     <Route path='/login' component={Login} />

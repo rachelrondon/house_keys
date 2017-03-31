@@ -62,8 +62,6 @@ class Dashboard extends Component {
     }
   }
 
-
-
   render(){
     return(
       <div>
@@ -71,7 +69,6 @@ class Dashboard extends Component {
         user={this.state.user}
         className="welcome"
       />
-
       <div className="roommate-apartment-button">
         <div className="params-view">
           <button onClick={this.handleApartmentClick.bind(this)} >
